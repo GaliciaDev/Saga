@@ -3,15 +3,15 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="css/capturas.css">
-	<link rel="shortcut icon" href="img/icon.png">
+	<link rel="stylesheet" type="text/css" href="../css/capturas.css">
+	<link rel="shortcut icon" href="../assets/img/icon.png">
 	<title>Capturas</title>
 </head>
 <body>
     <header>
 		<nav>
             <ul class="menu">
-                <li><a href="index_administrativo.php">Inicio</a></li>
+                <li><a href="../index_administrativo.php">Inicio</a></li>
                 <li><a href="asignacion_horarios.php">Asignar Horario</a></li>                
                 <li><a href="contactos_tutores.php">Contacto Tutores</a></li>                
                 <li><a href="estadisticas_alumno.php">Estadisticas Alumnos</a></li>            
@@ -40,7 +40,7 @@
     <form action="capturas_calificaciones.php" method="POST">         
         <?php                                        
             //Conexion a la BD
-            $conexion = mysqli_connect("localhost", "root", "");
+            $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
             mysqli_select_db($conexion, "sagadb");
 
             //Realizamos consulta
@@ -84,7 +84,7 @@
                         
 
                         //Conexion a la BD
-                        $conexion = mysqli_connect("localhost", "root", "");
+                        $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
                         mysqli_select_db($conexion, "sagadb");
 
                         //Realizamos consulta
@@ -110,7 +110,7 @@
                                 $calificacion = $_POST['calificacion'];
                                 $mat = $_POST['materia'];                   
 
-                                $conexion=mysqli_connect("localhost","root","");
+                                $conexion=mysqli_connect("localhost","DBA-Saga","srvtySDL&");
                                 mysqli_select_db($conexion, "sagadb");
                                 
                                 for ($i = 0; $i < (count($id)); $i++) {
@@ -142,7 +142,7 @@
                                 $calificacion = $_POST['calificacion'];           
                                 $mat = $_POST['materia'];                           
 
-                                $conexion=mysqli_connect("localhost","root","");
+                                $conexion=mysqli_connect("localhost","DBA-Saga","srvtySDL&");
                                 mysqli_select_db($conexion, "sagadb");
                                 
                                 for ($i = 0; $i < (count($id)); $i++) {
@@ -174,7 +174,7 @@
                                 $calificacion = $_POST['calificacion'];  
                                 $mat = $_POST['materia'];                  
 
-                                $conexion=mysqli_connect("localhost","root","");
+                                $conexion=mysqli_connect("localhost","DBA-Saga","srvtySDL&");
                                 mysqli_select_db($conexion, "sagadb");
                                 
                                 for ($i = 0; $i < (count($id)); $i++) {

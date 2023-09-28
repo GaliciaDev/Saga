@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/consulta_horarios.css">
-    <link rel="shortcut icon" href="img/icon.png">  
+    <link rel="stylesheet" type="text/css" href="../css/consulta_horarios.css">
+    <link rel="shortcut icon" href="../assets&/img/icon.png">  
     <title>Kardex</title>
 </head>
 <body>
 <header>
     <nav>
         <ul class="menu">
-            <li><a href="index_alumnos.php">Inicio</a></li>                                  
+            <li><a href="../index_alumnos.php">Inicio</a></li>                                  
             <li><a href="calificaciones_alumno.php">Calificaciones</a></li>                                
             <li><a href="kardex.php">Kardex</a></li>                                          
             <li><a href="apoyo.html">Apoyo Tecnico</a></li>
@@ -35,7 +35,7 @@
         $id_alumno = $_POST['id_alumno'];
 
         // Conexión a la BD
-        $conexion = mysqli_connect("localhost", "root", "");
+        $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
         mysqli_select_db($conexion, "sagadb");
 
         // Consulta para obtener el kardex del alumno

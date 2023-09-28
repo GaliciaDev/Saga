@@ -15,7 +15,7 @@
 		$Grupo=$_POST['grupo'];
 		$Clave=$_POST['Clave_A'];		
 
-		$conexion=mysqli_connect("localhost", "root", "");
+		$conexion=mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
 		mysqli_select_db($conexion, "sagadb");		
 
 		$Resultado=mysqli_query($conexion,"INSERT INTO `alumnos`(`id_alumno`, `nombre`, `apellidoP`, `apellidoM`, `natalicio`, `edad`, `sexo`, `domicilio`, `tutor`, `telefono`, `correo`, `grado`, `turno`, `materias`, `docentes`, `Horario_A`, `Clave_A`, `grupo`) VALUES ('$Matricula','$Nombre','$ApellidoP','$ApellidoM','$FechaNac','$Edad','$Genero','$Domicilio','$Tutor','$Tel_Tutor','$Correo','$Grado',NULL,NULL,NULL,NULL,'$Clave','$Grupo');");

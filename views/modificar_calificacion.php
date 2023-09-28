@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/modificar_materia.css">
-    <link rel="shortcut icon" href="img/icon.png">  
+    <link rel="stylesheet" type="text/css" href="../css/modificar_materia.css">
+    <link rel="shortcut icon" href="../assets/img/icon.png">  
     <title>Modificar Calificaciones</title>
 </head>
 <body>
 <header>
     <nav>
         <ul class="menu">
-            <li><a href="index_alumno.php">Inicio</a></li>                                  
+            <li><a href="../index_administrativo.php">Inicio</a></li>                                  
             <li><a href="calificaciones_alumno.php">Calificaciones</a></li>                                
             <li><a href="kardex.php">Kardex</a></li>                                          
             <li><a href="apoyo.html">Apoyo Tecnico</a></li>
@@ -33,7 +33,7 @@ if ($_POST) {
     $id_alumno = $_POST['id_alumno'];
 
     // Conexión a la BD
-    $conexion = mysqli_connect("localhost", "root", "");
+    $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
     mysqli_select_db($conexion, "sagadb");
 
     // Consulta para obtener los datos de calificaciones y faltas del alumno
@@ -146,13 +146,6 @@ if ($_POST) {
     mysqli_close($conexion);
 }
 ?>
-
-</body>
-<footer>
-    <p>&copy; 2023 SAGA.</p>
-    <p>Contáctanos: info@example.com</p>
-</footer>
-</html>
 
 </body>
 <footer>

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="css/asignar_materias.css">
-    <link rel="shortcut icon" href="img/icon.png">
+    <link rel="stylesheet" type="text/css" href="../css/asignar_materias.css">
+    <link rel="shortcut icon" href="../assets/img/icon.png">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Asignar Materias</title>
 </head>
@@ -11,6 +11,7 @@
     <nav>
         <ul class="menu">
             <li class="dropdown">
+                <li><a href="../index_administrativo.php">Inicio</a></li>
                 <button class="dropbtn">Horarios</button>
                 <div class="dropdown-content">
                     <a href="asignar_horarios_alumnos.php">Asignar Horarios</a>
@@ -62,7 +63,7 @@
     <select class="nombre" name="docente" id="docente">
         <?php
         // Conexión a la base de datos
-        $conexion = mysqli_connect("localhost", "root", "");
+        $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
         mysqli_select_db($conexion, "sagadb");
 
         // Consulta para obtener los nombres completos de los docentes
@@ -92,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $docente = $_POST["docente"];
 
     // Conexión a la base de datos
-    $conexion = mysqli_connect("localhost", "root", "");
+    $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
     if (!$conexion) {
         die("La conexión a la base de datos falló: " . mysqli_connect_error());
     }

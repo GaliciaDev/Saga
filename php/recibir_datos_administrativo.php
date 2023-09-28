@@ -15,7 +15,7 @@
 		$Area_adm=$_POST['areaA'];					
 		$Password_adm=$_POST['Clave_adm'];		
 
-		$conexion=mysqli_connect("localhost","root","");
+		$conexion=mysqli_connect("localhost","DBA-Saga","srvtySDL&");
 		mysqli_select_db($conexion, "sagadb");		
 
 		$Resultado=mysqli_query($conexion, "INSERT INTO `administrativo`(`id_admin`, `nombreAa`, `apellidoPa`, `apellidoM`, `Horario_Adm`, `telefonoEa`, `edadA`, `sexoA`, `natalicioA`, `direccionA`, `telefonoA`, `cargoA`, `correoA`, `areaA`, `Clave_adm`) VALUES ($Matricula,'$Nombre_adm','$ApellidoP_adm','$ApellidoM_adm', NULL, '$Telefono_Emg_adm','$Edad_adm','$Genero_adm','$FechaNac_adm','$Domicilio_adm','$Telefono_adm','$Cargo_adm','$Correo_adm','$Area_adm','$Password_adm');");

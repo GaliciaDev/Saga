@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="css/eliminar.css">
-	<link rel="shortcut icon" href="img/icon.png">
+	<link rel="stylesheet" type="text/css" href="../css/eliminar.css">
+	<link rel="shortcut icon" href="../assets/img/icon.png">
 	<title>Eliminar Docentes</title>
 </head>
 <body>
@@ -18,18 +18,18 @@
 			<input class="materias" type="text" name="id" placeholder="Ingrese Matricula">
 			<input type="submit" class="busqueda" name="buscar" value="Buscar">			
 		
-			<img src="img/img2.png" style="width: 100%;" />     
+			<img src="../assets/img/img2.png" style="width: 100%;" />     
             <a href="registro_docentes.html"><input class="btnconsulta" name="Consultar" type="button" id="btnSalir" value="Registro"></a><br>
             <a href="consulta_docentes.php"><input class="btneliminar" name="Consultar" type="button" id="btnSalir" value="Consulta y Actualizacion"></a><br><br>       
-			<br><a href="index_administrativo.php"><input class="btnsalir" name="Salir" type="button" id="btnSalir" value="Salir"></a><br>
-			<img src="img/img3.png" style="width: 100%;" />		
+			<br><a href="../index_administrativo.php"><input class="btnsalir" name="Salir" type="button" id="btnSalir" value="Salir"></a><br>
+			<img src="../assets/img/img3.png" style="width: 100%;" />		
 		</div>		
 	
 		<?php			
 			if (isset($_POST['buscar'])) {
 				$matricula_D = $_POST['id'];                    				
 				
-				$conexion = mysqli_connect("localhost", "root", "");
+				$conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
 				mysqli_select_db($conexion, "sagadb");
 				
 				$resultado = mysqli_query($conexion, "SELECT * FROM `docentes` WHERE `id_docente` = '$matricula_D';");
@@ -51,7 +51,7 @@
 			else if (isset($_POST['eliminar'])) {		
 				$id = $_POST['id'];								
 
-				$conexion=mysqli_connect("localhost", "root", "");
+				$conexion=mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
 				mysqli_select_db($conexion, "sagadb");		
 					
 				$Resultado = mysqli_query($conexion, "DELETE FROM `docentes` WHERE `id_docente` = '$id';");	

@@ -31,7 +31,7 @@
             $pdf -> Cell(35, 10, utf8_decode("Desempeño"), 1, 1, 'C', true);
             $pdf -> SetFont('Arial', '', 11);
 
-            $conexion = mysqli_connect("localhost", "root", "");
+            $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
             mysqli_select_db($conexion, "sagadb");
 
             $query = "SELECT * FROM `alumnos` WHERE `grado` = '$grado' AND `grupo` = '$grupo';";

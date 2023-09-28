@@ -1,8 +1,8 @@
 <?php
 // Conectar a la base de datos (configura las credenciales adecuadamente)
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "DBA-Saga";
+$password = "srvtySDL&";
 $dbname = "sagadb";
 
 $conn = new mysqli($servername, $username, $password, $dbname);

@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/consulta_horarios.css">
-    <link rel="shortcut icon" href="img/icon.png">  
+    <link rel="stylesheet" type="text/css" href="../css/consulta_horarios.css">
+    <link rel="shortcut icon" href="../assets/img/icon.png">  
     <title>Consulta de Horarios</title>
 </head>
 <body>
     <header>
         <nav>
             <ul class="menu">
-                <li><a href="index_administrativo.php">Inicio</a></li>                                  
+                <li><a href="../index_administrativo.php">Inicio</a></li>                                  
                 <li><a href="capturas_calificaciones.php">Captura Calificaciones</a></li>
                 <li><a href="contactos_tutores.php">Contacto Tutores</a></li>                
                 <li><a href="estadisticas_alumno.php">Estadisticas Alumnos</a></li>            
@@ -42,8 +42,8 @@
 
         <?php
         $servername = "localhost"; // Cambia localhost por el servidor de tu base de datos
-        $username = "root";
-        $password = "";
+        $username = "DBA-Saga";
+        $password = "srvtySDL&";
         $dbname = "sagadb"; // Nombre de la base de datos
 
         // Crear una conexión a la base de datos

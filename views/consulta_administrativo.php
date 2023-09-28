@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="css/consulta.css">
-	<link rel="shortcut icon" href="img/icon.png">
+	<link rel="stylesheet" type="text/css" href="../css/consulta.css">
+	<link rel="shortcut icon" href="../assets/img/icon.png">
 	<title>Consulta y Actualizacion</title>
 </head>
 <body>
@@ -18,11 +18,11 @@
 			<input class="materias" type="text" name="id" placeholder="Ingrese Matricula">
 			<input type="submit" class="busqueda" name="buscar" value="Buscar">			
 		
-			<img src="img/img2.png" style="width: 100%;" />        
+			<img src="../assets/img/img2.png" style="width: 100%;" />        
             <a href="registro_administrativo.html"><input class="btnconsulta" name="Consultar" type="button" id="btnSalir" value="Registro"></a><br>
             <a href="eliminar_administrativo.php"><input class="btneliminar" name="Consultar" type="button" id="btnSalir" value="Eliminar"></a><br><br>
 			<br><a href="index_administrativo.php"><input class="btnsalir" name="Salir" type="button" id="btnSalir" value="Salir"></a><br><br>
-			<img src="img/img3.png" style="width: 100%;" />		
+			<img src="../assets/img/img3.png" style="width: 100%;" />		
 		</div>		
 	
 		<?php
@@ -32,7 +32,7 @@
 				
 
 				//Conexion a la BD
-				$conexion = mysqli_connect("localhost", "root", "");
+				$conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
 				mysqli_select_db($conexion, "sagadb");
 
 				//Realizamos consulta
@@ -103,7 +103,7 @@
                 $Cargo = $_POST['cargo'];
                 $Area = $_POST['area'];
 
-				$conexion=mysqli_connect("localhost", "root", "");
+				$conexion=mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
 				mysqli_select_db($conexion, "sagadb");		
 					
 				$Resultado = mysqli_query($conexion, "UPDATE `administrativo` SET  `nombreAa` = '$Nombre', `apellidoPa` = '$ApellidoP', `apellidoM` = '$ApellidoM', `natalicioA` = '$FechaNac', `edadA` = '$Edad', `direccionA` = '$Domicilio', `telefonoA` = '$Telefono', `telefonoEa` = '$Tel_Emg', `correoA` = '$Correo', `cargoA` = '$Cargo', `areaA` = '$Area' WHERE `id_admin` = '$id';");	

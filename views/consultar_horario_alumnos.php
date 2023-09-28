@@ -3,8 +3,8 @@
 if (isset($_POST['grupo'])) {
     $grupo = $_POST['grupo'];
     $servername = "localhost"; // Cambia localhost por el servidor de tu base de datos
-    $username = "root";
-    $password = "";
+    $username = "DBA-Saga";
+    $password = "srvtySDL&";
     $dbname = "sagadb"; // Nombre de la base de datos
 
     // Crear una conexión a la base de datos
@@ -36,15 +36,15 @@ if (isset($_POST['grupo'])) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/consulta_horarios.css">
-    <link rel="shortcut icon" href="img/icon.png">  
+    <link rel="stylesheet" type="text/css" href="../css/consulta_horarios.css">
+    <link rel="shortcut icon" href="../assets/img/icon.png">  
     <title>Consulta de Horarios</title>
 </head>
 <body>
 <header>
         <nav>
             <ul class="menu">
-                <li><a href="index_alumnos.php">Inicio</a></li>                                  
+                <li><a href="../index_alumnos.php">Inicio</a></li>                                  
                 <li><a href="calificaciones_alumno.php">Calificaciones</a></li>                                
                 <li><a href="kardex.php">Estadisticas Alumnos</a></li>                                          
                 <li><a href="apoyo.html">Apoyo Tecnico</a></li>

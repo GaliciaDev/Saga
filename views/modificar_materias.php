@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/estilo_modificar_materia.css">
-    <link rel="shortcut icon" href="img/icon.png">  
+    <link rel="stylesheet" type="text/css" href="../css/modificar_materia.css">
+    <link rel="shortcut icon" href="../assets/img/icon.png">  
     <title>Modificar Calificaciones</title>
 </head>
 <body>
@@ -12,6 +12,7 @@
         <nav>
             <ul class="menu">                                                                
                 <li class="dropdown">
+                    <li><a href="../index_administrativo.php">Inicio</a></li>
                     <button class="dropbtn">Horarios</button>
                     <div class="dropdown-content">
                         <a href="asignar_horarios_alumnos.php">Asignar Horarios</a>
@@ -52,7 +53,7 @@
 
 <?php
 // Conexión a la BD
-$conexion = mysqli_connect("localhost", "root", "");
+$conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
 mysqli_select_db($conexion, "sagadb");
 
 // Función para generar la tabla de materias

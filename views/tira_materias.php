@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="css/estilo_tira_materias.css">
-        <link rel="shortcut icon" href="img/icon.png">
+        <link rel="stylesheet" type="text/css" href="../css/estilo_tira_materias.css">
+        <link rel="shortcut icon" href="../assets/img/icon.png">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Tira Materias</title>
     </head>
@@ -10,7 +10,7 @@
     <header>
         <nav>
             <ul class="menu">                                                
-                <li><a href="index_administrativo.php">Inicio</a></li>
+                <li><a href="../index_administrativo.php">Inicio</a></li>
                 <li><a href="asignacion_horarios.php">Asignar Horario</a></li>
                 <li><a href="capturas_calificaciones.php">Captura Calificaciones</a></li>
                 <li><a href="contactos_tutores.php">Contacto Tutores</a></li>                
@@ -73,7 +73,7 @@
                     <?php
                     
                     // Conexion a la BD
-                    $conexion = mysqli_connect("localhost", "root", "");
+                    $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
                     mysqli_select_db($conexion, "sagadb");
 
                     $resultadoDocentes = mysqli_query("SELECT `nombreD`, `apellidoPd`, `apellidoMd` FROM `docentes`");

@@ -2,7 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="css/index.css">
-        <link rel="shortcut icon" href="img/icon.png">
+        <link rel="shortcut icon" href="assets/img/icon.png">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Index del Docente</title>
     </head>
@@ -41,7 +41,7 @@
 				$matricula = $_POST['index'];		
 
 				//Conexion a la BD
-				$conexion = mysqli_connect("localhost", "root", "");
+				$conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
 				mysqli_select_db($conexion, "sagadb");
 
 				//Realizamos consulta

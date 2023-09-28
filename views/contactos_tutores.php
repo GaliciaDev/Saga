@@ -3,15 +3,15 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="css/contactos_tutores.css">
-	<link rel="shortcut icon" href="img/icon.png">
+	<link rel="stylesheet" type="text/css" href="../css/contactos_tutores.css">
+	<link rel="shortcut icon" href="../assets/img/icon.png">
 	<title>Contacto a Tutores</title>
 </head>
 <body>
 	<header>
 		<nav>
             <ul class="menu">
-                <li><a href="index_administrativo.php">Inicio</a></li>
+                <li><a href="../index_administrativo.php">Inicio</a></li>
                 <li><a href="asignacion_horarios.php">Asignar Horario</a></li>
                 <li><a href="capturas_calificaciones.php">Captura Calificaciones</a></li>                         
                 <li><a href="estadisticas_alumno.php">Estadisticas Alumnos</a></li>            
@@ -53,7 +53,7 @@
 				$matricula = $_POST['contactos'];		
 
 				//Conexion a la BD
-				$conexion = mysqli_connect("localhost", "root", "");
+				$conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
 				mysqli_select_db($conexion, "sagadb");
 
 				//Realizamos consulta

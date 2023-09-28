@@ -5,7 +5,7 @@
 		$Promedio_Materias=$_POST['prom_materias'];
 		$Promedio_General=$_POST['prom_general'];
 
-		$conexion=mysqli_connect("localhost","root","");
+		$conexion=mysqli_connect("localhost","DBA-Saga","srvtySDL&");
 		mysqli_select_db($conexion, "sagadb");		
 
 		$Resultado=mysqli_query($conexion,"INSERT INTO `calificaciones`(`Materias`, `Calificacion`, `Promedio_Materias`, `Promedio_General`) VALUES ('".$Materias."','".$Calificacion."','".$Promedio_Materias."','".$Promedio_General."');");

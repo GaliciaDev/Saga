@@ -1,15 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="shortcut icon" href="img/icon.png">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="shortcut icon" href="../assets/img/icon.png">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Calificaciones del Alumnado</title>
 </head>
 <body>
     <header>
-        <nav>
-            <!-- Tu menú de navegación aquí -->
+        <nav>        
+            <ul class="menu">
+                <li><a href="../index_administrativo.php">Inicio</a></li>                
+                <li><a href="asignacion_horarios.php">Asignar Horario</a></li>
+                <li><a href="capturas_calificaciones.php">Captura Calificaciones</a></li>
+				<li class="dropdown">
+                    <button class="dropbtn">Estadisticas Alumnos</button>
+                    <div class="dropdown-content">
+                      <a href="estadisticas_alumno.php">Alumno</a>
+                      <a href="estadistica_grupal.php">Grupal</a>                      
+                    </div>
+                </li>   
+                <li><a href="contactos_tutores.php">Contacto Tutores</a></li>                                          
+                <li class="dropdown">
+                    <button class="dropbtn">Registro</button>
+                    <div class="dropdown-content">
+                      <a href="registro_alumnos.html">Registro Alumnos</a>
+                      <a href="registro_docentes.html">Registro Docentes</a>
+                      <a href="registro_administrativo.html">Registro Administrativo</a>
+                    </div>
+                </li>                
+                <li><a href="apoyo.html">Apoyo Tecnico</a></li>
+                <li><a href="php/cerrarsesion.php">Cerrar Sesion</a></li>
+            </ul>        
         </nav>
     </header>
     
@@ -22,8 +44,8 @@
             $id_alumno = $_GET["id"];
 
             $servername = "localhost";
-            $username = "root";
-            $password = "";
+            $username = "DBA-Saga";
+            $password = "srvtySDL&";
             $dbname = "sagadb";
 
             // Crear conexión

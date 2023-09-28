@@ -14,8 +14,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/actualizacion_horario.css">
-    <link rel="shortcut icon" href="img/icon.png">  
+    <link rel="stylesheet" type="text/css" href="../css/actualizacion_horario.css">
+    <link rel="shortcut icon" href="../assets/img/icon.png">  
     <title>Actualizacion de Horarios</title>
 
     <style>
@@ -132,8 +132,8 @@ $id = $_GET["id"];
 
 //Conectamos con la base de datos.
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "DBA-Saga";
+$password = "srvtySDL&";
 $dbname = "sagadb";
 
 
@@ -225,8 +225,8 @@ $conn->close();
         $nuevoAula = $_POST["nuevoAula"];
 
         $servername = "localhost";
-        $username = "root";
-        $password = "";
+        $username = "DBA-Saga";
+        $password = "srvtySDL&";
         $dbname = "sagadb";
 
         $conn = new mysqli($servername, $username, $password, $dbname);

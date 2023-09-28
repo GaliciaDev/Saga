@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <link rel="shortcut icon" href="img/icon.png">
+        <link rel="stylesheet" type="text/css" href="../css/index.css">
+        <link rel="shortcut icon" href="../assets/img/icon.png">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Index del Alumno</title>
     </head>
@@ -10,6 +10,7 @@
     <header>
         <nav>
             <ul class="menu">                                                
+                <li><a href="../index_alumno.php">Inicio</a></li>
                 <li><a href="consultar_horario_alumnos.php">Horario</a></li>
                 <li><a href="tira_materias_alumno.php">Tira Materias</a></li>                
                 <li><a href="calificaciones_alumno.php">Calificaciones</a></li>                

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="css/estilo_calificaciones_alumno.css">
-    <link rel="shortcut icon" href="img/icon.png">
+    <link rel="stylesheet" type="text/css" href="../css/estilo_calificaciones_alumno.css">
+    <link rel="shortcut icon" href="../assets/img/icon.png">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Calificaciones</title>
 </head>
@@ -10,7 +10,7 @@
 <header>
     <nav>
         <ul class="menu">                                                
-            <li><a href="index_alumno.php">Inicio</a></li>      
+            <li><a href="../index_alumno.php">Inicio</a></li>      
             <li><a href="consulta_horario_alumno.php">Horario</a></li>
             <li><a href="tira_materias.php">Tira Materias</a></li>                                          
             <li><a href="kardex.php">Estadisticas</a></li>                
@@ -35,7 +35,7 @@
             $matricula = $_POST['index'];        
 
             // Conexion a la BD
-            $conexion = mysqli_connect("localhost", "root", "");
+            $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
             mysqli_select_db($conexion, "sagadb");
 
             // Realizamos consulta para obtener todas las materias del alumno

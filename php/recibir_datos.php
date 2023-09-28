@@ -18,7 +18,7 @@
 		$Horario_A=$_POST['horario_a'];
 		$Password=$_POST['password'];		
 
-		$conexion=mysqli_connect("localhost","root","");
+		$conexion=mysqli_connect("localhost","DBA-Saga","srvtySDL&");
 		mysqli_select_db($conexion, "sagadb");		
 
 		$Resultado=mysqli_query($conexion,"INSERT INTO `users`(`Matricula`, `Nombre`, `Apellido_P`, `Apellido_M`, `Fecha_Nac`, `Edad`,`Genero`,`Dirrecion`,`Tutor`,`Tutor`,`Telefono_Tutor`,`Correo`,`Grado`,`Turno`,`Materias`,`Docente`,`Horario_A`,`Password`) VALUES ('".null."','".$Nombre."','".$ApellidoP."','".$ApellidoM."','".$FechaNac."','".$Edad."','".$Domicilio."','".$Tutor."','".$Tel_Tutor."','".$Genero."','".$Correo."','".$Grado."','".$Turno."','".$Materias."','".$Docentes."','".$Horario_A."','".$Password."');");

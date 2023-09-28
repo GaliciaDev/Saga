@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <link rel="shortcut icon" href="img/icon.png">
+        <link rel="stylesheet" type="text/css" href="../css/index.css">
+        <link rel="shortcut icon" href="../assets/img/icon.png">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Modificar Calificacion</title>
     </head>
@@ -10,6 +10,7 @@
     <header>
         <nav>
             <ul class="menu">                                                
+                <li><a href="../index_docente.php">Inicio</a></li>   
                 <li><a href="consulta_horarios_D.php">Horario</a></li>                
                 <li><a href="capturas_calificaciones_D.php">Captura Calificaciones</a></li>
                 <li><a href="contactos_tutores_D.php">Contacto Tutores</a></li>
@@ -28,8 +29,8 @@
                 <!-- Aquí obtienes las materias disponibles desde tu base de datos y las agregas como opciones -->
                 <?php
                 $servername = "localhost";
-                $username = "root";
-                $password = "";
+                $username = "DBA-Saga";
+                $password = "srvtySDL&";
                 $dbname = "sagadb";
 
                 // Crear conexión
@@ -60,8 +61,8 @@
             $materia = $_POST["materia"];
             // Realizar una consulta para obtener los datos de los alumnos con la materia seleccionada
             $servername = "localhost";
-            $username = "root";
-            $password = "";
+            $username = "DBA-Saga";
+            $password = "srvtySDL&";
             $dbname = "sagadb";
 
             // Crear conexión
