@@ -1,0 +1,229 @@
+body {
+    width: 98%;
+    height: auto;
+    text-align: center;    
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+.menu {
+    background-color: #333;
+    height: 50px;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu li a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 20px;
+}
+
+.menu li a:hover {
+    background-color: #555;
+}
+
+.foto_perfil {
+  width: 200px; 
+  height: auto; 
+  border: 1px solid #ddd;
+  border-radius: 5px; 
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); 
+  margin: 10px;
+}
+
+.tabla {
+    border-collapse: collapse;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    text-align: center;
+}
+
+.tabla th{ 
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabla td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;   
+}
+
+.tabla th {
+    background-color: #f2f2f2;
+}
+
+.tabla tr:hover {
+    background-color: #f5f5f5;
+}
+
+footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+}
+
+form {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+  
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+  
+input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.salon {
+    display: block;
+    width: 80px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.busca{
+    display: block;
+    width: 80px;
+    padding: 10px;
+    margin: 0 auto; /* Esto centrará horizontalmente el elemento */
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;  
+}
+
+.nombre_doc {
+    display: block;
+    width: 250px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+input[type="submit"] {
+    background-color: #363636;
+    color: white;
+    border: none;
+    height: auto;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+  
+input[type="submit"]:hover {
+    background-color: #686868;
+}
+
+select {
+    display: block;
+    width: 75%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #333;
+    font-size: 12px;
+    cursor: pointer;
+}
+  
+select:hover {
+    border-color: #999;
+}
+  
+select:focus {
+    outline: none;
+    border-color: #555;
+    box-shadow: 0 0 5px rgba(85, 85, 85, 0.3);
+}
+  
+select option {
+    background-color: #fff;
+    color: #333;
+}  
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    padding: 8px;
+    text-align: left;
+    list-style-type: none;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+.dropbtn {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.dropdown-content a {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+}
+  
+.dropdown:hover .dropdown-content {
+    display: block;
+}

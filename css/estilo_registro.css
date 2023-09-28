@@ -1,0 +1,337 @@
+.registro {
+    width: 400px;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+  
+.registro h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+  
+.nombre {
+    width: 39%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.edad {
+    width: 8%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.domicilio {
+    width: 53%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.genero {
+    width: 5%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;    
+}
+
+.reg {
+    width: 30%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+input[type="email"] {
+    width: 63%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+input[type="email"]::placeholder {
+    color: #888;
+}
+  
+  input[type="email"]:focus {
+    border-color: brown;
+}
+
+.tel {
+    width: 27%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+select option {
+  background-color: #f2f2f2;
+  color: #333; 
+  padding: 8px 12px;
+}
+
+select option:checked {
+  background-color: #818181; 
+  color: #fff; 
+}
+  
+.btnlimpiar {
+    width: 272px;
+    padding: 10px;
+    background-color: #818181;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.btnlimpiar:hover {
+    background-color: #000000;
+}
+  
+.btnsalir {
+    width: 100px;
+    height: auto;
+    padding: 10px;
+    background-color: #FF0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.btnsalir :hover {
+    background-color: #F43535;
+}
+  
+.btnguardar {
+    width: 272px;
+    padding: 10px;
+    background-color: #818181;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.btnguardar:hover {
+    background-color: #000000;
+}
+
+a .btnconsulta {
+    width: 272px;
+    padding: 10px;
+    background-color: #818181;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+a .btnconsulta:hover {
+    background-color: #000000;
+}
+
+.btnactualizar {
+    width: 272px;
+    padding: 10px;
+    background-color: #818181;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.btnactualizar:hover {
+    background-color: #000000;
+}
+
+a .btneliminar {
+    width: 272px;
+    padding: 10px;
+    background-color: #818181;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+a .btneliminar:hover {
+    background-color: #000000;
+}
+
+/* CODIGO NUEVO */
+form.registro {
+    width: 90%;
+    height: auto;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+div {
+    padding: 0.5em;
+    height: auto;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+div#Campos {
+    width: 60%;
+}
+
+div#Botones {
+    width: 25%;
+    height: 100%;
+}
+
+label {
+    width: 10%;
+    text-align: center;
+}
+
+.nom {
+    width: 20%;
+    text-align: center;
+    margin-bottom: 1em;    
+}
+
+.titulo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1em;    
+}
+
+.ed {
+    width: 10%;
+    text-align: center;
+    margin-bottom: 1em;    
+}
+
+.te {
+    width: 23%;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.domi {
+    width: 27%;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.ge {
+    width: 22%;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.car {
+    width: 24%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.corr {
+    width: 23%;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.correito {
+    width: 62%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.a {
+    width: 12%;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.fe {
+    width: 16%;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.na {
+    width: 17%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.con {
+    width: 38%;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.pass {
+    width: 48%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+}
+
+.matr{
+    width: 20%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.matri {
+    width: 15%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.apell {
+    width: 26%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}

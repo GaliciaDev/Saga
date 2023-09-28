@@ -1,0 +1,407 @@
+.registro {
+    width: 400px;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+  
+.registro h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+  
+.nombre {
+    width: 32%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.edad {
+    width: 8%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.domicilio {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.genero {
+    width: 8%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;    
+}
+
+.reg {
+    width: 30%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+input[type="email"] {
+    width: 32%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+input[type="email"]::placeholder {
+    color: #888;
+}
+  
+  input[type="email"]:focus {
+    border-color: brown;
+}
+
+.tel {
+    width: 16%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+select option {
+  background-color: #f2f2f2;
+  color: #333; 
+  padding: 8px 12px;
+}
+
+select option:checked {
+  background-color: #818181; 
+  color: #fff; 
+}
+  
+.btnlimpiar {
+    width: 272px;
+    padding: 10px;
+    background-color: #818181;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.btnlimpiar:hover {
+    background-color: #000000;
+}
+  
+a .btnsalir {
+    width: 100px;
+    height: auto;
+    padding: 10px;
+    background-color: #FF0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+a .btnsalir:hover {
+    background-color: #F43535;
+}
+  
+.btnguardar {
+    width: 272px;
+    padding: 10px;
+    background-color: #818181;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.btnguardar:hover {
+    background-color: #000000;
+}
+
+a .btnconsulta {
+    width: 272px;
+    padding: 10px;
+    background-color: #818181;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.btnconsulta:hover {
+    background-color: #000000;
+}
+
+.btnregresar {
+    width: 272px;
+    padding: 10px;
+    background-color: #285ceb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.btnregresar :hover {
+    background-color: #0b2b83;
+}
+
+a .btneliminar {
+    width: 272px;
+    padding: 10px;
+    background-color: #818181;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.btneliminar:hover {
+    background-color: #000000;
+}
+
+/* CODIGO NUEVO */
+form.registro {
+    width: 90%;
+    height: auto;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+div {
+    padding: 0.5em;
+    height: auto;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+div#Campos {
+    width: 60%;
+}
+
+div#Botones {
+    width: 25%;
+    height: 100%;
+}
+
+label {
+    width: 6%;
+    text-align: center;
+}
+
+.nom {
+    width: 15%;
+    text-align: center;
+    margin-bottom: 1em;    
+}
+
+.titulo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1em;    
+}
+
+.ed {
+    width: 9%;
+    text-align: center;
+    margin-bottom: 1em;    
+}
+
+.te {
+    width: 15%;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.domi {
+    width: 13%;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.ge {
+    width: 15%;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.car {
+    width: 24%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.corr {
+    width: 19%;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.correito {
+    width: 62%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.a {
+    width: 12%;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.fe {
+    width: 23%;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.na {
+    width: 16%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.con {
+    width: 25%;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.pass {
+    width: 48%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.nomt {
+    width: 13%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.nombret {
+    width: 39%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #818181;
+    box-shadow: 0 0 5px #818181;
+}
+
+input[type="submit"] {
+    width: 272px;
+    height: auto;
+    padding: 10px 20px;
+    background-color: #818181;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+  
+input[type="submit"]:hover {
+    background-color: #000000;
+}
+
+.espacio {
+    width: 10%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.g {
+    width: 5%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.gr {
+    width: 10%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.mat {
+    width: 25%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.matri {
+    width: 10%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.apell {
+    width: 30%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
