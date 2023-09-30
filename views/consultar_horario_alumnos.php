@@ -42,15 +42,15 @@ if (isset($_POST['grupo'])) {
 </head>
 <body>
 <header>
-        <nav>
-            <ul class="menu">
-                <li><a href="../index_alumnos.php">Inicio</a></li>                                  
-                <li><a href="calificaciones_alumno.php">Calificaciones</a></li>                                
-                <li><a href="kardex.php">Estadisticas Alumnos</a></li>                                          
-                <li><a href="apoyo.html">Apoyo Tecnico</a></li>
-                <li><a href="php/cerrarsesion.php">Cerrar Sesion</a></li>
-            </ul>
-        </nav>
+    <nav>
+        <ul class="menu">      
+            <li><a href="../index_alumno.php">Inicio</a></li>                                                      
+            <li><a href="tira_materias_alumno.php">Tira Materias</a></li>                
+            <li><a href="calificaciones_alumno.php">Calificaciones</a></li>                
+            <li><a href="kardex.php">Estadisticas</a></li>                            
+            <li><a href="../php/cerrarsesion.php">Cerrar Sesion</a></li>
+        </ul>
+    </nav>
     </header>
     <h1>Horario de Alumno</h1>
     <!-- Formulario para ingresar el grupo -->

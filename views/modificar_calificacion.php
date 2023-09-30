@@ -10,14 +10,42 @@
 <body>
 <header>
     <nav>
-        <ul class="menu">
-            <li><a href="../index_administrativo.php">Inicio</a></li>                                  
-            <li><a href="calificaciones_alumno.php">Calificaciones</a></li>                                
-            <li><a href="kardex.php">Kardex</a></li>                                          
-            <li><a href="apoyo.html">Apoyo Tecnico</a></li>
-            <li><a href="php/cerrarsesion.php">Cerrar Sesion</a></li>
-        </ul>
-    </nav>
+        <ul class="menu">      
+                <li><a href="../index_administrativo.php">Inicio</a></li>
+                <li class="dropdown">                    
+                    <button class="dropbtn">Horarios</button>
+                    <div class="dropdown-content">
+                        <a href="views/asignar_horarios_alumnos.php">Asignar Horarios</a>
+                        <a href="views/consultar_horarios.php">Consulta Horarios</a>                      
+                    </div>
+                </li>                   
+                <li><a href="views/capturar_calif_definitiva.php">Capturacion Trimestral</a></li>                
+                <li class="dropdown">
+                    <button class="dropbtn">Materias</button>
+                    <div class="dropdown-content">
+                      <a href="views/asignar_materia.php">Asignar Materias</a>
+                      <a href="views/modificar_materias.php">Modificar Materias</a>                      
+                    </div>
+                </li>                                          
+                <li class="dropdown">
+                    <button class="dropbtn">Estadisticas Alumnos</button>
+                    <div class="dropdown-content">
+                      <a href="views/estadisticas_alumno.php">Alumno</a>
+                      <a href="views/estadistica_grupal.php">Grupal</a>                      
+                    </div>
+                </li>        
+                <li class="dropdown">
+                    <button class="dropbtn">Registro</button>
+                    <div class="dropdown-content">
+                      <a href="views/registro_alumnos.html">Registro Alumnos</a>
+                      <a href="views/registro_docentes.html">Registro Docentes</a>
+                      <a href="views/registro_administrativo.html">Registro Administrativo</a>
+                    </div>
+                </li>                 
+                <li><a href="views/contactos_tutores.php">Contacto Tutores</a></li>                    
+                <li><a href="php/cerrarsesion.php">Cerrar Sesion</a></li>
+            </ul>            
+        </nav> 
 </header>
 <h1>Modificar Calificaciones</h1>
 <!-- Formulario para ingresar el ID del alumno -->

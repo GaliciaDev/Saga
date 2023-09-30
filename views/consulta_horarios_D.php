@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../css/estilo_horario.css">
+    <link rel="stylesheet" type="text/css" href="../css/horario.css">
     <link rel="shortcut icon" href="../assets/img/icon.png">
     <title>Horarios</title>
 </head>
@@ -16,7 +16,7 @@
                 <li><a href="contactos_tutores_D.php">Contacto Tutores</a></li>
                 <li><a href="estadisticas_alumno_D.php">Estadisticas Alumnos</a></li>
                 <li><a href="apoyo_D.html">Apoyo Tecnico</a></li>
-                <li><a href="php/cerrarsesion.php">Cerrar Sesion</a></li>
+                <li><a href="../php/cerrarsesion.php">Cerrar Sesion</a></li>
             </ul>
         </nav>
     </header>
@@ -70,6 +70,26 @@
         }
         ?>
     </table>
+    <br><a target="_blank" href="../php/imprimir_horario_D.php?nombre_profesor=<?php echo urlencode($nombre_profesor); ?>">
+    <button class="btnguardar">Imprimir PDF</button>
+    </a><br><br>
+    <style>
+        /* Estilo para el botón */
+        .btnguardar {
+            background-color: #000; /* Color de fondo negro para el botón */
+            color: #fff; /* Color del texto del botón (blanco) */
+            padding: 10px 20px; /* Espaciado interno del botón (ajusta según tus necesidades) */
+            border: none; /* Quita el borde del botón */
+            border-radius: 5px; /* Añade esquinas redondeadas al botón */
+            cursor: pointer; /* Cambia el cursor al pasar el ratón por encima */
+            transition: background-color 0.3s ease; /* Agrega una transición suave al color de fondo */
+        }
+
+        /* Estilo para el botón cuando se pasa el ratón por encima */
+        .btnguardar:hover {
+            background-color: #333; /* Cambia el color de fondo a gris oscuro al pasar el ratón por encima */
+        }
+    </style>
 </body>
 <footer>
     <p>&copy; 2023 SAGA.</p>

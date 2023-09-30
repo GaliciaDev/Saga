@@ -9,14 +9,14 @@
 </head>
 <body>
     <header>
-		<nav>
-            <ul class="menu">
+        <nav>
+            <ul class="menu"> 
                 <li><a href="../index_docente.php">Inicio</a></li>
-                <li><a href="consulta_horarios_D.php">Horario</a></li>                
+                <li><a href="consulta_horarios_D.php">Horario</a></li>                                
+                <li><a href="modificar_calificacion_D.php">Modificar Calificacion</a></li>
                 <li><a href="contactos_tutores_D.php">Contacto Tutores</a></li>
-                <li><a href="estadisticas_alumno_D.php">Estadisticas Alumnos</a></li>
-                <li><a href="apoyo_D.html">Apoyo Tecnico</a></li>
-                <li><a href="php/cerrarsesion.php">Cerrar Sesion</a></li>
+                <li><a href="estadisticas_alumno_D.php">Estadisticas Alumnos</a></li>                
+                <li><a href="../php/cerrarsesion.php">Cerrar Sesion</a></li>
             </ul>
         </nav>
 	</header>
@@ -29,9 +29,27 @@
         <input type="submit" class="busqueda" name="buscar" value="Buscar">                                
     </form><br>    
 
-    <form action="capturas_calificaciones.php" method="POST">
-        <label>Materia </label>
-        <input class="materias" type="text" name="materia" placeholder="Ingrese La Materia">  
+    <form action="capturas_calificaciones_D.php" method="POST">
+    <!--Modificar para que despues solo imprima las materia del docente que esta inicada la session -->
+    
+    <label>Materia</label>
+        <select class="materias" name="materia">
+            <?php
+            // Conexión a la base de datos
+            $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+            mysqli_select_db($conexion, "sagadb");
+
+            // Consulta para obtener las materias desde la base de datos
+            $consulta = "SELECT Materias FROM tira_materias";
+            $resultado = mysqli_query($conexion, $consulta);
+
+            // Recorre los resultados y crea opciones para el select
+            while ($fila = mysqli_fetch_assoc($resultado)) {
+                $nomMateria = $fila['Materias'];
+                echo "<option value='$nomMateria'>$nomMateria</option>";
+            }                        
+            ?>
+        </select>  
 
         <h4>Seleccione un Trimestre: </h4>
             <input type="radio" id="cal1" name="opc" value="cal1" required>

@@ -21,7 +21,7 @@
                     <button class="dropbtn">Captura Calificaciones</button>
                     <div class="dropdown-content">
                       <a href="views/modificar_calificacion.php">Modificar Calificacion</a>
-                      <a href="views/capturar_calif_definitiva.php">Calificacion Trimestral</a>                      
+                      <a href="views/capturar_calif_definitiva.php">Captura Trimestral</a>                      
                     </div>
                 </li>       
                 <li class="dropdown">
@@ -46,8 +46,7 @@
                       <a href="views/registro_administrativo.html">Registro Administrativo</a>
                     </div>
                 </li>                 
-                <li><a href="views/contactos_tutores.php">Contacto Tutores</a></li>    
-                <li><a href="apoyo.html">Apoyo Tecnico</a></li>
+                <li><a href="views/contactos_tutores.php">Contacto Tutores</a></li>                    
                 <li><a href="php/cerrarsesion.php">Cerrar Sesion</a></li>
             </ul>            
         </nav>        
@@ -77,7 +76,7 @@
 				$campo = mysqli_fetch_array($resultado);
 				echo '
 				<tr>
-                    <th rowspan="2"><img src="img/img1.png" alt="MDN"></th>							
+                    <th rowspan="2"><img src=" assets/img/img3.png" alt="MDN"></th>							
 					<th>Nombre</th>					
                     <td>'.(implode([$campo['nombreAa'], $campo['apellidoPa'], $campo['apellidoM']])).'</td>					
 					<th>Matricula</th>			

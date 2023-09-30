@@ -12,43 +12,43 @@
     <nav>
             <ul class="menu">      
                 <li><a href="../index_administrativo.php">Inicio</a></li>                                                          
-                <li><a href="views/consultar_horarios.php">Consulta Horarios</a></li>                   
+                <li><a href="consultar_horarios.php">Consulta Horarios</a></li>                   
                 <li class="dropdown">
                     <button class="dropbtn">Captura Calificaciones</button>
                     <div class="dropdown-content">
-                      <a href="views/modificar_calificacion.php">Modificar Calificacion</a>
-                      <a href="views/capturar_calif_definitiva.php">Calificacion Trimestral</a>                      
+                      <a href="modificar_calificacion.php">Modificar Calificacion</a>
+                      <a href="capturar_calif_definitiva.php">Calificacion Trimestral</a>                      
                     </div>
                 </li>       
                 <li class="dropdown">
                     <button class="dropbtn">Materias</button>
                     <div class="dropdown-content">
-                      <a href="views/asignar_materia.php">Asignar Materias</a>
-                      <a href="views/modificar_materias.php">Modificar Materias</a>                      
+                      <a href="asignar_materia.php">Asignar Materias</a>
+                      <a href="modificar_materias.php">Modificar Materias</a>                      
                     </div>
                 </li>                                          
                 <li class="dropdown">
                     <button class="dropbtn">Estadisticas Alumnos</button>
                     <div class="dropdown-content">
-                      <a href="views/estadisticas_alumno.php">Alumno</a>
-                      <a href="views/estadistica_grupal.php">Grupal</a>                      
+                      <a href="estadisticas_alumno.php">Alumno</a>
+                      <a href="estadistica_grupal.php">Grupal</a>                      
                     </div>
                 </li>        
                 <li class="dropdown">
                     <button class="dropbtn">Registro</button>
                     <div class="dropdown-content">
-                      <a href="views/registro_alumnos.html">Registro Alumnos</a>
-                      <a href="views/registro_docentes.html">Registro Docentes</a>
-                      <a href="views/registro_administrativo.html">Registro Administrativo</a>
+                      <a href="registro_alumnos.html">Registro Alumnos</a>
+                      <a href="registro_docentes.html">Registro Docentes</a>
+                      <a href="registro_administrativo.html">Registro Administrativo</a>
                     </div>
                 </li>                 
-                <li><a href="views/contactos_tutores.php">Contacto Tutores</a></li>                    
-                <li><a href="php/cerrarsesion.php">Cerrar Sesion</a></li>
+                <li><a href="contactos_tutores.php">Contacto Tutores</a></li>                    
+                <li><a href="../php/cerrarsesion.php">Cerrar Sesion</a></li>
             </ul>            
         </nav>
 	</header>
     <head>
-        <br><label>Seleccionar Turno: Matutino</label>
+        <br><label>Seleccionar Turno: Vespertino</label>
             <a class="boton-personalizado" href="asignar_horarios_alumnos_tarde.php">Vespertino</a>
             <a class="boton-personalizado" href="asignar_horarios_alumnos.php">Matutino</a><br>
             <style>
@@ -66,7 +66,7 @@
                     background-color: #333;
                 }
             </style>
-        <br><form class="formulario" method="POST" action="asignar_horarios_alumnos.php">
+        <br><form class="formulario" method="POST" action="asignar_horarios_alumnos_tarde.php">
             <h1>Asignacion de Horarios</h1>
             <label>Ingrese Un Grupo a Asignar Horario</label>
                 
@@ -90,7 +90,7 @@
                 <option value="Jueves">Jueves</option>
                 <option value="Viernes">Viernes</option>
             </select></td>            
-            <td>7:00 am - 7:45 am</td>
+            <td>2:00 pm- 2:45 pm</td>
             <td>
                 <select id="materia" name="materia[]" requierd>
                     <?php
@@ -135,7 +135,7 @@
                 </select>
             </td>
             <tr>                
-                <td>7:45 am - 8:30 am</td>
+                <td>2:45 pm - 3:30 pm</td>
                 <td>
                     <select id="materia" name="materia[]" requierd>
                         <?php
@@ -181,7 +181,7 @@
                 </td>
             </tr>    
             <tr>                
-                <td>8:30 am - 9:15 am</td>
+                <td>3:30 pm - 4:15 pm</td>
                 <td>
                     <select id="materia" name="materia[]" requierd>
                         <?php
@@ -227,7 +227,7 @@
                 </td>
             </tr> 
             <tr>                
-                <td>9:15 am - 10:00 am</td>
+                <td>4:15 pm - 5:00 pm</td>
                 <td>
                     <select id="materia" name="materia[]" requierd>
                         <?php
@@ -273,11 +273,11 @@
                 </td>
             </tr>   
             <tr>                           
-                <td>10:00 am - 10:30 am</td>
+                <td>5:00 pm - 5:30 pm</td>
                 <td colspan="3">Reseso</td>
             </tr> 
             <tr>                
-                <td>10:30 am - 11:15 am</td>
+                <td>5:30 pm - 6:15 pm</td>
                 <td>
                     <select id="materia" name="materia[]" requierd>
                         <?php
@@ -323,7 +323,7 @@
                 </td>
             </tr>  
             <tr>                
-                <td>11:15 am - 12:00 pm</td>
+                <td>6:15 pm - 7:00 pm</td>
                 <td>
                     <select id="materia" name="materia[]" requierd>
                         <?php
@@ -369,7 +369,7 @@
                 </td>
             </tr>  
             <tr>                
-                <td>12:00 pm - 12:45 pm</td>
+                <td>7:00 pm - 7:45 pm</td>
                 <td>
                     <select id="materia" name="materia[]" requierd>
                         <?php
@@ -415,7 +415,7 @@
                 </td>
             </tr>  
             <tr>                
-                <td>12:45 pm - 1:30 pm</td>
+                <td>7:45 pm - 8:30 pm</td>
                 <td>
                     <select id="materia" name="materia[]" requierd>
                         <?php
@@ -466,49 +466,42 @@
         <br><input class="btnlimpiar" name="Limpiar" type="reset" id="btnResetear" value="Limpiar"><br>        
         <input class="btnguardar" name="asignar" type="submit" id="btnEnviar" value="Establecer Horarios">     
         <?php
-            $servername = "localhost"; // Cambia localhost por el servidor de tu base de datos
-            $username = "DBA-Saga";
-            $password = "srvtySDL&";
-            $dbname = "sagadb"; // Nombre de la base de datos
+        $servername = "localhost";
+        $username = "DBA-Saga";
+        $password = "srvtySDL&";
+        $dbname = "sagadb";
 
-            // Crear una conexión a la base de datos
-            $conn = new mysqli($servername, $username, $password, $dbname);
+        $conn = new mysqli($servername, $username, $password, $dbname);
 
-            // Verificar la conexión
-            if ($conn->connect_error) {
-                die("Error de conexión: " . $conn->connect_error);
-            }
-        ?>
-        <?php
+        if ($conn->connect_error) {
+            die("Error de conexión: " . $conn->connect_error);
+        }
+
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $grupo = $_POST["asignar_grupo"];
             $dia = $_POST["dia"];
             $materias = $_POST["materia"];
             $docentes = $_POST["nombre_docente"];
-            $horas = ["7:00 - 7:45", "7:45 - 8:30", "8:30 - 9:15", "9:15 - 10:00", "10:30 - 11:15", "11:15 - 12:00", "12:00 - 12:45", "12:45 - 1:30"];
+            $horas = ["2:00 - 2:45", "2:45 - 3:30", "3:30 - 4:15", "4:15 - 5:00", "5:30 - 6:15", "6:15 - 7:00", "7:00 - 7:45", "7:45 - 8:30"];
             $aulas = $_POST["aula"];
-            $turno = "Matutino"; // Define el turno como "Matutino"
+            $turno = "Vespertino"; // Definir el turno como "Vespertino"
 
-            // Iterar a través de los datos y realizar las inserciones en la base de datos
             for ($i = 0; $i < count($materias); $i++) {
-                $actualizacion_realizada = false; // Variable para llevar el seguimiento de si se realizó alguna actualización
-                $mensaje_no_cambios = ""; // Mensaje que se mostrará si no se realizan cambios
+                $actualizacion_realizada = false;
+                $mensaje_no_cambios = "";
 
                 for ($i = 0; $i < count($materias); $i++) {
                     $hora = $horas[$i];
 
-                    // Verificar si el docente ya tiene una asignación en ese día y hora
                     $sql_verificar = "SELECT * FROM horarios WHERE Docentes = '$docentes[$i]' AND Dias = '$dia' AND Hora = '$hora'";
                     $resultado_verificar = $conn->query($sql_verificar);
 
                     if ($resultado_verificar->num_rows == 0) {
-                        // Realizar la inserción en la base de datos
                         $sql_insertar = "INSERT INTO horarios (grado_grupo, Dias, Materias, Docentes, Hora, Aula, turno)
                                         VALUES ('$grupo', '$dia', '$materias[$i]', '$docentes[$i]', '$hora', '$aulas[$i]', '$turno')";
 
                         if ($conn->query($sql_insertar) === TRUE) {
                             $registro_exitoso = true;
-                            // Mostrar mensaje emergente si el registro es exitoso
                             if ($registro_exitoso) {
                                 echo "<script>
                                         setTimeout(function() {
@@ -520,42 +513,35 @@
                             echo "Error en la inserción: " . $conn->error;
                         }
                     } else {
-                        // Mensaje de asignación duplicada
                         $mensaje_duplicado = "Ya existe una asignación para el docente '$docentes[$i]' en el día '$dia' y hora '$hora'.<br><br>";
-
-                        // Preguntar al usuario si quiere actualizar los datos existentes
                         $mensaje_duplicado .= "¿Quieres actualizar esta asignación? (Sí/No)";
-
-                        // Mostrar el mensaje y obtener la respuesta del usuario
                         $respuesta_usuario = strtolower(trim(readline($mensaje_duplicado)));
 
-                        // Verificar la respuesta del usuario
                         if ($respuesta_usuario === 'si' || $respuesta_usuario === 'sí') {
-                            // Realizar la actualización en la base de datos
                             $sql_actualizar = "UPDATE horarios 
                                             SET Materias = '$materias[$i]', Aula = '$aulas[$i]'
                                             WHERE Docentes = '$docentes[$i]' AND Dias = '$dia' AND Hora = '$hora'";
 
                             if ($conn->query($sql_actualizar) === TRUE) {
                                 echo "Actualización exitosa.";
-                                $actualizacion_realizada = true; // Se ha realizado una actualización
+                                $actualizacion_realizada = true;
                             } else {
                                 echo "Error en la actualización: " . $conn->error;
                             }
                         } else {
-                            // No se realizan cambios, no se muestra el mensaje aquí
+                            // No se realizan cambios
+                            $mensaje_no_cambios = "";
                         }
                     }
                 }
 
-                // Mostrar mensaje "No se realizaron cambios" solo si no se realizó ninguna actualización
                 if (!$actualizacion_realizada) {
                     echo $mensaje_no_cambios;
-                }                    
+                }
             }
             $conn->close();
         }
-        ?> 
+    ?>
     </form>        
 </body><br>
 <footer>

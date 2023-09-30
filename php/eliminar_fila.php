@@ -20,7 +20,7 @@ $sql = "DELETE FROM `horarios` WHERE `id_horario` = '$id'";
 
 if ($conn->query($sql) === TRUE) {
     // La fila se eliminó correctamente
-    echo "Fila eliminada correctamente";
+    echo "Fila eliminada correctamente";        
 } else {
     // Error al eliminar la fila
     echo "Error al eliminar la fila: " . $conn->error;

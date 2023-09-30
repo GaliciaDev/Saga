@@ -9,30 +9,30 @@
 <body>
 <header>
     <nav>
-        <ul class="menu">
-            <li class="dropdown">
-                <li><a href="../index_administrativo.php">Inicio</a></li>
-                <button class="dropbtn">Horarios</button>
+        <ul class="menu">                                                                
+            <li><a href="../index_administrativo.php">Inicio</a></li>
+            <li class="dropdown">                    
+                <button class="dropbtn">Horarios</button>                
                 <div class="dropdown-content">
                     <a href="asignar_horarios_alumnos.php">Asignar Horarios</a>
-                    <a href="consultar_horarios.php">Consulta Horarios</a>
+                    <a href="consultar_horarios.php">Consulta Horarios</a>                      
                 </div>
-            </li>
-            <li><a href="modificar_materias.php">Modificar Materias</a></li>
+            </li>                   
             <li class="dropdown">
                 <button class="dropbtn">Captura Calificaciones</button>
                 <div class="dropdown-content">
                     <a href="modificar_calificacion.php">Modificar Calificacion</a>
-                    <a href="capturar_calif_definitiva.php">Calificacion Trimestral</a>
+                    <a href="capturar_calif_definitiva.php">Captura Trimestral</a>                      
                 </div>
-            </li>
+            </li>       
+            <li><a href="modificar_materias.php">Modificar Materias</a></li>            
             <li class="dropdown">
                 <button class="dropbtn">Estadisticas Alumnos</button>
                 <div class="dropdown-content">
                     <a href="estadisticas_alumno.php">Alumno</a>
-                    <a href="estadistica_grupal.php">Grupal</a>
+                    <a href="estadistica_grupal.php">Grupal</a>                      
                 </div>
-            </li>
+            </li>        
             <li class="dropdown">
                 <button class="dropbtn">Registro</button>
                 <div class="dropdown-content">
@@ -40,11 +40,10 @@
                     <a href="registro_docentes.html">Registro Docentes</a>
                     <a href="registro_administrativo.html">Registro Administrativo</a>
                 </div>
-            </li>
-            <li><a href="contactos_tutores.php">Contacto Tutores</a></li>
-            <li><a href="apoyo.html">Apoyo Tecnico</a></li>
-            <li><a href="php/cerrarsesion.php">Cerrar Sesion</a></li>
-        </ul>
+            </li>                 
+            <li><a href="contactos_tutores.php">Contacto Tutores</a></li>                    
+            <li><a href="../php/cerrarsesion.php">Cerrar Sesion</a></li>
+        </ul>    
     </nav>
 </header>
 <body>

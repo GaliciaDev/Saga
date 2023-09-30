@@ -11,18 +11,30 @@
 <body>	
 	<header>
 		<nav>
-            <ul class="menu">
-                <li><a href="../index_administrativo.php">Inicio</a></li>                
-                <li><a href="asignacion_horarios.php">Asignar Horario</a></li>
-                <li><a href="capturas_calificaciones.php">Captura Calificaciones</a></li>
-				<li class="dropdown">
-                    <button class="dropbtn">Estadisticas Alumnos</button>
+            <ul class="menu">                
+				<li><a href="../index_administrativo.php">Inicio</a></li>                                                
+                <li class="dropdown">                    
+                    <button class="dropbtn">Horarios</button>
                     <div class="dropdown-content">
-                      <a href="estadisticas_alumno.php">Alumno</a>
-                      <a href="estadistica_grupal.php">Grupal</a>                      
+                        <a href="asignar_horarios_alumnos.php">Asignar Horarios</a>
+                        <a href="consultar_horarios.php">Consulta Horarios</a>                      
                     </div>
-                </li>   
-                <li><a href="contactos_tutores.php">Contacto Tutores</a></li>                                          
+                </li>                   
+                <li class="dropdown">
+                    <button class="dropbtn">Captura Calificaciones</button>
+                    <div class="dropdown-content">
+                      <a href="modificar_calificacion.php">Modificar Calificacion</a>
+                      <a href="capturar_calif_definitiva.php">Captura Trimestral</a>                      
+                    </div>
+                </li>       
+                <li class="dropdown">
+                    <button class="dropbtn">Materias</button>
+                    <div class="dropdown-content">
+                      <a href="asignar_materia.php">Asignar Materias</a>
+                      <a href="modificar_materias.php">Modificar Materias</a>                      
+                    </div>
+                </li>                                                          
+            	<li><a href="estadistica_grupal.php">Estadistica Grupal</a></li> 
                 <li class="dropdown">
                     <button class="dropbtn">Registro</button>
                     <div class="dropdown-content">
@@ -30,11 +42,11 @@
                       <a href="registro_docentes.html">Registro Docentes</a>
                       <a href="registro_administrativo.html">Registro Administrativo</a>
                     </div>
-                </li>                
-                <li><a href="apoyo.html">Apoyo Tecnico</a></li>
-                <li><a href="php/cerrarsesion.php">Cerrar Sesion</a></li>
-            </ul>
-        </nav>
+                </li>                 
+                <li><a href="contactos_tutores.php">Contacto Tutores</a></li>                    
+                <li><a href="../php/cerrarsesion.php">Cerrar Sesion</a></li>
+            </ul>            
+        </nav>   
 	</header>
 	<head>
 		<h1>Desempeño del Alumno</h1>		
@@ -121,6 +133,6 @@
 		echo '</table>';
 		mysqli_close($conexion);
 
-		echo '<br><a target="_blank" href="php/imprimir_estadisticas.php?id_alumno='.$id.'"><button class="btnguardar">Imprimir PDF</button></a><br><br>';
+		echo '<br><a target="_blank" href="../php/imprimir_estadisticas.php?id_alumno='.$id.'"><button class="btnguardar">Imprimir PDF</button></a><br><br>';
 	}
 ?>

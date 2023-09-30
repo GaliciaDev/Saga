@@ -2,8 +2,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/actualizacion_horario.css">
-    <link rel="shortcut icon" href="img/icon.png">  
+    <link rel="stylesheet" type="text/css" href="..css/actualizacion_horario.css">
+    <link rel="shortcut icon" href="../assets/img/icon.png">  
     <title>Actualizacion de Horarios</title>
 
     <style>
@@ -190,7 +190,7 @@ $conn->close();
     <input class="input" type="text" name="nuevoAula" value="<?php echo $aula; ?>"><br><br>
 
     <input type="submit" name="Actualizar" value="Actualizar">
-    <button><a href="../consultar_horarios.php">Cancelar</a></button>
+    <button><a href="../views/consultar_horarios.php">Cancelar</a></button>
 </form>
 </div>
 <div class="image-container">            
@@ -226,6 +226,7 @@ $conn->close();
 
         if ($conn->query($sql) === TRUE) {
             echo "<label>Los datos se han actualizado correctamente.</label>";
+            echo '<meta http-equiv="refresh" content="1 URL=../views/consultar_horarios.php">';
         } else {
             echo "<label>Error al actualizar los datos: </label>" . $conn->error;
         }

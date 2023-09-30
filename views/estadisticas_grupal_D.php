@@ -10,47 +10,32 @@
 <body>	
 	<header>
         <nav>
-            <ul class="menu">                                                                
-                <li><a href="../index_administrativo.php">Inicio</a></li>
-                <li class="dropdown">                    
-                    <button class="dropbtn">Horarios</button>
-                    <div class="dropdown-content">
-                        <a href="asignar_horarios_alumnos.php">Asignar Horarios</a>
-                        <a href="consultar_horarios.php">Consulta Horarios</a>                      
-                    </div>
-                </li>                   
+            <ul class="menu">    
+                <li><a href="../index_docente.php">Inicio</a></li>                                            
+                <li><a href="consulta_horarios_D.php">Horario</a></li>                
                 <li class="dropdown">
                     <button class="dropbtn">Captura Calificaciones</button>
                     <div class="dropdown-content">
-                      <a href="modificar_calificacion.php">Modificar Calificacion</a>
-                      <a href="capturar_calif_definitiva.php">Captura Trimestral</a>                      
+                        <a href="capturas_calificaciones_D.php">Captura Calificaciones</a>
+                        <a href="modificar_calificacion_D.php">Modificar Calificacion</a>                      
                     </div>
-                </li>       
+                </li>                           
                 <li class="dropdown">
-                    <button class="dropbtn">Materias</button>
+                    <button class="dropbtn">Estadisticas Alumnos</button>
                     <div class="dropdown-content">
-                      <a href="asignar_materia.php">Asignar Materias</a>
-                      <a href="modificar_materias.php">Modificar Materias</a>                      
+                        <a href="estadisticas_alumno_D.php">Alumno</a>
+                        <a href="estadisticas_grupal_D.php">Grupal</a>
                     </div>
-                </li>                                                          
-            	<li><a href="estaditicas_alumno.php">Estadistica Alumno</a></li> 
-                <li class="dropdown">
-                    <button class="dropbtn">Registro</button>
-                    <div class="dropdown-content">
-                      <a href="registro_alumnos.html">Registro Alumnos</a>
-                      <a href="registro_docentes.html">Registro Docentes</a>
-                      <a href="registro_administrativo.html">Registro Administrativo</a>
-                    </div>
-                </li>                 
-                <li><a href="contactos_tutores.php">Contacto Tutores</a></li>                    
+                </li>
+                <li><a href="contactos_tutores_D.php">Contacto Tutores</a></li>                  
                 <li><a href="../php/cerrarsesion.php">Cerrar Sesion</a></li>
-            </ul>            
-        </nav> 
+            </ul>
+        </nav>
 	</header>
 	<head>
 		<h1>Desenpeño del Grupo</h1>		
 	</head>
-	<form action="estadistica_grupal.php" method="POST">
+	<form action="estadisticas_grupal_D.php" method="POST">
 		<label>Ingrese un Grupo:</label>
 		<input autofocus type="text" name="grupo" placeholder="Ingrese un Grupo" requied>
 		<input class="btnguardar" name="Enviar" type="submit" id="btnEnviar" value="Buscar"><br>

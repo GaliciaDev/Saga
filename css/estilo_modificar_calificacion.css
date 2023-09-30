@@ -47,7 +47,7 @@ header {
 
 .tabla_horarios {
     border-collapse: collapse;
-    width: 80%;
+    width: 100%;
     height: auto;
     justify-content: center;
     text-align: center;
@@ -101,12 +101,15 @@ label {
 input,
 textarea {
     display: block;
-    width: 100%;
+    width: 30%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    text-align: center;
+    justify-content: center;
+    display: block;
 }
   
   input[type="submit"] {
@@ -120,6 +123,25 @@ textarea {
   
   input[type="submit"]:hover {
     background-color: #45a049;
+}
+
+.center-input {
+    text-align: center;
+}
+
+/* Estilo base del botón */
+.editarBtn {
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Estilo cuando se hace hover sobre el botón */
+.editarBtn:hover {
+    background-color: gray;
 }
 
 select {

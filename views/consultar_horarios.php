@@ -37,6 +37,7 @@
             <th>Materia</th>
             <th>Salón</th>
             <th>Profesor</th>
+            <th>Turno</th>
             <th>Acciones</th>
         </tr>
 
@@ -55,19 +56,23 @@
         }
 
         // Consulta SQL para obtener los datos de la tabla 'horarios'
-        $sql = "SELECT grado_grupo, Dias, Materias, Docentes, Hora, Aula, id_horario FROM horarios";
+        $sql = "SELECT grado_grupo, Dias, Materias, Docentes, Hora, Aula, id_horario, Turno FROM horarios";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
             // Mostrar los datos en la tabla
             while ($row = $result->fetch_assoc()) {
+                $hora = $row["Hora"];
+                $turno = $row["Turno"];
+
                 echo "<tr>";
                 echo "<td>" . $row["grado_grupo"] . "</td>";
                 echo "<td>" . $row["Dias"] . "</td>";
-                echo "<td>" . $row["Hora"] . "</td>";
+                echo "<td>" . $hora . "</td>";
                 echo "<td>" . $row["Materias"] . "</td>";
                 echo "<td>" . $row["Aula"] . "</td>";
                 echo "<td>" . $row["Docentes"] . "</td>";
+                echo "<td>" . $turno . "</td>";
                 echo "<td>";
                 echo "<button class='eliminar' onclick=\"eliminarFila('" . $row['id_horario'] . "')\">Eliminar</button>";
                 echo "<button class='modificar' onclick=\"modificarFila('" . $row['id_horario'] . "')\">Modificar</button>";
@@ -90,7 +95,7 @@ function eliminarFila(id) {
         var xhr = new XMLHttpRequest();
 
         // Configurar una solicitud POST al script PHP que manejará la eliminación
-        xhr.open("POST", "php/eliminar_fila.php", true);
+        xhr.open("POST", "../php/eliminar_fila.php", true);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
         // Definir la función de callback para manejar la respuesta del servidor
@@ -113,7 +118,7 @@ function eliminarFila(id) {
 function modificarFila(id) {
     if (confirm("¿Deseas Modificar Estos Datos?")) {
         // Redirigir al usuario a la página de formulario de actualización
-        window.location.href = "php/actualizar_fila.php?id=" + encodeURIComponent(id);
+        window.location.href = "../php/actualizar_fila.php?id=" + encodeURIComponent(id);
 
         window.location.href = url;
     }
