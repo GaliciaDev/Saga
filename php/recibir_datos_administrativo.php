@@ -53,13 +53,13 @@
 						font-size: 18px;
 					}
 				</style>';
-			echo '<META HTTP-EQUIV="REFRESH" CONTENT="2;URL=crud/registro_administrativo.html">';
+			echo '<META HTTP-EQUIV="REFRESH" CONTENT="2;URL=../views/registro_administrativo.html">';
 		}
 		else{ echo "ERROR En La Consulta";}
 		mysqli_close($conexion);
 	}
 	else{
 		echo "ERROR";
-		echo '<META HTTP-EQUIV="REFRESH" CONTENT="5;URL=index_administrativo.php>';
+		echo '<META HTTP-EQUIV="REFRESH" CONTENT="5;URL=../index_administrativo.php>';
 	}
 ?>
