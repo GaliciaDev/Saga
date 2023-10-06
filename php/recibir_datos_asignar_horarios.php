@@ -16,7 +16,7 @@
 			
 			if($Resultado == true){
 				echo 'Datos Registrados';
-				echo '<META HTTP-EQUIV="REFRESH" CONTENT="5;URL=\'../views/asignacion_horarios_docentes.php\'">';
+				echo '<META HTTP-EQUIV="REFRESH" CONTENT="5;URL=\'../asignacion_horarios_docentes.php\'">';
 			}
 		}else {
 			echo 'Ya Existe un Registro Igual';

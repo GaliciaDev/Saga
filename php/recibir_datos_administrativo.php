@@ -60,6 +60,6 @@
 	}
 	else{
 		echo "ERROR";
-		echo '<META HTTP-EQUIV="REFRESH" CONTENT="5;URL=../index_administrativo.php>';
+		echo '<META HTTP-EQUIV="REFRESH" CONTENT="5;URL=index_administrativo.php>';
 	}
 ?>

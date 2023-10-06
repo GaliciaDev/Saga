@@ -30,7 +30,7 @@
 
         select,
         .input {
-            width: 8%;
+            width: 18%;
             padding: 10px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
@@ -142,6 +142,7 @@ if ($result->num_rows > 0) {
     $materias = $row["Materias"];
     $docente = $row["Docentes"];
     $aula = $row["Aula"];
+    $turno = $row["turno"];
 } else {
     echo "No se encontraron resultados.";
 }
@@ -189,6 +190,13 @@ $conn->close();
     <label>Aula:</label>
     <input class="input" type="text" name="nuevoAula" value="<?php echo $aula; ?>"><br><br>
 
+    <label>Turno:</label>
+        <select name="nuevoTurno" class="select">
+            <option value="<?php echo $turno; ?>"><?php echo $turno;?></option>
+            <option value="Matutino">Matutino</option>
+            <option value="Vespertino">Vespertino</option>
+        </select><br><br>
+
     <input type="submit" name="Actualizar" value="Actualizar">
     <button><a href="../views/consultar_horarios.php">Cancelar</a></button>
 </form>
@@ -207,6 +215,7 @@ $conn->close();
         $nuevoMateria = $_POST["nuevoMateria"];
         $nuevoDocente = $_POST["nuevoDocente"];
         $nuevoAula = $_POST["nuevoAula"];
+        $nuevoTurno = $_POST["nuevoTurno"];
 
         // Conectar a la base de datos (configura las credenciales adecuadamente)
         $servername = "localhost";
@@ -222,7 +231,7 @@ $conn->close();
         }
 
         // Consulta SQL para actualizar la fila en la base de datos
-        $sql = "UPDATE `horarios` SET `Dias`='$nuevoDia', `Hora`='$nuevoHora', `grado_grupo`='$nuevoGradoGrupo', `Materias`='$nuevoMateria', `Docentes`='$nuevoDocente', `Aula`='$nuevoAula' WHERE `id_horario`='$id'";
+        $sql = "UPDATE `horarios` SET `Dias`='$nuevoDia', `Hora`='$nuevoHora', `grado_grupo`='$nuevoGradoGrupo', `Materias`='$nuevoMateria', `Docentes`='$nuevoDocente', `Aula`='$nuevoAula', `turno`='$nuevoTurno' WHERE `id_horario`='$id'";
 
         if ($conn->query($sql) === TRUE) {
             echo "<label>Los datos se han actualizado correctamente.</label>";
