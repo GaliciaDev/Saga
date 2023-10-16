@@ -1,3 +1,8 @@
+<?php
+    include 'php/variabledS.php';
+    validarSd();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,7 +31,7 @@
                     </div>
                 </li>
                 <li><a href="views/contactos_tutores_D.php">Contacto Tutores</a></li>                  
-                <li><a href="php/cerrarsesion.php">Cerrar Sesion</a></li>
+                <li><a href="php/cerrar_sesion">Cerrar Sesion</a></li>
             </ul>
         </nav>
     </header>

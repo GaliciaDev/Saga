@@ -17,6 +17,8 @@ if (isset($_GET['id'])) {
             $materia = $fila['Materias'];
             $horas_clases = $fila['Horas_Clases'];
             $docente = $fila['docente'];
+            $anio = $fila['año'];
+
         } else {
             // El registro no existe
             echo 'El registro no existe.';
@@ -36,9 +38,9 @@ if (isset($_GET['id'])) {
 // Manejar el formulario de edición
 if ($_POST) {
     // Obtener los datos editados desde el formulario
-    $nuevaMateria = $_POST['nueva_materia'];
-    $nuevasHorasClases = $_POST['nuevas_horas_clases'];
-    $nuevoDocente = $_POST['nuevo_docente'];
+    $nuevaMateria = isset($_POST['nueva_materia']) ? $_POST['nueva_materia'] : '';
+    $nuevasHorasClases = isset($_POST['nuevas_horas_clases']) ? $_POST['nuevas_horas_clases'] : '';
+    $nuevoDocente = isset($_POST['nuevo_docente']) ? $_POST['nuevo_docente'] : '';
 
     // Actualizar los datos en la base de datos
     $query_actualizar = "UPDATE tira_materias SET Materias = '$nuevaMateria', Horas_Clases = '$nuevasHorasClases', docente = '$nuevoDocente' WHERE id = $id";
@@ -50,15 +52,13 @@ if ($_POST) {
         echo 'Error al actualizar los datos: ' . mysqli_error($conexion);
     }
 }
-
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../css/modificar_materia.css">
+    <link rel="stylesheet" type="text/css" href="../css/estilo_modificar_materia.css">
     <link rel="shortcut icon" href="../assets/img/icon.png">  
     <title>Editar Materia</title>
 </head>
@@ -75,8 +75,34 @@ if ($_POST) {
             <option value="3" <?php if ($horas_clases == '3') echo 'selected'; ?>>3 Hrs</option>
         </select><br>
 
-        <label for="nuevo_docente">Docente:</label>
-        <input type="text" id="nuevo_docente" name="nuevo_docente" value="<?php echo $docente; ?>"><br>
+        <select class="nombre" name="nuevo_docente" id="docente">
+            <?php
+            // Conexión a la base de datos
+            $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+            mysqli_select_db($conexion, "sagadb");
+
+            // Consulta para obtener los nombres completos de los docentes
+            $consulta_docentes = "SELECT CONCAT(nombreD, ' ', apellidoPd, ' ', apellidoMd) AS nombre_completo FROM docentes";
+            $resultado_docentes = mysqli_query($conexion, $consulta_docentes);
+
+            // Generar las opciones
+            while ($fila_docente = mysqli_fetch_assoc($resultado_docentes)) {
+                $nombre_completo = $fila_docente['nombre_completo'];
+                echo '<option class="nombre" value="' . $nombre_completo . '">' . $nombre_completo . '</option>';
+            }
+
+            // Cerrar la conexión a la BD
+            mysqli_close($conexion);
+            ?>
+        </select><br>
+
+        <label>Grado de la Materia</label>
+            <select class="anio">
+                <?php echo '<option value="' . $anio . '">'.$anio.'</option>';?>
+                <option value="1">1°</option>
+                <option value="2">2°</option>
+                <option value="3">3°</option>
+            </select><br><br>
 
         <input type="submit" value="Guardar Cambios">
         <a href="../views/modificar_materias.php">Regresar</a>
@@ -89,6 +115,14 @@ if ($_POST) {
             background-color: #f0f0f0;
             margin: 0;
             padding: 0;
+        }
+
+        #nuevas_horas_clases {
+            width: 30%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
         }
 
         /* Estilo para el encabezado */
@@ -113,12 +147,13 @@ if ($_POST) {
         label {
             display: block;
             margin-bottom: 10px;
+            font-size: 15px;
         }
 
         /* Estilo para los campos de entrada de texto y selección */
         input[type="text"],
         select {
-            width: 100%;
+            width: 85%;
             padding: 10px;
             margin-bottom: 20px;
             border: 1px solid #ccc;
@@ -137,6 +172,14 @@ if ($_POST) {
 
         input[type="submit"]:hover {
             background-color: #555;
+        }
+
+        .anio {
+            width: 20%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
         }
     </style>
 </html>

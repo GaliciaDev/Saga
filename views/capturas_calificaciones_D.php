@@ -108,9 +108,8 @@
                                 mysqli_select_db($conexion, "sagadb");
                                 
                                 for ($i = 0; $i < (count($id)); $i++) {
-                                    $consulta = mysqli_query($conexion, "SELECT * FROM `materias` WHERE `id_alumno` = '$id[$i]' AND `Nom_Materia` = '$mat' LIMIT 1;");
-
-                                    if (mysqli_num_rows($consulta) == 0) {
+                                    $consulta = mysqli_query($conexion, "SELECT * FROM `materias` WHERE `id_alumno` = '$id[$i]' AND `Nom_Materia` = '$mat' LIMIT 1;");                                                                                                        
+                                    if (mysqli_num_rows($consulta) == 0) {                                        
                                         $resultado = mysqli_query($conexion, "INSERT INTO `materias`(`id_alumno`, `Nom_Materia`, `Calificacion_1`, `Calificacion_2`, `Calificacion_3`, `Faltas_1`, `Faltas_2`, `Faltas_3`, `Promedio_Mat`) VALUES ('$id[$i]','$mat','$calificacion[$i]', NULL, NULL,'$faltas[$i]', NULL, NULL, NULL);");
                                     }
                                     else {
@@ -141,6 +140,8 @@
                                 
                                 for ($i = 0; $i < (count($id)); $i++) {
                                     $consulta = mysqli_query($conexion, "SELECT * FROM `materias` WHERE `id_alumno` = '$id[$i]' AND `Nom_Materia` = '$mat' LIMIT 1;");
+
+
 
                                     if (mysqli_num_rows($consulta) == 0) {
                                         $resultado = mysqli_query($conexion, "INSERT INTO `materias`(`id_alumno`, `Nom_Materia`, `Calificacion_1`, `Calificacion_2`, `Calificacion_3`, `Faltas_1`, `Faltas_2`, `Faltas_3`, `Promedio_Mat`) VALUES ('$id[$i]','$mat',NULL, $calificacion[$i], NULL, NULL, '$faltas[$i]', NULL, NULL);");

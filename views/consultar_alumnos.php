@@ -3,9 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../css/est_consulta_alumnos.css">
+	<link rel="stylesheet" type="text/css" href="../css/consulta_alumnos.css">
 	<link rel="shortcut icon" href="../assets/img/icon.png">
-	<title>Capturas</title>
+	<title>Consulta</title>
 </head>
 <body>
     
@@ -69,6 +69,11 @@
 								<input class="g" type="number" name="grado" '.($campo['grado']).' placeholder="Grado" value="'.($campo['grado']).'" required><br><br>
 							<label class="grupo">Grupo</label>
 								<input class="gr" type="text" name="grupo" '.($campo['grupo']).' placeholder="Grupo" value="'.($campo['grupo']).'" required><br><br>
+							<label class="turno">Turno</label>
+								<select class="turn" name="turno" '.($campo['turno']).' required>
+									<option value="Matutino">Matutino</option>
+									<option value="Vespertino">Vespertino</option>
+								</select><br><br>
 							
 								<br><br><input type="submit" name="capturar" value="Actualizar Informacion"> 							
 						</div>
@@ -89,12 +94,13 @@
 				$Tel_Tutor = $_POST['telefono'];				
 				$Correo = $_POST['correo'];		
 				$Grado = $_POST['grado'];
-				$Grupo = $_POST['grupo'];						
+				$Grupo = $_POST['grupo'];	
+				$Turno = $_POST['turno'];					
 
 				$conexion=mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
 				mysqli_select_db($conexion, "sagadb");		
 					
-				$Resultado = mysqli_query($conexion, "UPDATE `alumnos` SET  `nombre` = '$Nombre', `apellidoP` = '$ApellidoP', `apellidoM` = '$ApellidoM', `natalicio` = '$FechaNac', `edad` = '$Edad', `domicilio` = '$Domicilio', `tutor` = '$Tutor', `telefono` = '$Tel_Tutor', `correo` = '$Correo', `grado` = '$Grado', `grupo` = '$Grupo' WHERE `id_alumno` = '$id';");	
+				$Resultado = mysqli_query($conexion, "UPDATE `alumnos` SET  `nombre` = '$Nombre', `apellidoP` = '$ApellidoP', `apellidoM` = '$ApellidoM', `natalicio` = '$FechaNac', `edad` = '$Edad', `domicilio` = '$Domicilio', `tutor` = '$Tutor', `telefono` = '$Tel_Tutor', `correo` = '$Correo', `grado` = '$Grado', `grupo` = '$Grupo', `turno` = '$Turno' WHERE `id_alumno` = '$id';");	
 
 				if($Resultado==true){
 					echo '

@@ -21,7 +21,7 @@
 			<img src="../assets/img/img2.png" style="width: 100%;" />        
             <a href="registro_docentes.html"><input class="btnconsulta" name="Consultar" type="button" id="btnSalir" value="Registro"></a><br>
             <a href="eliminar_docente.php"><input class="btneliminar" name="Consultar" type="button" id="btnSalir" value="Eliminar"></a><br><br>    
-			<br><a href="index_administrativo.php"><input class="btnsalir" name="Salir" type="button" id="btnSalir" value="Salir"></a><br>
+			<br><a href="../index_administrativo.php"><input class="btnsalir" name="Salir" type="button" id="btnSalir" value="Salir"></a><br>
 			<img src="../assets/img/img3.png" style="width: 100%;" />		
 		</div>		
 	

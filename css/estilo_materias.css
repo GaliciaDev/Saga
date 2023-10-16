@@ -1,0 +1,160 @@
+/* Estilo general del cuerpo de la página */
+body {
+    width: 98%;
+    height: auto;
+    font-size: 12px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Estilo del encabezado */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Estilo del menú de navegación */
+.menu {
+    background-color: #333;
+    height: 50px;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu li a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-size: 14px;
+}
+
+.menu li a:hover {
+    background-color: #555;
+}
+
+/* Estilo de los botones desplegables */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    padding: 8px;
+    text-align: left;
+    list-style-type: none;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.dropbtn {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Estilo del contenido principal */
+body > body {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo de etiquetas y campos de entrada del formulario */
+form label {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+    font-size: 18px;
+    
+}
+
+form input[type="text"],
+form select {
+    width: 20%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Estilo del botón de envío del formulario */
+form input[type="submit"] {
+    background-color: #2c312c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #b4b9b5;
+}
+
+/* Estilo del pie de página */
+footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+}
+
+.nombre {
+    width: 20%;
+    height: auto;
+}
+
+.docente {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.ano {
+    width: 7%;
+    height: auto;
+}
+
+#horas_clases{
+    width: 7%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

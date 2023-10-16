@@ -101,9 +101,10 @@
                         $consultaMaterias = "SELECT Materias FROM tira_materias";
                         $resultadoMaterias = mysqli_query($conexion, $consultaMaterias);
 
+                        echo '<option value="">Ingrese una Materia</option>';
                         // Generar las opciones del select
                         while ($filaMateria = mysqli_fetch_assoc($resultadoMaterias)) {
-                            echo '<option value="">Ingrese una Materia</option>';
+                            
                             echo "<option value='" . $filaMateria['Materias'] . "'>" . $filaMateria['Materias'] . "</option>";
                         }
 
@@ -123,9 +124,9 @@
                         $consultaProfesores  = "SELECT docente FROM tira_materias";
                         $resultadoProfesores  = mysqli_query($conexion, $consultaProfesores );
 
+                        echo '<option value="">Ingrese un Docente</option>';
                         // Generar las opciones del select
-                        while ($filaProfesor = mysqli_fetch_assoc($resultadoProfesores )) {
-                            echo '<option value="">Ingrese un Docente</option>';
+                        while ($filaProfesor = mysqli_fetch_assoc($resultadoProfesores )) {                            
                             echo "<option value='" . $filaProfesor['docente'] . "'>" . $filaProfesor['docente'] . "</option>";
                         }
 
@@ -146,9 +147,9 @@
                             $consultaMaterias = "SELECT Materias FROM tira_materias";
                             $resultadoMaterias = mysqli_query($conexion, $consultaMaterias);
 
+                            echo '<option value="">Ingrese una Materia</option>';
                             // Generar las opciones del select
-                            while ($filaMateria = mysqli_fetch_assoc($resultadoMaterias)) {
-                                echo '<option value="">Ingrese una Materia</option>';
+                            while ($filaMateria = mysqli_fetch_assoc($resultadoMaterias)) {                                
                                 echo "<option value='" . $filaMateria['Materias'] . "'>" . $filaMateria['Materias'] . "</option>";
                             }
 
@@ -167,10 +168,10 @@
                             // Consulta para obtener las Materias de tira_materias
                             $consultaProfesores  = "SELECT docente FROM tira_materias";
                             $resultadoProfesores  = mysqli_query($conexion, $consultaProfesores );
-
+                            
+                            echo '<option value="">Ingrese un Docente</option>';
                             // Generar las opciones del select
-                            while ($filaProfesor = mysqli_fetch_assoc($resultadoProfesores )) {
-                                echo '<option value="">Ingrese un Docente</option>';
+                            while ($filaProfesor = mysqli_fetch_assoc($resultadoProfesores )) {                                
                                 echo "<option value='" . $filaProfesor['docente'] . "'>" . $filaProfesor['docente'] . "</option>";
                             }
 
@@ -192,9 +193,9 @@
                             $consultaMaterias = "SELECT Materias FROM tira_materias";
                             $resultadoMaterias = mysqli_query($conexion, $consultaMaterias);
 
+                            echo '<option value="">Ingrese una Materia</option>';
                             // Generar las opciones del select
-                            while ($filaMateria = mysqli_fetch_assoc($resultadoMaterias)) {
-                                echo '<option value="">Ingrese una Materia</option>';
+                            while ($filaMateria = mysqli_fetch_assoc($resultadoMaterias)) {                                
                                 echo "<option value='" . $filaMateria['Materias'] . "'>" . $filaMateria['Materias'] . "</option>";
                             }
 
@@ -214,9 +215,9 @@
                             $consultaProfesores  = "SELECT docente FROM tira_materias";
                             $resultadoProfesores  = mysqli_query($conexion, $consultaProfesores );
 
+                            echo '<option value="">Ingrese un Docente</option>';
                             // Generar las opciones del select
-                            while ($filaProfesor = mysqli_fetch_assoc($resultadoProfesores )) {
-                                echo '<option value="">Ingrese un Docente</option>';
+                            while ($filaProfesor = mysqli_fetch_assoc($resultadoProfesores )) {                                
                                 echo "<option value='" . $filaProfesor['docente'] . "'>" . $filaProfesor['docente'] . "</option>";
                             }
 
@@ -238,9 +239,9 @@
                             $consultaMaterias = "SELECT Materias FROM tira_materias";
                             $resultadoMaterias = mysqli_query($conexion, $consultaMaterias);
 
+                            echo '<option value="">Ingrese una Materia</option>';
                             // Generar las opciones del select
-                            while ($filaMateria = mysqli_fetch_assoc($resultadoMaterias)) {
-                                echo '<option value="">Ingrese una Materia</option>';
+                            while ($filaMateria = mysqli_fetch_assoc($resultadoMaterias)) {                                
                                 echo "<option value='" . $filaMateria['Materias'] . "'>" . $filaMateria['Materias'] . "</option>";
                             }
 
@@ -260,9 +261,9 @@
                             $consultaProfesores  = "SELECT docente FROM tira_materias";
                             $resultadoProfesores  = mysqli_query($conexion, $consultaProfesores );
 
+                            echo '<option value="">Ingrese un Docente</option>';
                             // Generar las opciones del select
-                            while ($filaProfesor = mysqli_fetch_assoc($resultadoProfesores )) {
-                                echo '<option value="">Ingrese un Docente</option>';
+                            while ($filaProfesor = mysqli_fetch_assoc($resultadoProfesores )) {                                
                                 echo "<option value='" . $filaProfesor['docente'] . "'>" . $filaProfesor['docente'] . "</option>";
                             }
 
@@ -288,9 +289,9 @@
                             $consultaMaterias = "SELECT Materias FROM tira_materias";
                             $resultadoMaterias = mysqli_query($conexion, $consultaMaterias);
 
+                            echo '<option value="">Ingrese una Materia</option>';
                             // Generar las opciones del select
-                            while ($filaMateria = mysqli_fetch_assoc($resultadoMaterias)) {
-                                echo '<option value="">Ingrese una Materia</option>';
+                            while ($filaMateria = mysqli_fetch_assoc($resultadoMaterias)) {                                
                                 echo "<option value='" . $filaMateria['Materias'] . "'>" . $filaMateria['Materias'] . "</option>";
                             }
 
@@ -310,9 +311,9 @@
                             $consultaProfesores  = "SELECT docente FROM tira_materias";
                             $resultadoProfesores  = mysqli_query($conexion, $consultaProfesores );
 
+                            echo '<option value="">Ingrese un Docente</option>';
                             // Generar las opciones del select
-                            while ($filaProfesor = mysqli_fetch_assoc($resultadoProfesores )) {
-                                echo '<option value="">Ingrese un Docente</option>';
+                            while ($filaProfesor = mysqli_fetch_assoc($resultadoProfesores )) {                                
                                 echo "<option value='" . $filaProfesor['docente'] . "'>" . $filaProfesor['docente'] . "</option>";
                             }
 
@@ -334,9 +335,9 @@
                             $consultaMaterias = "SELECT Materias FROM tira_materias";
                             $resultadoMaterias = mysqli_query($conexion, $consultaMaterias);
 
+                            echo '<option value="">Ingrese una Materia</option>';
                             // Generar las opciones del select
-                            while ($filaMateria = mysqli_fetch_assoc($resultadoMaterias)) {
-                                echo '<option value="">Ingrese una Materia</option>';
+                            while ($filaMateria = mysqli_fetch_assoc($resultadoMaterias)) {                                
                                 echo "<option value='" . $filaMateria['Materias'] . "'>" . $filaMateria['Materias'] . "</option>";
                             }
 
@@ -356,9 +357,9 @@
                             $consultaProfesores  = "SELECT docente FROM tira_materias";
                             $resultadoProfesores  = mysqli_query($conexion, $consultaProfesores );
 
+                            echo '<option value="">Ingrese un Docente</option>';
                             // Generar las opciones del select
-                            while ($filaProfesor = mysqli_fetch_assoc($resultadoProfesores )) {
-                                echo '<option value="">Ingrese un Docente</option>';
+                            while ($filaProfesor = mysqli_fetch_assoc($resultadoProfesores )) {                                
                                 echo "<option value='" . $filaProfesor['docente'] . "'>" . $filaProfesor['docente'] . "</option>";
                             }
 
@@ -380,9 +381,9 @@
                             $consultaMaterias = "SELECT Materias FROM tira_materias";
                             $resultadoMaterias = mysqli_query($conexion, $consultaMaterias);
 
+                            echo '<option value="">Ingrese una Materia</option>';
                             // Generar las opciones del select
-                            while ($filaMateria = mysqli_fetch_assoc($resultadoMaterias)) {
-                                echo '<option value="">Ingrese una Materia</option>';
+                            while ($filaMateria = mysqli_fetch_assoc($resultadoMaterias)) {                                
                                 echo "<option value='" . $filaMateria['Materias'] . "'>" . $filaMateria['Materias'] . "</option>";
                             }
 
@@ -402,9 +403,9 @@
                             $consultaProfesores  = "SELECT docente FROM tira_materias";
                             $resultadoProfesores  = mysqli_query($conexion, $consultaProfesores );
 
+                            echo '<option value="">Ingrese un Docente</option>';
                             // Generar las opciones del select
-                            while ($filaProfesor = mysqli_fetch_assoc($resultadoProfesores )) {
-                                echo '<option value="">Ingrese un Docente</option>';
+                            while ($filaProfesor = mysqli_fetch_assoc($resultadoProfesores )) {                                
                                 echo "<option value='" . $filaProfesor['docente'] . "'>" . $filaProfesor['docente'] . "</option>";
                             }
 
@@ -426,9 +427,9 @@
                             $consultaMaterias = "SELECT Materias FROM tira_materias";
                             $resultadoMaterias = mysqli_query($conexion, $consultaMaterias);
 
+                            echo '<option value="">Ingrese una Materia</option>';
                             // Generar las opciones del select
-                            while ($filaMateria = mysqli_fetch_assoc($resultadoMaterias)) {
-                                echo '<option value="">Ingrese una Materia</option>';
+                            while ($filaMateria = mysqli_fetch_assoc($resultadoMaterias)) {                                
                                 echo "<option value='" . $filaMateria['Materias'] . "'>" . $filaMateria['Materias'] . "</option>";
                             }
 
@@ -448,9 +449,9 @@
                             $consultaProfesores  = "SELECT docente FROM tira_materias";
                             $resultadoProfesores  = mysqli_query($conexion, $consultaProfesores );
 
+                            echo '<option value="">Ingrese un Docente</option>';
                             // Generar las opciones del select
-                            while ($filaProfesor = mysqli_fetch_assoc($resultadoProfesores )) {
-                                echo '<option value="">Ingrese un Docente</option>';
+                            while ($filaProfesor = mysqli_fetch_assoc($resultadoProfesores )) {                                
                                 echo "<option value='" . $filaProfesor['docente'] . "'>" . $filaProfesor['docente'] . "</option>";
                             }
 

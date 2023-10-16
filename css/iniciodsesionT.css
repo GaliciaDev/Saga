@@ -9,7 +9,7 @@
 }
 
 body{
-    background-image: url(../img/patioFondoP.jpg);
+    background-image: url(../assets/img/index_d.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -69,7 +69,7 @@ main{
 
 .caja__trasera button:hover{
     background: #fff;
-    color: #864f00;
+    color: #d114b5;
 }
 
 /* Formularios */
@@ -97,7 +97,7 @@ main{
     font-size: 30px;
     text-align: center;
     margin-bottom: 20px;
-    color: #864f00;
+    color: #d114b5;
 }
 
 .registros form input{
@@ -116,7 +116,7 @@ main{
     margin-top: 40px;
     border: none;
     font-size: 14px;
-    background: #864f00;
+    background: #d114b5;
     color: white;
     cursor: pointer;
     outline: none;

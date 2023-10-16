@@ -6,7 +6,7 @@ window.addEventListener("resize",ajusteAncho);
 /* Variables de control */
 var contenedorRegistros = document.querySelector(".registros");
 var formularioIniciarS = document.querySelector(".inicioDs");
-var formularioRegistro = document.querySelector(".registrarU");
+var formularioRegistro = document.querySelector(".recuperarC");
 var caja__trasera_inicio = document.querySelector(".caja__trasera-inicio");
 var caja__trasera_registro = document.querySelector(".caja__trasera-registro");
 

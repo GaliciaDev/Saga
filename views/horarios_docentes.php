@@ -24,14 +24,15 @@
                       <a href="registro_administrativo.html">Registro Administrativo</a>
                     </div>
                 </li>                 
-                <li><a href="../php/cerrarsesion.php">Cerrar Sesion</a></li>
+                <li><a href="apoyo.html">Apoyo Tecnico</a></li>
+                <li><a href="php/cerrarsesion.php">Cerrar Sesion</a></li>
             </ul>
         </nav>
 	</header>
     <head>
         <h1>Horarios a Asignar a Docentes</h1>
     </head>
-    <form method="POST" action="../php/recibir_datos_asignar_horarios.php">        
+    <form method="POST" action="php/recibir_datos_asignar_horarios.php">        
         <label for="dias">Dia:</label>
         <select class="dia" id="dias" name="dia" required>
             <option value="">Elije</option>

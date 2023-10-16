@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../css/asignar_materias.css">
+    <link rel="stylesheet" type="text/css" href="../css/estilo_materias.css">
     <link rel="shortcut icon" href="../assets/img/icon.png">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Asignar Materias</title>
@@ -58,7 +58,7 @@
         <option value="3 Hrs">3 Hrs.</option>
         <!-- Agrega más opciones si es necesario -->
     </select>
-    <label for="docente">Docente:</label>
+    <label for="docente" class="docente">Docente:</label>
     <select class="nombre" name="docente" id="docente">
         <?php
         // Conexión a la base de datos
@@ -79,6 +79,14 @@
         mysqli_close($conexion);
         ?>
     </select><br>
+    
+    <label for="ano">Año:</label>
+    <select class="ano" name="ano" id="ano">
+        <option value="1">1°</option>
+        <option value="2">2°</option>
+        <option value="3">3°</option>
+    </select><br><br>
+
     <input type="submit" value="Guardar"><br><br>
 </form>
 
@@ -90,6 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $materia = $_POST["materia"];
     $horas_clases = $_POST["horas_clases"];
     $docente = $_POST["docente"];
+    $anio = $_POST["ano"];
 
     // Conexión a la base de datos
     $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
@@ -112,11 +121,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mensaje = "Elemento duplicado.";
     } else {
         // Preparar la consulta SQL para la inserción
-        $consulta = "INSERT INTO `tira_materias`(`grado_grupo`, `Materias`, `Horas_Clases`, `docente`) VALUES (NULL, ?, ?, ?)";
+        $consulta = "INSERT INTO `tira_materias`(`Materias`, `Horas_Clases`, `docente`, `id`, `año`) VALUES ('$materia','$horas_clases','$docente',null,'$anio')";
         $stmt = mysqli_prepare($conexion, $consulta);
-
-        // Vincular los parámetros a la consulta
-        mysqli_stmt_bind_param($stmt, "sss", $materia, $horas_clases, $docente);
+        
 
         // Ejecutar la consulta
         if (mysqli_stmt_execute($stmt)) {

@@ -1,7 +1,7 @@
 <?php
     /* Definir que trabajaremos con variables de sesion */
     session_start();
-    include '../conexion_be.php';
+    include '../php/conexion_be.php';
 
     /* Variables de acceso */
     $correo = $_POST['correo'];

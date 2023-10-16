@@ -4,80 +4,149 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../css/consulta_horarios.css">
-    <link rel="shortcut icon" href="../assets&/img/icon.png">  
+    <link rel="shortcut icon" href="../assets/img/icon.png">  
     <title>Kardex</title>
+    <style>
+        /* Estilos de las tablas */
+        .tabla-grande {
+            float: left;
+            width: 80%;
+        }
+        .tabla-pequena {
+            float: right;
+            width: 20%;
+        }
+        .tabla-grande th, .tabla-grande td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .tabla-pequena th, .tabla-pequena td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
-<header>
-    <nav>
-        <ul class="menu">
-            <li><a href="../index_alumnos.php">Inicio</a></li>                                  
-            <li><a href="calificaciones_alumno.php">Calificaciones</a></li>                                
-            <li><a href="kardex.php">Kardex</a></li>                                          
-            <li><a href="apoyo.html">Apoyo Tecnico</a></li>
-            <li><a href="../php/cerrarsesion.php">Cerrar Sesion</a></li>
-        </ul>
-    </nav>
-</header>
-<h1>Kardex del Alumno</h1>
-<!-- Formulario para ingresar el ID del alumno -->
-<form method="POST">
-    <label for="id">Ingrese el ID del alumno:</label>
-    <input type="text" name="id_alumno" id="id_alumno">
-    <input type="submit" value="Buscar">
-</form>
+    <header>
+        <nav>
+            <ul class="menu"> 
+                <li><a href="../index_alumno.php">Inicio</a></li>                               
+                <li><a href="consultar_horario_alumnos.php">Horario</a></li>
+                <li><a href="tira_materias_alumno.php">Tira Materias</a></li>                                                                                    
+                <li><a href="../php/cerrarsesion.php">Cerrar Sesion</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<table class="kardex">
-    <?php
-    // Verificar si se ha enviado el formulario
-    if ($_POST) {
-        // Obtener el ID del alumno desde el formulario
-        $id_alumno = $_POST['id_alumno'];
+    <h1>Kardex</h1>
 
-        // Conexión a la BD
-        $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
-        mysqli_select_db($conexion, "sagadb");
+    <!-- Formulario para ingresar el ID del alumno -->
+    <form action="" method="POST" style="margin-bottom: 20px;">
+        <label for="id_alumno">ID del Alumno:</label>
+        <input type="text" id="id_alumno" name="id_alumno" required>
+        <input type="submit" value="Buscar">
+    </form>
 
-        // Consulta para obtener el kardex del alumno
-        $consulta_kardex = "SELECT m.Nom_Materia, m.Calificacion_1, m.Calificacion_2, m.Calificacion_3, m.Faltas_1, m.Faltas_2, m.Faltas_3, m.Promedio_Mat 
-                            FROM materias AS m
-                            INNER JOIN alumnos AS a ON m.id_alumno = a.id_alumno
-                            WHERE m.id_alumno = '$id_alumno'";
-
-        $resultado_kardex = mysqli_query($conexion, $consulta_kardex);
-
-        // Imprimir la tabla del kardex
-        echo '
+    <!-- Tabla grande -->
+    <table class="tabla-grande">
         <tr>
             <th>Materia</th>
-            <th>Calificación 1</th>
-            <th>Calificación 2</th>
-            <th>Calificación 3</th>
-            <th>Faltas 1</th>
-            <th>Faltas 2</th>
-            <th>Faltas 3</th>
-            <th>Promedio Materia</th>
-        </tr>';
+            <th>Calificación</th>
+            <th>Periodo</th>
+            <th>Situación</th>
+        </tr>
+        <?php
+            if (isset($_POST['id_alumno'])) {
+                $id_alumno = $_POST['id_alumno'];
 
-        while ($fila_kardex = mysqli_fetch_assoc($resultado_kardex)) {
-            echo '
-            <tr>
-                <td>' . $fila_kardex['Nom_Materia'] . '</td>
-                <td>' . $fila_kardex['Calificacion_1'] . '</td>
-                <td>' . $fila_kardex['Calificacion_2'] . '</td>
-                <td>' . $fila_kardex['Calificacion_3'] . '</td>
-                <td>' . $fila_kardex['Faltas_1'] . '</td>
-                <td>' . $fila_kardex['Faltas_2'] . '</td>
-                <td>' . $fila_kardex['Faltas_3'] . '</td>
-                <td>' . $fila_kardex['Promedio_Mat'] . '</td>
-            </tr>';
-        }
+                // Conexión a la base de datos
+                $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+                mysqli_select_db($conexion, "sagadb");
 
-        // Cerrar la conexión a la BD
-        mysqli_close($conexion);
-    }
-    ?>
-</table>
+                // Consulta para obtener los datos de la tabla calificaciones
+                $consulta_calificaciones = "SELECT materia, calificacion, periodo, situacion FROM calificaciones WHERE id_alumno = '$id_alumno'";
+                $resultado_calificaciones = mysqli_query($conexion, $consulta_calificaciones);
+
+                // Recorre los resultados y muestra los datos en la tabla grande
+                while ($fila_calificacion = mysqli_fetch_assoc($resultado_calificaciones)) {
+                    $materia = $fila_calificacion['materia'];
+                    $calificacion = $fila_calificacion['calificacion'];
+                    $periodo = $fila_calificacion['periodo'];
+                    $situacion = ($calificacion >= 60) ? 'Aprobado' : 'Reprobado';
+
+                    echo "<tr>";
+                    echo "<td>$materia</td>";
+                    echo "<td>$calificacion</td>";
+                    echo "<td>$periodo</td>";
+                    echo "<td>$situacion</td>";
+                    echo "</tr>";
+                }
+
+                // Cierra la conexión a la base de datos
+                mysqli_close($conexion);
+            }
+        ?>
+    </table>
+
+    <!-- Tabla pequeña -->
+    <table class="tabla-pequena">
+        <tr>
+            <th>Año Cursado</th>
+            <td>
+                <?php
+                    if (isset($_POST['id_alumno'])) {
+                        // Conexión a la base de datos
+                        $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+                        mysqli_select_db($conexion, "sagadb");
+
+                        // Consulta para obtener los grados cursados por el alumno
+                        $consulta_grados = "SELECT DISTINCT grado FROM calificaciones WHERE id_alumno = '$id_alumno'";
+                        $resultado_grados = mysqli_query($conexion, $consulta_grados);
+
+                        // Recorre los resultados y muestra los grados en la tabla pequeña
+                        $grados_cursados = array();
+                        while ($fila_grado = mysqli_fetch_assoc($resultado_grados)) {
+                            $grado = $fila_grado['grado'];
+                            $grados_cursados[] = $grado;
+                        }
+
+                        // Muestra los grados cursados
+                        echo implode(", ", $grados_cursados);
+
+                        // Cierra la conexión a la base de datos
+                        mysqli_close($conexion);
+                    }
+                ?>
+            </td>
+        </tr>
+        <tr>
+            <th>Promedio</th>
+            <td>
+                <?php
+                    if (isset($_POST['id_alumno'])) {
+                        // Conexión a la base de datos
+                        $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+                        mysqli_select_db($conexion, "sagadb");
+
+                        // Consulta para calcular el promedio de todas las materias
+                        $consulta_promedio = "SELECT AVG(calificacion) AS promedio FROM calificaciones WHERE id_alumno = '$id_alumno'";
+                        $resultado_promedio = mysqli_query($conexion, $consulta_promedio);
+                        $fila_promedio = mysqli_fetch_assoc($resultado_promedio);
+                        $promedio = $fila_promedio['promedio'];
+
+                        // Muestra el promedio
+                        echo round($promedio, 2);
+
+                        // Cierra la conexión a la base de datos
+                        mysqli_close($conexion);
+                    }
+                ?>
+            </td>
+        </tr>
+    </table>
+
 </body>
 <footer>
     <p>&copy; 2023 SAGA.</p>

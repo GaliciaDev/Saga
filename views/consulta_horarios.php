@@ -16,7 +16,7 @@
                 <li><a href="contactos_tutores.php">Contacto Tutores</a></li>
                 <li><a href="estadisticas_alumno.php">Estadisticas Alumnos</a></li>
                 <li><a href="apoyo.html">Apoyo Tecnico</a></li>
-                <li><a href="../php/cerrarsesion.php">Cerrar Sesion</a></li>
+                <li><a href="php/cerrarsesion.php">Cerrar Sesion</a></li>
             </ul>
         </nav>
 	</header>

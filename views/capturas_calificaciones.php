@@ -24,7 +24,7 @@
                     </div>
                 </li>                 
                 <li><a href="apoyo.html">Apoyo Tecnico</a></li>
-                <li><a href="../php/cerrarsesion.php">Cerrar Sesion</a></li>
+                <li><a href="php/cerrarsesion.php">Cerrar Sesion</a></li>
             </ul>
         </nav>
 	</header>

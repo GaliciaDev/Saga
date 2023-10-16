@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../css/modificar_materia.css">
+    <link rel="stylesheet" type="text/css" href="../css/estilo_modificar_materia.css">
     <link rel="shortcut icon" href="../assets/img/icon.png">  
     <title>Modificar Calificaciones</title>
 </head>
@@ -61,8 +61,8 @@ function generarTablaMaterias($id, $materia, $horas_clases, $docente) {
     echo '<td><h2>' . $materia . '</h2></td>';
     echo '<td><h2>' . $horas_clases . '</h2></td>';
     echo '<td><h2>' . $docente . '</h2></td>';
-    echo '<td><a href="../php/editar_materia.php?id=' . $id . '"><h2>Editar</h2></a></td>';
-    echo '<td><a href="../php/eliminar_materia.php?id=' . $id . '"><h2>Eliminar</h2></a></td>';
+    echo '<td><a href="../php/editar_materia.php?id=' . $id . '"><h2 class="editar">Editar</h2></a></td>';
+    echo '<td><a href="../php/eliminar_materia.php?id=' . $id . '"><h2 class="editar">Eliminar</h2></a></td>';
     echo '</tr>';    
 }
 

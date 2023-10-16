@@ -1,3 +1,8 @@
+<?php
+    include 'php/variabledS.php';
+    validarSad();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -30,7 +35,14 @@
                       <a href="views/asignar_materia.php">Asignar Materias</a>
                       <a href="views/modificar_materias.php">Modificar Materias</a>                      
                     </div>
-                </li>                                          
+                </li>       
+                <li class="dropdown">
+                    <button class="dropbtn">Subir Grado</button>
+                    <div class="dropdown-content">                    
+                      <a href="views/subir_grado.php">Aumentar Grado</a>
+                      <a href="views/lista_reprobados.php">Lista Reprobados</a>
+                    </div>
+                </li>                                               
                 <li class="dropdown">
                     <button class="dropbtn">Estadisticas Alumnos</button>
                     <div class="dropdown-content">
@@ -47,7 +59,7 @@
                     </div>
                 </li>                 
                 <li><a href="views/contactos_tutores.php">Contacto Tutores</a></li>                    
-                <li><a href="php/cerrarsesion.php">Cerrar Sesion</a></li>
+                <li><a href="php/cerrar_sesion.php">Cerrar Sesion</a></li>
             </ul>            
         </nav>        
     </header>
