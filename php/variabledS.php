@@ -27,7 +27,7 @@ function validarS() {
                 echo '
                     <script>
                         alert("Por favor debes iniciar sesion");
-                        window.location = "index.html";
+                        window.location = "index.php";
                     </script>
                 ';
                 session_destroy();
@@ -41,7 +41,7 @@ function validarSd() {
                 echo '
                     <script>
                         alert("Por favor debes iniciar sesion");
-                        window.location = "index.html";
+                        window.location = "index.php";
                     </script>
                 ';
                 session_destroy();
@@ -55,7 +55,7 @@ function validarSad() {
                 echo '
                     <script>
                         alert("Por favor debes iniciar sesion");
-                        window.location = "index.html";
+                        window.location = "index.php";
                     </script>
                 ';
                 session_destroy();

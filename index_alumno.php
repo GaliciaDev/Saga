@@ -70,8 +70,5 @@
 
     </table>
 </body>
-    <footer>
-        <p>&copy; 2023 SAGA.</p>
-        <p>Contáctanos: info@example.com</p>
-    </footer>
+        <?php include 'php/footerG.php'; ?>
 </html>  
