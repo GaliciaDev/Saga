@@ -1,3 +1,7 @@
+<?php    
+    include '../php/variabledS.php';
+    validarSd();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,51 +26,55 @@
     </header>
     <h1>Horario</h1>
     <br><br>
-    <label>Nombre del Profesor: </label>
-    <form method="POST" action="consulta_horarios_D.php">
-        <input type="text" name="nombre_profesor" placeholder="Ingresa el Nombre del Profesor">
-        <input type="submit" value="Buscar">
-    </form><br>
     <table class="tabla_horarios">
-        <?php
-        // Recibir el nombre del profesor del formulario
-        if ($_POST) {
-            $nombre_profesor = $_POST['nombre_profesor'];
+        <?php        
+        if (isset($_SESSION['docente'])) {
+            $id_usuario = $_SESSION['docente'];
 
-            // Conexion a la BD
-            $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
-            mysqli_select_db($conexion, "sagadb");
+            include '../php/conexion_be.php';
 
-            // Realizamos consulta para obtener los horarios del profesor
-            $consulta = "SELECT Dias, grado_grupo, Hora, Aula, Docentes, Materias FROM `horarios` WHERE `Docentes` = '$nombre_profesor';";
-            $resultado = mysqli_query($conexion, $consulta);
+            // Consulta para obtener el nombre del profesor a partir del ID de usuario
+            $consulta_nombre = "SELECT nombreD, apellidoPd, apellidoMd FROM `docentes` WHERE `id_docente` = '$id_usuario';";
+            $resultado_nombre = mysqli_query($conexion, $consulta_nombre);
 
-            // Imprimir tabla de horarios
-            echo '          
-            <tr>
-                <th>Día</th>                        
-                <th>Grupo</th>
-                <th>Horario</th>
-                <th>Materia</th>
-                <th>Salón</th>
-                <th>Profesor</th>                                                                                                                  
-            </tr>
-            ';
-            
-            // Iterar a través de los resultados de la consulta
-            while ($campo = mysqli_fetch_array($resultado)) {
-                echo '
+            if ($row = mysqli_fetch_assoc($resultado_nombre)) {
+                $nombre_profesor = $row['nombreD'] . ' ' . $row['apellidoPd'] . ' ' . $row['apellidoMd'];
+
+                // Consulta para obtener los horarios del profesor
+                $consulta_horarios = "SELECT Dias, grado_grupo, Hora, Aula, Docentes, Materias FROM `horarios` WHERE `Docentes` = '$nombre_profesor';";
+                $resultado_horarios = mysqli_query($conexion, $consulta_horarios);
+
+                // Imprimir tabla de horarios
+                echo '          
                 <tr>
-                    <td>' . ($campo['Dias']) . '</td>
-                    <td>' . ($campo['grado_grupo']) . '</td>
-                    <td>' . ($campo['Hora']) . '</td>
-                    <td>' . ($campo['Materias']) . '</td>
-                    <td>' . ($campo['Aula']) . '</td>
-                    <td>' . ($campo['Docentes']) . '</td>  
-                </tr>';
+                    <th>Día</th>                        
+                    <th>Grupo</th>
+                    <th>Horario</th>
+                    <th>Materia</th>
+                    <th>Salón</th>
+                    <th>Profesor</th>                                                                                                                  
+                </tr>
+                ';
+
+                // Iterar a través de los resultados de la consulta de horarios
+                while ($campo = mysqli_fetch_array($resultado_horarios)) {
+                    echo '
+                    <tr>
+                        <td>' . ($campo['Dias']) . '</td>
+                        <td>' . ($campo['grado_grupo']) . '</td>
+                        <td>' . ($campo['Hora']) . '</td>
+                        <td>' . ($campo['Materias']) . '</td>
+                        <td>' . ($campo['Aula']) . '</td>
+                        <td>' . ($campo['Docentes']) . '</td>  
+                    </tr>';
+                }
+            } else {
+                echo 'No se encontró un profesor con el ID de usuario proporcionado.';
             }
             
-            mysqli_close($conexion);                          
+            mysqli_close($conexion);
+        } else {
+            echo 'No se ha iniciado sesión. Por favor, inicie sesión para ver los horarios.';
         }
         ?>
     </table>

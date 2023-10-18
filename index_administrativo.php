@@ -62,54 +62,45 @@
                 <li><a href="php/cerrar_sesion.php">Cerrar Sesion</a></li>
             </ul>            
         </nav>        
-    </header>
-    
-    <br><br><label>En base al login direccione este index: </label>
-		<form method="POST" action="index_administrativo.php">
-			<input type="text" name="index" placeholder="Ingrese su Matricula">
-			<input type="submit" value="Buscar">
-		</form>
-
-    <table class="tabla_informacion">                    
+    </header>    
+        <br><br><table class="tabla_informacion">                    
         <tr>
-            <h2>Informacion General</h2>
+            <h2>Información General</h2>
             <?php
-			//Recibir los datos del buscador
-			if ($_POST) {
-				$matricula = $_POST['index'];		
+            // Obtén la matrícula del administrador desde la variable de sesión
+            $matricula = $_SESSION['admin'];
+            
+            // Conexion a la BD
+            $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+            mysqli_select_db($conexion, "sagadb");
 
-				//Conexion a la BD
-				$conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
-				mysqli_select_db($conexion, "sagadb");
+            // Realiza consulta
+            $resultado = mysqli_query($conexion, "SELECT * FROM `administrativo` WHERE `id_admin` = '$matricula' LIMIT 1;");
 
-				//Realizamos consulta
-				$resultado = mysqli_query($conexion, "SELECT * FROM `administrativo` WHERE `id_admin` = '$matricula' LIMIT 1;");
+            $campo = mysqli_fetch_array($resultado);
+            echo '
+            <tr>
+                <th rowspan="2"><img src="assets/img/img3.png" alt="MDN"></th>
+                <th>Nombre</th>
+                <td>'.($campo['nombreAa']). ' ' .($campo['apellidoPa']). ' ' .($campo['apellidoM']).'</td>
+                <th>Matricula</th>
+                <td>'.($campo['id_admin']).'</td>
+                <th>Cargo</th>
+                <td>'.($campo['cargoA']).'</td>
+            </tr>
 
-				$campo = mysqli_fetch_array($resultado);
-				echo '
-				<tr>
-                    <th rowspan="2"><img src=" assets/img/img3.png" alt="MDN"></th>							
-					<th>Nombre</th>					
-                    <td>'.(implode([$campo['nombreAa'], $campo['apellidoPa'], $campo['apellidoM']])).'</td>					
-					<th>Matricula</th>			
-						<td>'.($campo['id_admin']).'</td>	    
-                    <th>Cargo</th>					
-                        <td>'.($campo['cargoA']).'</td>
-				</tr>
-				<tr>
-					<th>Area</th>
-						<td>'.($campo['areaA']).'</td>
-					<th>Telefono</th>
-						<td>'.($campo['telefonoA']).'</td>
-                    <th>Telefono de Emergencias</th>
-                        <td>'.($campo['telefonoEa']).'</td>
-				</tr>  
-				';                            
-			}
-    		?>     
+            <tr>
+                <th>Area</th>
+                <td>' . ($campo['areaA']) . '</td>
+                <th>Telefono</th>
+                <td>' . ($campo['telefonoA']) . '</td>
+                <th>Telefono de Emergencias</th>
+                <td>' . ($campo['telefonoEa']) . '</td>
+            </tr>
+            ';                            
+            ?>
         </tr>
-
-    </table><br>
+    </table><br><br><br>
 </body>
     <footer>
         <p>&copy; 2023 SAGA.</p>

@@ -1,5 +1,5 @@
 <?php
-
+//guarda y compara variables de sesion para cada tipo de usuario
 function verificarS() {   
         session_start();
            if(isset($_SESSION['usuario'])) {
