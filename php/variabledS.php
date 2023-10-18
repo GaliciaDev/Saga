@@ -2,7 +2,7 @@
 //guarda y compara variables de sesion para cada tipo de usuario
 function verificarS() {   
         session_start();
-           if(isset($_SESSION['usuario'])) {
+           if(isset($_SESSION['alumno'])) {
                 header("location: ../index_alumno.php");
                 }
             }
@@ -23,7 +23,7 @@ function verificarSad() {
 
 function validarS() {
         session_start();
-            if(!isset($_SESSION['usuario'])) {
+            if(!isset($_SESSION['alumno'])) {
                 echo '
                     <script>
                         alert("Por favor debes iniciar sesion");

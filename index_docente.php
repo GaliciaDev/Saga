@@ -1,5 +1,6 @@
 <?php
 include 'php/variabledS.php';
+include 'php/conexion_be.php';
 validarSd();
 ?>
 

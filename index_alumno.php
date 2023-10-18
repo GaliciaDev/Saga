@@ -1,4 +1,5 @@
 <?php
+    include 'php/conexion_be.php';
     include 'php/variabledS.php';
     validarS();
 ?>
@@ -11,35 +12,14 @@
         <title>Index del Alumno</title>
     </head>
 <body>
-    <header>
-        <nav>
-            <ul class="menu">                                                
-                <li><a href="views/consultar_horario_alumnos.php">Horario</a></li>
-                <li><a href="views/tira_materias_alumno.php">Tira Materias</a></li>                
-                <li><a href="views/calificaciones_alumno.php">Calificaciones</a></li>                
-                <li><a href="views/kardex.php">Kardex</a></li>                                
-                <li><a href="php/cerrar_sesion.php">Cerrar Sesion</a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php include 'php/navegacion_A.php'; ?>
 
-    <br><br><label>En base al login direccione este index: </label>
-		<form method="POST" action="index_alumno.php">
-			<input type="text" name="index" placeholder="Ingrese su Matricula">
-			<input type="submit" value="Buscar">
-		</form>
 
     <table class="tabla_informacion">                    
         <tr>
             <h2>Informacion General</h2>
             <?php
-			//Recibir los datos del buscador
-			if ($_POST) {
-				$matricula = $_POST['index'];		
-
-				//Conexion a la BD
-				$conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
-				mysqli_select_db($conexion, "sagadb");
+			$matricula = $_SESSION['alumno'];
 
 				//Realizamos consulta
 				$resultado = mysqli_query($conexion, "SELECT * FROM `alumnos` WHERE `id_alumno` = '$matricula' LIMIT 1;");
@@ -64,7 +44,6 @@
                         <td>'.($campo['turno']).'</td>
 				</tr>  
 				';                            
-			}
     		?>     
         </tr>
 

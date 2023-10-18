@@ -15,7 +15,7 @@
 
     if (mysqli_num_rows($validar_login) > 0) {
         /* Variables de sesion */
-        $_SESSION['usuario'] = $matricula;
+        $_SESSION['alumno'] = $matricula;
         header("location: ../index_alumno.php");
         exit;
 

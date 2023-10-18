@@ -1,34 +1,8 @@
 <?php
-// Verificar si se ha enviado un grupo por el usuario
-if (isset($_POST['grupo'])) {
-    $grupo = $_POST['grupo'];
-    $servername = "localhost"; // Cambia localhost por el servidor de tu base de datos
-    $username = "DBA-Saga";
-    $password = "srvtySDL&";
-    $dbname = "sagadb"; // Nombre de la base de datos
+    require '../php/conexion_be.php';
 
-    // Crear una conexión a la base de datos
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    //$sql = "SELECT Dias, Marterias, Docentes, Hora, Aula FROM horarios WHERE  id_alumno = '$alumno'";
 
-    // Verificar la conexión
-    if ($conn->connect_error) {
-        die("Error de conexión: " . $conn->connect_error);
-    }
-
-    // Consulta SQL para obtener los datos de la tabla 'horarios' para el grupo específico
-    $sql = "SELECT Dias, Materias, Docentes, Hora, Aula FROM horarios WHERE grado_grupo = '$grupo'";
-    $result = $conn->query($sql);
-
-    // Crear un array para almacenar los datos de los horarios
-    $horarios = array();
-    while ($row = $result->fetch_assoc()) {
-        $horarios[] = $row;
-    }
-
-    $conn->close();
-} else {
-    $horarios = array(); // Si no se ha enviado un grupo, inicializa el array vacío
-}
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +22,7 @@ if (isset($_POST['grupo'])) {
             <li><a href="tira_materias_alumno.php">Tira Materias</a></li>                
             <li><a href="calificaciones_alumno.php">Calificaciones</a></li>                
             <li><a href="views/kardex.php">Kardex</a></li>                    
-            <li><a href="../php/cerrarsesion.php">Cerrar Sesion</a></li>
+            <li><a href="../php/cerrar_sesion.php">Cerrar Sesion</a></li>
         </ul>
     </nav>
     </header>

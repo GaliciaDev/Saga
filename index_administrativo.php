@@ -1,5 +1,6 @@
 <?php
     include 'php/variabledS.php';
+    include 'php/conexion_be.php';
     validarSad();
 ?>
 
@@ -70,10 +71,6 @@
             // Obtén la matrícula del administrador desde la variable de sesión
             $matricula = $_SESSION['admin'];
             
-            // Conexion a la BD
-            $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
-            mysqli_select_db($conexion, "sagadb");
-
             // Realiza consulta
             $resultado = mysqli_query($conexion, "SELECT * FROM `administrativo` WHERE `id_admin` = '$matricula' LIMIT 1;");
 
