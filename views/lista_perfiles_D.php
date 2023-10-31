@@ -1,21 +1,25 @@
 <?php
-    include 'php/variabledS.php';
-    include 'php/conexion_be.php';
+    include '../php/variabledS.php';
     validarSad();
+
+    include '../php/conexion_be.php';
+    $consultaUsuarios = "SELECT * FROM `docentes`";
+    $resultadoUsuarios = mysqli_query($conexion, $consultaUsuarios);
 ?>
 
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <link rel="shortcut icon" href="assets/img/icon.png">
+        <link rel="stylesheet" type="text/css" href="../css/perfiles.css">
+        <link rel="shortcut icon" href="../assets/img/icon.png">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>Index Administrativo</title>
+        <title>Perfiles</title>
     </head> 
 <body>
     <header>
-        <nav>
+        <nav>            
             <ul class="menu">                                                                
+                <li><a href="../index_administrativo.php">Inicio</a></li>
                 <li class="dropdown">                    
                     <button class="dropbtn">Horarios</button>
                     <div class="dropdown-content">
@@ -56,8 +60,7 @@
                     <div class="dropdown-content">
                       <a href="views/registro_alumnos.html">Registro Alumnos</a>
                       <a href="views/registro_docentes.html">Registro Docentes</a>
-                      <a href="views/registro_administrativo.html">Registro Administrativo</a>
-                      <a href="views/lista_perfiles.php">Lista Perfiles</a>
+                      <a href="views/registro_administrativo.html">Registro Administrativo</a>                      
                     </div>
                 </li>   
                 <li class="dropdown">
@@ -72,40 +75,38 @@
             </ul>            
         </nav>        
     </header>    
-        <br><br><table class="tabla_informacion">                    
-        <tr>
-            <h2>Información General</h2>
-            <?php
-            // Obtén la matrícula del administrador desde la variable de sesión
-            $matricula = $_SESSION['admin'];
-            
-            // Realiza consulta
-            $resultado = mysqli_query($conexion, "SELECT * FROM `administrativo` WHERE `id_admin` = '$matricula' LIMIT 1;");
-
-            $campo = mysqli_fetch_array($resultado);
-            echo '
-            <tr>
-                <th rowspan="2"><img src="assets/img/img3.png" alt="MDN"></th>
-                <th>Nombre</th>
-                <td>'.($campo['nombreAa']). ' ' .($campo['apellidoPa']). ' ' .($campo['apellidoM']).'</td>
-                <th>Matricula</th>
-                <td>'.($campo['id_admin']).'</td>
-                <th>Cargo</th>
-                <td>'.($campo['cargoA']).'</td>
-            </tr>
-
-            <tr>
-                <th>Area</th>
-                <td>' . ($campo['areaA']) . '</td>
-                <th>Telefono</th>
-                <td>' . ($campo['telefonoA']) . '</td>
-                <th>Telefono de Emergencias</th>
-                <td>' . ($campo['telefonoEa']) . '</td>
-            </tr>
-            ';                            
-            ?>
-        </tr>
-    </table><br><br><br>
+        <h2>Usuarios Administrativos</h2>
+        <div id="Botones">
+            <a href="lista_perfiles.php"><button>Perfiles Administrativos</button></a>
+            <a href="lista_perfiles_A.php"><button>Perfiles Alumnos</button></a>
+        </div>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Correo Electrónico</th>
+                    <th>Telefono</th>
+                    <th>Direccion</th>
+                    <th>Cargo</th>        
+                    <th>Tel Emergencia</th>            
+                    <th>Acciones</th>
+                </tr>
+                <?php
+                while ($fila = mysqli_fetch_assoc($resultadoUsuarios)) {
+                    echo "<tr>";
+                    echo "<td>" . $fila['id_docente'] . "</td>";
+                    $nombreCompleto = implode(' ', [$fila['nombreD'], $fila['apellidoPd'], $fila['apellidoMd']]);
+                    echo "<td>" . $nombreCompleto . "</td>";
+                    echo "<td>" . $fila['correoD'] . "</td>";
+                    echo "<td>" . $fila['telefonoD'] . "</td>";
+                    echo "<td>" . $fila['direccionD'] . "</td>";
+                    echo "<td>" . $fila['cargoD'] . "</td>";
+                    echo "<td>" . $fila['telefonoEd'] . "</td>";
+                    echo "<td><a href='consulta_docentes.php?id=" . $fila['id_docente'] . "'>Ver Mas...</a></td>";
+                    echo "</tr>";
+                }
+                ?>
+            </table>
 </body>
     <footer>
         <p>&copy; 2023 SAGA.</p>

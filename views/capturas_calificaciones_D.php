@@ -15,12 +15,19 @@ validarSd();
 <body>
     <header>
         <nav>
-            <ul class="menu">
+        <ul class="menu">
                 <li><a href="../index_docente.php">Inicio</a></li>
-                <li><a href="capturas_calificaciones_D.php">Captura Calificaciones</a></li>
+                <li><a href="consulta_horarios_D.php">Horario</a></li>                                    
+                <li><a href="modificar_calificacion_D.php">Modificar Calificacion</a></li>
+                <li class="dropdown">
+                    <button class="dropbtn">Estadisticas Alumnos</button>
+                    <div class="dropdown-content">
+                        <a href="estadisticas_alumno_D.php">Alumno</a>
+                        <a href="estadisticas_grupal_D.php">Grupal</a>
+                    </div>
+                </li>
                 <li><a href="contactos_tutores_D.php">Contacto Tutores</a></li>
-                <li><a href="estadisticas_alumno_D.php">Estadisticas Alumnos</a></li>                
-                <li><a href="../php/cerrarsesion.php">Cerrar Sesion</a></li>
+                <li><a href="../php/cerrar_sesion.php">Cerrar Sesion</a></li>
             </ul>
         </nav>
     </header>
@@ -41,7 +48,7 @@ validarSd();
                 $nombre_profesor = $row['nombreD'] . ' ' . $row['apellidoPd'] . ' ' . $row['apellidoMd'];
 
                 // Consulta para obtener los grados y grupos asociados al docente
-                $consulta_grados_grupos = "SELECT DISTINCT grado_grupo FROM `horarios` WHERE `Docentes` = '$nombre_profesor';";
+                $consulta_grados_grupos = "SELECT grado_grupo FROM `horarios` WHERE `Docentes` = '$nombre_profesor';";
                 $resultado_grados_grupos = mysqli_query($conexion, $consulta_grados_grupos);
 
                 echo '<form class="form_captura" action="capturas_calificaciones_D.php" method="POST">
@@ -62,9 +69,9 @@ validarSd();
         } else {
             echo 'No se ha iniciado sesión. Por favor, inicie sesión para ver los horarios.';
         }
-    
+                      
         // Consulta para obtener las materias del docente        
-        $consulta_materias = "SELECT DISTINCT `Materias` FROM `horarios` WHERE `Docentes` = '$nombre_profesor';";
+        $consulta_materias = "SELECT `Materias` FROM `horarios` WHERE `Docentes` = '$nombre_profesor';";
         $resultado_materias = mysqli_query($conexion, $consulta_materias);
         
         if (mysqli_num_rows($resultado_materias) > 0) {
@@ -73,12 +80,15 @@ validarSd();
                     <select class="materias" name="materia">';
             
             // Agrega opciones al select con las materias del docente
+            $primerDato = mysqli_fetch_assoc($resultado_materias);
+            $nomMateria = $primerDato['Materias'];
+            echo "<option value='.$nomMateria'>$nomMateria</option>";
             while ($fila = mysqli_fetch_assoc($resultado_materias)) {
-                $nomMateria = $fila['Materias'];
-                echo "<option value='.$nomMateria'>$nomMateria</option>";                
-            }
-            
-            
+                if ($nomMateria != $fila['Materias']) {
+                    $nomMateria = $fila['Materias'];
+                    echo "<option value='.$nomMateria'>$nomMateria</option>";
+                }
+            }                        
             echo '</select>';
         } else {
             echo 'El docente no tiene materias asociadas.';

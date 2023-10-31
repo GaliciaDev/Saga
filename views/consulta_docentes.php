@@ -15,7 +15,7 @@
 	<form class="registro" id="registro" action="consulta_docentes.php" method="POST">   	
 		<div id="Botones">			                                                           
 			<label class="antes">Matricula del Docente</label>
-			<input class="materias" type="text" name="id" placeholder="Ingrese Matricula">
+			<input class="materias" type="text" name="id"  value="<?php echo isset($_GET['id']) ? $_GET['id'] : ''; ?>" placeholder="Ingrese Matricula">
 			<input type="submit" class="busqueda" name="buscar" value="Buscar">			
 		
 			<img src="../assets/img/img2.png" style="width: 100%;" />        

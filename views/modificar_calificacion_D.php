@@ -1,10 +1,21 @@
 <?php
-// Conexión a la base de datos
-$conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
-mysqli_select_db($conexion, "sagadb");
+include '../php/variabledS.php';
+validarSd();
 
-// Consulta para obtener las materias desde la tabla "tira_materias"
-$consultaMaterias = "SELECT Materias FROM tira_materias";
+// Conexión a la base de datos
+include '../php/conexion_be.php';
+
+// Obtén el nombre completo del docente desde la tabla `docentes`
+$nombreDocente = "";
+$consultaNombreDocente = "SELECT CONCAT(nombreD, ' ', apellidoPd, ' ', apellidoMd) AS nombre_completo FROM docentes WHERE id_docente = '{$_SESSION['docente']}'";
+$resultadoNombreDocente = mysqli_query($conexion, $consultaNombreDocente);
+
+if ($fila = mysqli_fetch_assoc($resultadoNombreDocente)) {
+    $nombreDocente = $fila['nombre_completo'];
+}
+
+// Consulta para obtener las materias asociadas al docente desde la tabla `tira_materias`
+$consultaMaterias = "SELECT Materias FROM tira_materias WHERE TRIM(docente) = '$nombreDocente'";
 $resultadoMaterias = mysqli_query($conexion, $consultaMaterias);
 ?>
 
@@ -22,11 +33,17 @@ $resultadoMaterias = mysqli_query($conexion, $consultaMaterias);
         <nav>
             <ul class="menu">
                 <li><a href="../index_docente.php">Inicio</a></li>
+                <li><a href="consulta_horarios_D.php">Horario</a></li>
                 <li><a href="capturas_calificaciones_D.php">Captura Calificaciones</a></li>
+                <li class="dropdown">
+                    <button class="dropbtn">Estadisticas Alumnos</button>
+                    <div class="dropdown-content">
+                        <a href="estadisticas_alumno_D.php">Alumno</a>
+                        <a href="estadisticas_grupal_D.php">Grupal</a>
+                    </div>
+                </li>
                 <li><a href="contactos_tutores_D.php">Contacto Tutores</a></li>
-                <li><a href="estadisticas_alumno_D.php">Estadisticas Alumnos</a></li>
-                <li><a href="apoyo_D.html">Apoyo Tecnico</a></li>
-                <li><a href="php/cerrarsesion.php">Cerrar Sesion</a></li>
+                <li><a href="../php/cerrar_sesion.php">Cerrar Sesion</a></li>
             </ul>
         </nav>
     </header>
@@ -44,42 +61,37 @@ $resultadoMaterias = mysqli_query($conexion, $consultaMaterias);
         </select>
         <input type="submit" value="Seleccionar">
     </form><br>
+
     <?php
     if (isset($_POST['materia'])) {
         $selectedMateria = $_POST['materia'];
 
-        // Consulta para obtener los datos de la materia seleccionada
-        $consultaMateriaSeleccionada = "SELECT * FROM materias WHERE Nom_Materia = '$selectedMateria'";
-        $resultadoMateriaSeleccionada = mysqli_query($conexion, $consultaMateriaSeleccionada);
+        // Consulta para obtener las calificaciones de los estudiantes en la materia seleccionada
+        $consultaCalificaciones = "SELECT * FROM `materias` WHERE `Nom_Materia` = '$selectedMateria'";
+        $resultadoCalificaciones = mysqli_query($conexion, $consultaCalificaciones);
 
         echo "<table class='tabla_calificaciones'>";
         echo "<tr>";
-        echo "<th>Materia</th>";
+        echo "<th>ID Alumno</th>";
         echo "<th>Calificación 1</th>";
         echo "<th>Calificación 2</th>";
         echo "<th>Calificación 3</th>";
         echo "<th>Faltas 1</th>";
         echo "<th>Faltas 2</th>";
         echo "<th>Faltas 3</th>";
-        echo "<th>Acciones</th>";
         echo "</tr>";
 
-        // Recorremos los datos de la materia seleccionada
-        while ($filaMateria = mysqli_fetch_assoc($resultadoMateriaSeleccionada)) {
-            echo "<form method='POST' action='../php/actualizar_calificaciones.php'>";
-                echo "<tr>";
-                echo "<td>" . $filaMateria['Nom_Materia'] . "</td>";
-                echo "<td class='center-input'><input type='text' name='calif1' value='" . $filaMateria['Calificacion_1'] . "'></td>";
-                echo "<td class='center-input'><input type='text' name='calif2' value='" . $filaMateria['Calificacion_2'] . "'></td>";
-                echo "<td class='center-input'><input type='text' name='calif3' value='" . $filaMateria['Calificacion_3'] . "'></td>";
-                echo "<td class='center-input'><input type='text' name='faltas1' value='" . $filaMateria['Faltas_1'] . "'></td>";
-                echo "<td class='center-input'><input type='text' name='faltas2' value='" . $filaMateria['Faltas_2'] . "'></td>";
-                echo "<td class='center-input'><input type='text' name='faltas3' value='" . $filaMateria['Faltas_3'] . "'></td>";
-                echo "<input type='hidden' name='id_materia' value='" . $filaMateria['id_materia'] . "'>";
-                echo "<td><button class='editarBtn' type='submit' class='editarBtn'>Editar Calificación</button></td>";
-                echo "<input type='hidden' name='id_materia' value='" . $filaMateria['id_materia'] . "'>";
-                echo "</tr>";
-            echo "</form>";
+        // Recorremos los datos de las calificaciones
+        while ($filaCalificaciones = mysqli_fetch_assoc($resultadoCalificaciones)) {
+            echo "<tr>";
+            echo "<td>" . $filaCalificaciones['id_alumno'] . "</td>";
+            echo "<td>" . $filaCalificaciones['Calificacion_1'] . "</td>";
+            echo "<td>" . $filaCalificaciones['Calificacion_2'] . "</td>";
+            echo "<td>" . $filaCalificaciones['Calificacion_3'] . "</td>";
+            echo "<td>" . $filaCalificaciones['Faltas_1'] . "</td>";
+            echo "<td>" . $filaCalificaciones['Faltas_2'] . "</td>";
+            echo "<td>" . $filaCalificaciones['Faltas_3'] . "</td>";
+            echo "</tr>";
         }
 
         echo "</table>";
