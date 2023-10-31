@@ -41,7 +41,7 @@
             <div class="header-txt">
                 <h1>Escuela secundaria tecnica 153</h1>
                 <p>
-                    Leonardo 
+                    
                 </p>
                 <a href="#" class="btn-1">Informacion</a>
             </div>
