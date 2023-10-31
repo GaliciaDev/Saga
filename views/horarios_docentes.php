@@ -32,7 +32,7 @@
     <head>
         <h1>Horarios a Asignar a Docentes</h1>
     </head>
-    <form method="POST" action="php/recibir_datos_asignar_horarios.php">        
+    <form method="POST" action="../php/recibir_datos_asignar_horarios.php">        
         <label for="dias">Dia:</label>
         <select class="dia" id="dias" name="dia" required>
             <option value="">Elije</option>
@@ -63,7 +63,7 @@
             <input type="text" id="salon" name="aula" placeholder="Ingrese el Aula" required>
                 <?php                                        
                     //Conexion a la BD
-                    $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+                    include '../php/conexion.php';
                     mysqli_select_db($conexion, "sagadb");
 
                     //Realizamos consulta

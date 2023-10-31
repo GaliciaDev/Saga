@@ -5,7 +5,7 @@
 		$Nombre=$_POST['usuario'];
 		$password=$_POST['Pass'];				
 		#Conectamos con MySQL
-		$conexion=mysqli_connect("localhost","DBA-Saga","srvtySDL&");
+		include 'conexion.php';
 		mysqli_select_db($conexion, "sagadb");
 		#Consulta para validar
 		$Resultado=mysqli_query($conexion,"SELECT * FROM `login` WHERE `Matricula`='".$Nombre."' and `Password`='".$password."';");

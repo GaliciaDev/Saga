@@ -42,7 +42,7 @@
 		$total_mat = 0;
 
 		// Conexion a la BD
-		$conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+		include '../php/conexion.php';
 		mysqli_select_db($conexion, "sagadb");
 
 		// Realizamos consulta con JOIN para obtener datos del alumno y materias

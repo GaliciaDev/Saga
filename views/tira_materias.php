@@ -73,7 +73,7 @@
                     <?php
                     
                     // Conexion a la BD
-                    $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+                    include '../php/conexion.php';
                     mysqli_select_db($conexion, "sagadb");
 
                     $resultadoDocentes = mysqli_query("SELECT `nombreD`, `apellidoPd`, `apellidoMd` FROM `docentes`");

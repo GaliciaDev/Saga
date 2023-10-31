@@ -15,7 +15,7 @@
 		$Area=$_POST['areaD'];							
 		$Clave=$_POST['Clave'];		
 
-		$conexion=mysqli_connect("localhost","DBA-Saga","srvtySDL&");
+		include 'conexion.php';
 		mysqli_select_db($conexion, "sagadb");		
 
 		$Resultado=mysqli_query($conexion, "INSERT INTO `docentes`(`id_docente`, `nombreD`, `apellidoPd`, `apellidoMd`, `edad`, `sexoD`, `direccionD`, `telefonoD`, `cargoD`, `correoD`, `areaD`, `natalicioD`, `telefonoEd`, `Horario_D`, `Clave`) VALUES ($Matricula_D, '$Nombre', '$ApellidoP', '$ApellidoM', '$Edad', '$Genero', '$Domicilio', '$Telefono', '$Cargo', '$Correo', '$Area', '$FechaNac', '$Telefono_Emg', NULL, '$Clave')");

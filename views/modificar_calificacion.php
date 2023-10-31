@@ -61,7 +61,7 @@ if ($_POST) {
     $id_alumno = $_POST['id_alumno'];
 
     // Conexión a la BD
-    $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+    include '../php/conexion.php';
     mysqli_select_db($conexion, "sagadb");
 
     // Consulta para obtener los datos de calificaciones y faltas del alumno

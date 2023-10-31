@@ -62,7 +62,7 @@
                 $id_alumno = $_POST['id_alumno'];
 
                 // Conexión a la base de datos
-                $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+                include '../php/conexion.php';
                 mysqli_select_db($conexion, "sagadb");
 
                 // Consulta para obtener los datos de la tabla calificaciones
@@ -98,7 +98,7 @@
                 <?php
                     if (isset($_POST['id_alumno'])) {
                         // Conexión a la base de datos
-                        $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+                        include '../php/conexion.php';
                         mysqli_select_db($conexion, "sagadb");
 
                         // Consulta para obtener los grados cursados por el alumno
@@ -127,7 +127,7 @@
                 <?php
                     if (isset($_POST['id_alumno'])) {
                         // Conexión a la base de datos
-                        $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+                        include '../php/conexion.php';
                         mysqli_select_db($conexion, "sagadb");
 
                         // Consulta para calcular el promedio de todas las materias

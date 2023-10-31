@@ -63,7 +63,7 @@
             <input type="text" id="salon" name="aula" placeholder="Ingrese el Aula" required>
                 <?php                                        
                     //Conexion a la BD
-                    $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+                    include '../php/conexion.php';
                     mysqli_select_db($conexion, "sagadb");
 
                     //Realizamos consulta

@@ -117,21 +117,16 @@
 $id = $_GET["id"];
 
 // Conectar a la base de datos (configura las credenciales adecuadamente)
-$servername = "localhost";
-$username = "DBA-Saga";
-$password = "srvtySDL&";
-$dbname = "sagadb";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
+include 'conexion.php';
 
 // Verificar la conexión
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
+if ($conexion->connect_error) {
+    die("Error de conexión: " . $conexion->connect_error);
 }
 
 // Consulta SQL para seleccionar la fila específica por ID
 $sql = "SELECT * FROM `horarios` WHERE `id_horario` = '$id'";
-$result = $conn->query($sql);
+$result = $conexion->query($sql);
 
 if ($result->num_rows > 0) {
     // Mostrar los valores en el formulario para que el usuario pueda actualizarlos
@@ -148,7 +143,7 @@ if ($result->num_rows > 0) {
 }
 
 // Cerrar la conexión a la base de datos
-$conn->close();
+$conexion->close();
 ?>
 
 <div class="container">
@@ -218,29 +213,24 @@ $conn->close();
         $nuevoTurno = $_POST["nuevoTurno"];
 
         // Conectar a la base de datos (configura las credenciales adecuadamente)
-        $servername = "localhost";
-        $username = "DBA-Saga";
-        $password = "srvtySDL&";
-        $dbname = "sagadb";
-
-        $conn = new mysqli($servername, $username, $password, $dbname);
+        include 'conexion.php';
 
         // Verificar la conexión
-        if ($conn->connect_error) {
-            die("Error de conexión: " . $conn->connect_error);
+        if ($conexion->connect_error) {
+            die("Error de conexión: " . $conexion->connect_error);
         }
 
         // Consulta SQL para actualizar la fila en la base de datos
         $sql = "UPDATE `horarios` SET `Dias`='$nuevoDia', `Hora`='$nuevoHora', `grado_grupo`='$nuevoGradoGrupo', `Materias`='$nuevoMateria', `Docentes`='$nuevoDocente', `Aula`='$nuevoAula', `turno`='$nuevoTurno' WHERE `id_horario`='$id'";
 
-        if ($conn->query($sql) === TRUE) {
+        if ($conexion->query($sql) === TRUE) {
             echo "<label>Los datos se han actualizado correctamente.</label>";
             echo '<meta http-equiv="refresh" content="1 URL=../views/consultar_horarios.php">';
         } else {
-            echo "<label>Error al actualizar los datos: </label>" . $conn->error;
+            echo "<label>Error al actualizar los datos: </label>" . $conexion->error;
         }
 
         // Cerrar la conexión a la base de datos
-        $conn->close();
+        $conexion->close();
     }
 ?>

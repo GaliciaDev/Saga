@@ -131,23 +131,16 @@ $id = $_GET["id"];
 
 
 //Conectamos con la base de datos.
-$servername = "localhost";
-$username = "DBA-Saga";
-$password = "srvtySDL&";
-$dbname = "sagadb";
+include '../php/conexion.php';
 
 
-//Creamos la conexión.
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
+if ($conexion->connect_error) {
+    die("Error de conexión: " . $conexion->connect_error);
 }
 
 
 $sql = "SELECT * FROM `horarios` WHERE `id_horario` = '$id'";
-$result = $conn->query($sql);
+$result = $conexion->query($sql);
 
 if ($result->num_rows > 0) {
    
@@ -163,7 +156,7 @@ if ($result->num_rows > 0) {
 }
 
 
-$conn->close();
+$conexion->close();
 ?>
 
 <div class="container">
@@ -224,26 +217,21 @@ $conn->close();
         $nuevoDocente = $_POST["nuevoDocente"];
         $nuevoAula = $_POST["nuevoAula"];
 
-        $servername = "localhost";
-        $username = "DBA-Saga";
-        $password = "srvtySDL&";
-        $dbname = "sagadb";
+        include '../php/conexion.php';
 
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
-        if ($conn->connect_error) {
-            die("Error de conexión: " . $conn->connect_error);
+        if ($conexion->connect_error) {
+            die("Error de conexión: " . $conexion->connect_error);
         }
 
         $sql = "UPDATE `horarios` SET `Dias`='$nuevoDia', `Hora`='$nuevoHora', `grado_grupo`='$nuevoGradoGrupo', `Materias`='$nuevoMateria', `Docentes`='$nuevoDocente', `Aula`='$nuevoAula' WHERE `id_horario`='$id'";
 
-        if ($conn->query($sql) === TRUE) {
+        if ($conexion->query($sql) === TRUE) {
             echo "<label>Los datos se han actualizado correctamente.</label>";
         } else {
             echo "<label>Error al actualizar los datos: </label>" . $conn->error;
         }
 
-        $conn->close();
+        $conexion->close();
     }
 
 ?>

@@ -1,7 +1,7 @@
 <?php
 
     /* Instancia a la conexion HOST-DB */
-    include 'conexion_be.php';
+    include '../php/conexion_be.php';
 
     /* Variables de inicio de sesion */
     $nombre_completo = $_POST['nombre_completo'];

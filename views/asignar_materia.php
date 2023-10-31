@@ -62,7 +62,7 @@
     <select class="nombre" name="docente" id="docente">
         <?php
         // Conexión a la base de datos
-        $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+        include '../php/conexion.php';
         mysqli_select_db($conexion, "sagadb");
 
         // Consulta para obtener los nombres completos de los docentes
@@ -101,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $anio = $_POST["ano"];
 
     // Conexión a la base de datos
-    $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+    include '../php/conexion.php';
     if (!$conexion) {
         die("La conexión a la base de datos falló: " . mysqli_connect_error());
     }

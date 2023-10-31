@@ -61,7 +61,7 @@ if (isset($_POST['Enviar'])) {
     $grupo = $_POST['grupo'];
     $grado = str_split($grupo);
 
-    $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+    include '../php/conexion.php';
     mysqli_select_db($conexion, "sagadb");    
 
     // Obtener datos de los alumnos del mismo grupo

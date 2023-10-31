@@ -61,22 +61,16 @@
         </tr>
 
         <?php
-        $servername = "localhost"; // Cambia localhost por el servidor de tu base de datos
-        $username = "DBA-Saga";
-        $password = "srvtySDL&";
-        $dbname = "sagadb"; // Nombre de la base de datos
-
-        // Crear una conexión a la base de datos
-        $conn = new mysqli($servername, $username, $password, $dbname);
+        include '../php/conexion.php';
 
         // Verificar la conexión
-        if ($conn->connect_error) {
-            die("Error de conexión: " . $conn->connect_error);
+        if ($conexion->connect_error) {
+            die("Error de conexión: " . $conexion->connect_error);
         }
 
         // Consulta SQL para obtener los datos de la tabla 'horarios'
         $sql = "SELECT grado_grupo, Dias, Materias, Docentes, Hora, Aula, id_horario, Turno FROM horarios";
-        $result = $conn->query($sql);
+        $result = $conexion->query($sql);
 
         if ($result->num_rows > 0) {
             // Mostrar los datos en la tabla
@@ -102,7 +96,7 @@
             echo "No se encontraron resultados.";
         }
 
-        $conn->close();
+        $conexion->close();
         ?>
 
     </table><br>                   

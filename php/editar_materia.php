@@ -4,7 +4,7 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
     // Conexión a la base de datos
-    $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+    include 'conexion.php';
     mysqli_select_db($conexion, "sagadb");
 
     // Consulta para obtener los datos del registro a editar
@@ -78,7 +78,7 @@ if ($_POST) {
         <select class="nombre" name="nuevo_docente" id="docente">
             <?php
             // Conexión a la base de datos
-            $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+            include 'conexion.php';
             mysqli_select_db($conexion, "sagadb");
 
             // Consulta para obtener los nombres completos de los docentes

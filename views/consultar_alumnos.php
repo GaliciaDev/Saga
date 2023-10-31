@@ -32,7 +32,7 @@
 				
 
 				//Conexion a la BD
-				$conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+				include '../php/conexion.php';
 				mysqli_select_db($conexion, "sagadb");
 
 				//Realizamos consulta
@@ -97,7 +97,7 @@
 				$Grupo = $_POST['grupo'];	
 				$Turno = $_POST['turno'];					
 
-				$conexion=mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+				include '../php/conexion.php';
 				mysqli_select_db($conexion, "sagadb");		
 					
 				$Resultado = mysqli_query($conexion, "UPDATE `alumnos` SET  `nombre` = '$Nombre', `apellidoP` = '$ApellidoP', `apellidoM` = '$ApellidoM', `natalicio` = '$FechaNac', `edad` = '$Edad', `domicilio` = '$Domicilio', `tutor` = '$Tutor', `telefono` = '$Tel_Tutor', `correo` = '$Correo', `grado` = '$Grado', `grupo` = '$Grupo', `turno` = '$Turno' WHERE `id_alumno` = '$id';");	

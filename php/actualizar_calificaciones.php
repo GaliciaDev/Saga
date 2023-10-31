@@ -1,6 +1,6 @@
 <?php
 // Conexión a la base de datos
-$conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+include 'conexion.php';
 mysqli_select_db($conexion, "sagadb");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

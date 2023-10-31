@@ -52,7 +52,7 @@
 
 <?php
 // Conexión a la BD
-$conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+include '../php/conexion.php';
 mysqli_select_db($conexion, "sagadb");
 
 // Función para generar la tabla de materias

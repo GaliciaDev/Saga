@@ -41,7 +41,8 @@
             <div class="header-txt">
                 <h1>Escuela secundaria tecnica 153</h1>
                 <p>
-                    
+                    Lorem ipsum dolor sit amet consectetur a
+                    dipisicing elit. Quisquam, voluptatum.
                 </p>
                 <a href="#" class="btn-1">Informacion</a>
             </div>

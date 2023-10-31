@@ -4,5 +4,5 @@
 	session_destroy();
 	echo '<link rel="stylesheet" type="text/css" href="css/estilos_login.css">';
 	echo '<span class="Etiquetas">Cerrando sesion...</span>';
-	echo '<META HTTP-EQUIV="REFRESH" CONTENT="5;URL=####ruta a la que dirige al cerrar sesion">';
+	echo '<META HTTP-EQUIV="REFRESH" CONTENT="2;URL=../index.php">';
 ?>

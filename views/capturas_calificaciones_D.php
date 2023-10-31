@@ -121,7 +121,7 @@ validarSd();
             
 
             //Conexion a la BD
-            $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+            include '../php/conexion.php';
             mysqli_select_db($conexion, "sagadb");
 
             //Realizamos consulta
@@ -178,7 +178,7 @@ validarSd();
                     $calificacion = $_POST['calificacion'];           
                     $mat = $_POST['materia'];                           
 
-                    $conexion=mysqli_connect("localhost","DBA-Saga","srvtySDL&");
+                    include '../php/conexion.php';
                     mysqli_select_db($conexion, "sagadb");
                     
                     for ($i = 0; $i < (count($id)); $i++) {
@@ -212,7 +212,7 @@ validarSd();
                     $calificacion = $_POST['calificacion'];  
                     $mat = $_POST['materia'];                  
 
-                    $conexion=mysqli_connect("localhost","DBA-Saga","srvtySDL&");
+                    include '../php/conexion.php';
                     mysqli_select_db($conexion, "sagadb");
                     
                     for ($i = 0; $i < (count($id)); $i++) {

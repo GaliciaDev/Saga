@@ -11,7 +11,7 @@ if (isset($_GET['id_alumno'])) {
     $pdf = new FPDF();
 
     // Conexion a la BD
-    $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+    include 'conexion.php';
     mysqli_select_db($conexion, "sagadb");
 
     // Realizamos consulta con JOIN para obtener datos del alumno y materias

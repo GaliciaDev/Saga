@@ -73,7 +73,7 @@
 
             <?php
             // Realizar la conexión a la base de datos
-            $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+            include '../php/conexion.php';
             mysqli_select_db($conexion, "sagadb");
 
             // Obtener los datos de la tabla materias y alumnos
@@ -195,7 +195,7 @@
 <?php
 if (isset($_POST['capturar'])) {
     // Realizar la conexión a la base de datos
-    $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+    include '../php/conexion.php';
     mysqli_select_db($conexion, "sagadb");
 
     // Obtener los datos de la tabla materias

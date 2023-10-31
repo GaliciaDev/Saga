@@ -7,7 +7,7 @@
 		$dias = $_POST['dia'];
 		$hora = $_POST['hora'];
 
-		$conexion=mysqli_connect("localhost","DBA-Saga","srvtySDL&");
+		include 'conexion.php';
 		mysqli_select_db($conexion, "sagadb");		
 
 		$Resultado=mysqli_query($conexion, "SELECT * FROM `horarios` WHERE `grado_grupo` = '$GradoyGrupo' AND `Dias` =  '$dias' AND `Materias` = '$materias' AND `Docentes` = '$docentes' AND `Hora` = '$hora' AND `Aula` = '$aulas'");

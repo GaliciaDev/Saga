@@ -40,7 +40,7 @@
     <form action="capturas_calificaciones.php" method="POST">         
         <?php                                        
             //Conexion a la BD
-            $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+            include '../php/conexion.php';
             mysqli_select_db($conexion, "sagadb");
 
             //Realizamos consulta
@@ -84,7 +84,7 @@
                         
 
                         //Conexion a la BD
-                        $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+                        include '../php/conexion.php';
                         mysqli_select_db($conexion, "sagadb");
 
                         //Realizamos consulta
@@ -110,7 +110,7 @@
                                 $calificacion = $_POST['calificacion'];
                                 $mat = $_POST['materia'];                   
 
-                                $conexion=mysqli_connect("localhost","DBA-Saga","srvtySDL&");
+                                include '../php/conexion.php';
                                 mysqli_select_db($conexion, "sagadb");
                                 
                                 for ($i = 0; $i < (count($id)); $i++) {
@@ -142,7 +142,7 @@
                                 $calificacion = $_POST['calificacion'];           
                                 $mat = $_POST['materia'];                           
 
-                                $conexion=mysqli_connect("localhost","DBA-Saga","srvtySDL&");
+                                include '../php/conexion.php';
                                 mysqli_select_db($conexion, "sagadb");
                                 
                                 for ($i = 0; $i < (count($id)); $i++) {
@@ -174,7 +174,7 @@
                                 $calificacion = $_POST['calificacion'];  
                                 $mat = $_POST['materia'];                  
 
-                                $conexion=mysqli_connect("localhost","DBA-Saga","srvtySDL&");
+                                include '../php/conexion.php';
                                 mysqli_select_db($conexion, "sagadb");
                                 
                                 for ($i = 0; $i < (count($id)); $i++) {

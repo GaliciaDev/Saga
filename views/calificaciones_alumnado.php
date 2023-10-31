@@ -43,17 +43,11 @@
         if (isset($_GET["id"]) && is_numeric($_GET["id"])) {
             $id_alumno = $_GET["id"];
 
-            $servername = "localhost";
-            $username = "DBA-Saga";
-            $password = "srvtySDL&";
-            $dbname = "sagadb";
-
-            // Crear conexión
-            $conn = new mysqli($servername, $username, $password, $dbname);
+            include '../php/conexion.php';
 
             // Comprobar la conexión
-            if ($conn->connect_error) {
-                die("Conexión fallida: " . $conn->connect_error);
+            if ($conexion->connect_error) {
+                die("Conexión fallida: " . $conexion->connect_error);
             }
 
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -68,11 +62,11 @@
                 // Consulta para actualizar las calificaciones en la base de datos
                 $sql = "UPDATE materias SET Calificacion_1 = $calificacion1, Calificacion_2 = $calificacion2, Calificacion_3 = $calificacion3, Faltas_1 = $faltas1, Faltas_2 = $faltas2, Faltas_3 = $faltas3 WHERE id_alumno = $id_alumno";
 
-                if ($conn->query($sql) === TRUE) {
+                if ($conexion->query($sql) === TRUE) {
                     echo "Calificaciones actualizadas con éxito.";
                     echo '<meta http-equiv="refresh" content="1;url=modificar_calificacion_D.php">';
                 } else {
-                    echo "Error al actualizar calificaciones: " . $conn->error;
+                    echo "Error al actualizar calificaciones: " . $conexion->error;
                 }
             }
 
