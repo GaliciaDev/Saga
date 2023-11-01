@@ -13,19 +13,12 @@
     <link rel="stylesheet" href="css/indexP.css">
 </head>
 <body>
-    <!-- Informacion de navegacion -->
     <header class="header">
-
-        <!-- Menu de navegacion [Logo-Lista] -->
-        <div class="menu container">
-            
-            <a href="#" class="logo" ></a>
-            <input type="checkbox" id="menu"/>
-            <label for="menu">
-                <img src="/assets/img/menu1.jpg" class="menu-icono" alt=""/>
-            </label>
-
-            <nav class="navbar">
+        <div class="menu">
+            <label for="menu" class="menu-icono">&#9776;</label>
+            <div class="logo"></div>
+            <input type="checkbox" id="menu">
+            <nav class="navbar menu">
                 <ul>
                     <li><a href="https://www.facebook.com/tecnicabasiliovadillo.turnovespertino.9/?locale=es_LA%22%20class%3D%22nav__links%22">Nosotros</a></li>
                     <li><a href="../saga/views/formulario_alumnos.php">Alumnos</a></li>
@@ -33,8 +26,8 @@
                     <li><a href="../saga/views/formulario_tutores.php">Tutores</a></li>
                     <li><a href="../saga/views/formulario_administradores.php">Administrativo</a></li>
                 </ul>
-            </nav>  
-       </div>
+            </nav>
+        </div>        
 
        <!-- Informacion -->
        <div class="header-content container">
