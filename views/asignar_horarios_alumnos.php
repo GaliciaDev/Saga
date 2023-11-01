@@ -95,7 +95,7 @@
                 <select id="materia" name="materia[]" requierd>
                     <?php
                         // Conexión a la base de datos
-                        include("../php/conexion_be.php");
+                        include("../php/conexion.php");
 
                         // Consulta para obtener las Materias de tira_materias
                         $consultaMaterias = "SELECT Materias FROM tira_materias";
@@ -118,7 +118,7 @@
                 <select id="docente" name="nombre_docente[]" requierd>
                     <?php
                         // Conexión a la base de datos
-                        include("../php/conexion_be.php");
+                        include("../php/conexion.php");
 
                         // Consulta para obtener las Materias de tira_materias
                         $consultaProfesores  = "SELECT docente FROM tira_materias";
@@ -141,7 +141,7 @@
                     <select id="materia" name="materia[]" requierd>
                         <?php
                             // Conexión a la base de datos
-                            include("../php/conexion_be.php");
+                            include("../php/conexion.php");
 
                             // Consulta para obtener las Materias de tira_materias
                             $consultaMaterias = "SELECT Materias FROM tira_materias";
@@ -163,7 +163,7 @@
                     <select id="docente" name="nombre_docente[]" requierd>
                         <?php
                             // Conexión a la base de datos
-                            include("../php/conexion_be.php");
+                            include("../php/conexion.php");
 
                             // Consulta para obtener las Materias de tira_materias
                             $consultaProfesores  = "SELECT docente FROM tira_materias";
@@ -187,7 +187,7 @@
                     <select id="materia" name="materia[]" requierd>
                         <?php
                             // Conexión a la base de datos
-                            include("../php/conexion_be.php");
+                            include("../php/conexion.php");
 
                             // Consulta para obtener las Materias de tira_materias
                             $consultaMaterias = "SELECT Materias FROM tira_materias";
@@ -209,7 +209,7 @@
                     <select id="docente" name="nombre_docente[]" requierd>
                         <?php
                             // Conexión a la base de datos
-                            include("../php/conexion_be.php");
+                            include("../php/conexion.php");
 
                             // Consulta para obtener las Materias de tira_materias
                             $consultaProfesores  = "SELECT docente FROM tira_materias";
@@ -233,7 +233,7 @@
                     <select id="materia" name="materia[]" requierd>
                         <?php
                             // Conexión a la base de datos
-                            include("../php/conexion_be.php");
+                            include("../php/conexion.php");
 
                             // Consulta para obtener las Materias de tira_materias
                             $consultaMaterias = "SELECT Materias FROM tira_materias";
@@ -255,7 +255,7 @@
                     <select id="docente" name="nombre_docente[]" requierd>
                         <?php
                             // Conexión a la base de datos
-                            include("../php/conexion_be.php");
+                            include("../php/conexion.php");
 
                             // Consulta para obtener las Materias de tira_materias
                             $consultaProfesores  = "SELECT docente FROM tira_materias";
@@ -283,7 +283,7 @@
                     <select id="materia" name="materia[]" requierd>
                         <?php
                             // Conexión a la base de datos
-                            include("../php/conexion_be.php");
+                            include("../php/conexion.php");
 
                             // Consulta para obtener las Materias de tira_materias
                             $consultaMaterias = "SELECT Materias FROM tira_materias";
@@ -305,7 +305,7 @@
                     <select id="docente" name="nombre_docente[]" requierd>
                         <?php
                             // Conexión a la base de datos
-                            include("../php/conexion_be.php");
+                            include("../php/conexion.php");
 
                             // Consulta para obtener las Materias de tira_materias
                             $consultaProfesores  = "SELECT docente FROM tira_materias";
@@ -329,7 +329,7 @@
                     <select id="materia" name="materia[]" requierd>
                         <?php
                             // Conexión a la base de datos
-                            include("../php/conexion_be.php");
+                            include("../php/conexion.php");
 
                             // Consulta para obtener las Materias de tira_materias
                             $consultaMaterias = "SELECT Materias FROM tira_materias";
@@ -351,7 +351,7 @@
                     <select id="docente" name="nombre_docente[]" requierd>
                         <?php
                             // Conexión a la base de datos
-                            include("../php/conexion_be.php");
+                            include("../php/conexion.php");
 
                             // Consulta para obtener las Materias de tira_materias
                             $consultaProfesores  = "SELECT docente FROM tira_materias";
@@ -375,7 +375,7 @@
                     <select id="materia" name="materia[]" requierd>
                         <?php
                             // Conexión a la base de datos
-                            include("../php/conexion_be.php");
+                            include("../php/conexion.php");
 
                             // Consulta para obtener las Materias de tira_materias
                             $consultaMaterias = "SELECT Materias FROM tira_materias";
@@ -397,7 +397,7 @@
                     <select id="docente" name="nombre_docente[]" requierd>
                         <?php
                             // Conexión a la base de datos
-                            include("../php/conexion_be.php");
+                            include("../php/conexion.php");
 
                             // Consulta para obtener las Materias de tira_materias
                             $consultaProfesores  = "SELECT docente FROM tira_materias";
@@ -421,7 +421,7 @@
                     <select id="materia" name="materia[]" requierd>
                         <?php
                             // Conexión a la base de datos
-                            include("../php/conexion_be.php");
+                            include("../php/conexion.php");
 
                             // Consulta para obtener las Materias de tira_materias
                             $consultaMaterias = "SELECT Materias FROM tira_materias";
@@ -443,7 +443,7 @@
                     <select id="docente" name="nombre_docente[]" requierd>
                         <?php
                             // Conexión a la base de datos
-                            include("../php/conexion_be.php");
+                            include("../php/conexion.php");
 
                             // Consulta para obtener las Materias de tira_materias
                             $consultaProfesores  = "SELECT docente FROM tira_materias";
@@ -467,17 +467,11 @@
         <br><input class="btnlimpiar" name="Limpiar" type="reset" id="btnResetear" value="Limpiar"><br>        
         <input class="btnguardar" name="asignar" type="submit" id="btnEnviar" value="Establecer Horarios">     
         <?php
-            $servername = "localhost"; // Cambia localhost por el servidor de tu base de datos
-            $username = "DBA-Saga";
-            $password = "srvtySDL&";
-            $dbname = "sagadb"; // Nombre de la base de datos
-
-            // Crear una conexión a la base de datos
-            $conn = new mysqli($servername, $username, $password, $dbname);
+            include '../php/conexion.php';
 
             // Verificar la conexión
-            if ($conn->connect_error) {
-                die("Error de conexión: " . $conn->connect_error);
+            if ($conexion->connect_error) {
+                die("Error de conexión: " . $conexion->connect_error);
             }
         ?>
         <?php
@@ -500,14 +494,14 @@
 
                     // Verificar si el docente ya tiene una asignación en ese día y hora
                     $sql_verificar = "SELECT * FROM horarios WHERE Docentes = '$docentes[$i]' AND Dias = '$dia' AND Hora = '$hora'";
-                    $resultado_verificar = $conn->query($sql_verificar);
+                    $resultado_verificar = $conexion->query($sql_verificar);
 
                     if ($resultado_verificar->num_rows == 0) {
                         // Realizar la inserción en la base de datos
                         $sql_insertar = "INSERT INTO horarios (grado_grupo, Dias, Materias, Docentes, Hora, Aula, turno)
                                         VALUES ('$grupo', '$dia', '$materias[$i]', '$docentes[$i]', '$hora', '$aulas[$i]', '$turno')";
 
-                        if ($conn->query($sql_insertar) === TRUE) {
+                        if ($conexion->query($sql_insertar) === TRUE) {
                             $registro_exitoso = true;
                             // Mostrar mensaje emergente si el registro es exitoso
                             if ($registro_exitoso) {
@@ -518,7 +512,7 @@
                                     </script>";
                             }
                         } else {
-                            echo "Error en la inserción: " . $conn->error;
+                            echo "Error en la inserción: " . $conexion->error;
                         }
                     } else {
                         // Mensaje de asignación duplicada
@@ -537,11 +531,11 @@
                                             SET Materias = '$materias[$i]', Aula = '$aulas[$i]'
                                             WHERE Docentes = '$docentes[$i]' AND Dias = '$dia' AND Hora = '$hora'";
 
-                            if ($conn->query($sql_actualizar) === TRUE) {
+                            if ($conexion->query($sql_actualizar) === TRUE) {
                                 echo "Actualización exitosa.";
                                 $actualizacion_realizada = true; // Se ha realizado una actualización
                             } else {
-                                echo "Error en la actualización: " . $conn->error;
+                                echo "Error en la actualización: " . $conexion->error;
                             }
                         } else {
                             // No se realizan cambios, no se muestra el mensaje aquí
@@ -554,7 +548,7 @@
                     echo $mensaje_no_cambios;
                 }                    
             }
-            $conn->close();
+            $conexion->close();
         }
         ?> 
     </form>        

@@ -1,34 +1,27 @@
 <?php
-<<<<<<< HEAD
-    require '../php/conexion_be.php';
-
-    //$sql = "SELECT Dias, Marterias, Docentes, Hora, Aula FROM horarios WHERE  id_alumno = '$alumno'";
-
-?>
-=======
-
 include '../php/variabledS.php';
 validarS();
 
-include '../php/conexion_be.php';
+include '../php/conexion.php';
 
 // Verificar la conexión
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
 }
->>>>>>> fcad9cc (lista perfiles y modificacion variables de sesion de horarios)
 
-$matricula = $_SESSION['usuario'];
+$matricula = $_SESSION['alumno'];
 
-// Consulta SQL para obtener el grado y grupo del alumno
-$sql = "SELECT grado, grupo FROM alumnos WHERE id_alumno = '$matricula'";
+// Consulta SQL para obtener el grado, grupo y turno del alumno
+$sql = "SELECT grado, grupo, turno FROM alumnos WHERE id_alumno = '$matricula'";
 $result = $conexion->query($sql);
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $grupo = $row['grado'] . '' . $row['grupo'];
+    $turno = $row['turno'];
 } else {
-    $grupo = ''; 
+    $grupo = '';
+    $turno = '';
 }
 
 // Consulta SQL para obtener los horarios del grupo del alumno
@@ -55,21 +48,12 @@ $conexion->close();
 <body>
 <header>
     <nav>
-<<<<<<< HEAD
-        <ul class="menu">      
-            <li><a href="../index_alumno.php">Inicio</a></li>                                                      
-            <li><a href="tira_materias_alumno.php">Tira Materias</a></li>                
-            <li><a href="calificaciones_alumno.php">Calificaciones</a></li>                
-            <li><a href="views/kardex.php">Kardex</a></li>                    
-            <li><a href="../php/cerrar_sesion.php">Cerrar Sesion</a></li>
-=======
         <ul class="menu">
             <li><a href="../index_alumno.php">Inicio</a></li>
             <li><a href="tira_materias_alumno.php">Tira Materias</a></li>
             <li><a href="calificaciones_alumno.php">Calificaciones</a></li>
             <li><a href="views/kardex.php">Kardex</a></li>
             <li><a href="../php/cerrarsesion.php">Cerrar Sesion</a></li>
->>>>>>> fcad9cc (lista perfiles y modificacion variables de sesion de horarios)
         </ul>
     </nav>
 </header>
@@ -94,7 +78,6 @@ if (!empty($horarios)) {
         $materia = $horario['Materias'];
         $docente = $horario['Docentes'];
         $aula = $horario['Aula'];
-
         $horarios_organizados[$dia][$hora] = array(
             'materia' => $materia,
             'docente' => $docente,
@@ -102,10 +85,8 @@ if (!empty($horarios)) {
         );
     }
 
-    // Imprimir la tabla de horarios organizados de manera vertical
-    echo '<table class="tabla">';
-    echo '<tr><th></th><th>Lunes</th><th>Martes</th><th>Miércoles</th><th>Jueves</th><th>Viernes</th></tr>';
-    foreach (array(
+    // Lógica para ocultar horarios según el turno
+    $horas_mostradas = array(
         '7:00 - 7:45',
         '7:45 - 8:30',
         '8:30 - 9:15',
@@ -122,8 +103,19 @@ if (!empty($horarios)) {
         '6:15 - 7:00',
         '7:00 - 7:45',
         '7:45 - 8:30'
+    );
 
-    ) as $hora) {
+    // Filtrar las clases según el turno
+    if ($turno === 'Matutino') {
+        $horas_mostradas = array_slice($horas_mostradas, 0, 8); // Ocultar después de 1:30 PM
+    } else {
+        $horas_mostradas = array_slice($horas_mostradas, 8); // Ocultar antes de las 2:00 PM
+    }
+    
+    // Imprimir la tabla de horarios organizados de manera vertical
+    echo '<table class="tabla">';
+    echo '<tr><th></th><th>Lunes</th><th>Martes</th><th>Miércoles</th><th>Jueves</th><th>Viernes</th></tr>';
+    foreach ($horas_mostradas as $hora) {
         echo '<tr>';
         echo '<td>' . $hora . '</td>';
         foreach ($horarios_organizados as $dia => $horas) {
@@ -139,6 +131,8 @@ if (!empty($horarios)) {
         echo '</tr>';
     }
     echo '</table>';
+    $id = $_SESSION['alumno'];
+    echo '<br><a target="_blank" href="../php/imprimir_horario_alumno.php?id_alumno='.$id.'"><button class="btnguardar">Imprimir PDF</button></a><br><br>';
 } else {
     echo 'No se encontraron horarios para el grupo del alumno.';
 }

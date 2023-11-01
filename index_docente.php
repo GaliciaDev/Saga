@@ -1,6 +1,6 @@
 <?php
 include 'php/variabledS.php';
-include 'php/conexion_be.php';
+include 'php/conexion.php';
 validarSd();
 ?>
 
@@ -32,7 +32,7 @@ validarSd();
                     </div>
                 </li>
                 <li><a href="views/contactos_tutores_D.php">Contacto Tutores</a></li>
-                <li><a href="php/cerrar_sesion">Cerrar Sesion</a></li>
+                <li><a href="php/cerrarsesion.php">Cerrar Sesion</a></li>
             </ul>
         </nav>
     </header>
@@ -46,7 +46,7 @@ validarSd();
             $matricula = $_SESSION['docente'];
 
             // Conexión a la BD
-            $conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&");
+            include 'php/conexion.php';
             mysqli_select_db($conexion, "sagadb");
 
             // Realiza consulta

@@ -3,7 +3,7 @@ include '../php/variabledS.php';
 validarSd();
 
 // Conexión a la base de datos
-include '../php/conexion_be.php';
+include '../php/conexion.php';
 
 // Obtén el nombre completo del docente desde la tabla `docentes`
 $nombreDocente = "";
@@ -15,7 +15,7 @@ if ($fila = mysqli_fetch_assoc($resultadoNombreDocente)) {
 }
 
 // Consulta para obtener las materias asociadas al docente desde la tabla `tira_materias`
-$consultaMaterias = "SELECT Materias FROM tira_materias WHERE TRIM(docente) = '$nombreDocente'";
+$consultaMaterias = "SELECT * FROM tira_materias WHERE docente = '$nombreDocente'";
 $resultadoMaterias = mysqli_query($conexion, $consultaMaterias);
 ?>
 
@@ -49,27 +49,17 @@ $resultadoMaterias = mysqli_query($conexion, $consultaMaterias);
     </header>
     <h1>Editar Calificaciones</h1>
     <br><br>
-    <label>Seleccione una Materia:</label>
-    <form method="POST" action="">
-        <select class="materias" name="materia">
-            <?php
-            while ($filaMaterias = mysqli_fetch_assoc($resultadoMaterias)) {
-                $materia = $filaMaterias['Materias'];
-                echo "<option value='$materia'>$materia</option>";
-            }
-            ?>
-        </select>
-        <input type="submit" value="Seleccionar">
-    </form><br>
 
     <?php
-    if (isset($_POST['materia'])) {
-        $selectedMateria = $_POST['materia'];
+    // Recorremos las materias asociadas al docente
+    while ($filaMaterias = mysqli_fetch_assoc($resultadoMaterias)) {
+        $selectedMateria = $filaMaterias['Materias'];
 
         // Consulta para obtener las calificaciones de los estudiantes en la materia seleccionada
         $consultaCalificaciones = "SELECT * FROM `materias` WHERE `Nom_Materia` = '$selectedMateria'";
         $resultadoCalificaciones = mysqli_query($conexion, $consultaCalificaciones);
 
+        echo "<h2>$selectedMateria</h2>";
         echo "<table class='tabla_calificaciones'>";
         echo "<tr>";
         echo "<th>ID Alumno</th>";
@@ -81,7 +71,7 @@ $resultadoMaterias = mysqli_query($conexion, $consultaMaterias);
         echo "<th>Faltas 3</th>";
         echo "</tr>";
 
-        // Recorremos los datos de las calificaciones
+        // Recorremos los datos de las calificaciones de la materia actual
         while ($filaCalificaciones = mysqli_fetch_assoc($resultadoCalificaciones)) {
             echo "<tr>";
             echo "<td>" . $filaCalificaciones['id_alumno'] . "</td>";
@@ -97,9 +87,9 @@ $resultadoMaterias = mysqli_query($conexion, $consultaMaterias);
         echo "</table>";
     }
     ?>
-    </body>
-    <footer>
-        <p>&copy; 2023 SAGA.</p>
-        <p>Contáctanos: info@example.com</p>
-    </footer>
+</body>
+<footer>
+    <p>&copy; 2023 SAGA.</p>
+    <p>Contáctanos: info@example.com</p>
+</footer>
 </html>

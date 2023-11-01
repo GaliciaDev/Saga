@@ -41,18 +41,17 @@
             <div class="header-txt">
                 <h1>Escuela secundaria tecnica 153</h1>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur a
-                    dipisicing elit. Quisquam, voluptatum.
+                    
                 </p>
-                <a href="#" class="btn-1">Informacion</a>
+                <a href="https://www.facebook.com/p/Escuela-Secundaria-Tecnica-153-100063556944973/" class="btn-1">Informacion</a><br><br>
             </div>
        </div>
     </header>
 
     <!--Informacion de contacto cliente-->
     <section class="direction container">
-        <p>CMDX Lorem</p>
-        <p>info@info.com</p>
+        <p>Dirección: Benjamín García 119-II, Basilio Badillo, 45406 Tonalá, Jal.</p>
+        <p></p>
         <p>555-555-5555</p>
     </section>
 
@@ -64,12 +63,23 @@
         </div>
 
         <div class="about-txt">
-            <h2>Nosotros</h2>
+            <h2>Mision y Vision</h2>
             <p>
-                Lorem, ipsum dolor sit amet consectetur a
-                dipisicing elit. Neque, nostrum voluptatem? Esse sequi magnam temporibus illum alias, atque sint maiores, expedita inventore quo nihil ea non quidem eius laboriosam sunt.
+            Misión<br>
+                Somos un plantel al servicio de nuestros alumnos, que proporciona educación secundaria técnica de calidad. 
+            <br><br>
+            Visión.<br>
+                La Escuela Secundaria Técnica 1 de Jalisco es un plantel de excelencia en la Educación Básica, en donde buscamos cultivar los valores que sustentan un alto espíritu humanista que impulsa la calidad personal, lo que hace que nuestra institución avance hacia una educación integral.
+
+                Ofrecemos educación técnica de calidad en el área de Informática, lo que nos permite ser reconocidos por el desempeño de nuestros alumnos y docentes
+
+                Nuestros alumnos han aprendido a pensar críticamente y nuestros docentes aplican los principios constructivistas y de la Escuela Inteligente en la enseñanza usando los mejores recursos pedagógicos y tecnológicos.
+
+                Cumplimos con un propósito de conformar un equipo en superación permanente, con prestigio por sus innovaciones y comprometidos voluntariamente con el proceso dinámico de la calidad educativa.
+
+                Su comunidad se significa por el gran compromiso con la participación social y contamos con la corresponsabilidad de nuestros padres de familia para una mejor educación.
             </p>
-            <a href="#" class="btn-1">Informacion</a>
+            <a href="https://www.facebook.com/p/Escuela-Secundaria-Tecnica-153-100063556944973/" class="btn-1">Informacion</a>
         </div>
     </section>
 

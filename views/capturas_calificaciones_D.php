@@ -38,7 +38,7 @@ validarSd();
         if (isset($_SESSION['docente'])) {
             $id_docente = $_SESSION['docente'];
 
-            include '../php/conexion_be.php';
+            include '../php/conexion.php';
 
             // Consulta para obtener el nombre completo del docente
             $consulta_nombre = "SELECT nombreD, apellidoPd, apellidoMd FROM `docentes` WHERE `id_docente` = '$id_docente';";
@@ -147,7 +147,7 @@ validarSd();
                     $calificacion = $_POST['calificacion'];
                     $mat = $_POST['materia'];                   
 
-                    $conexion=mysqli_connect("localhost","DBA-Saga","srvtySDL&");
+                    include '../php/conexion.php';
                     mysqli_select_db($conexion, "sagadb");
                     
                     for ($i = 0; $i < (count($id)); $i++) {

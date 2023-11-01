@@ -20,7 +20,7 @@
 		
 			<img src="../assets/img/img2.png" style="width: 100%;" />        
             <a href="registro_docentes.html"><input class="btnconsulta" name="Consultar" type="button" id="btnSalir" value="Registro"></a><br>
-            <a href="eliminar_docente.php"><input class="btneliminar" name="Consultar" type="button" id="btnSalir" value="Eliminar"></a><br><br>    
+            <a href="eliminar_docente.php"><input class="btneliminar" name="Eliminar" type="button" id="btnSalir" value="Eliminar"></a><br><br>    
 			<br><a href="../index_administrativo.php"><input class="btnsalir" name="Salir" type="button" id="btnSalir" value="Salir"></a><br>
 			<img src="../assets/img/img3.png" style="width: 100%;" />		
 		</div>		
@@ -89,7 +89,7 @@
 				}
 				mysqli_close($conexion);
 			}                    
-			else if (isset($_POST['capturar'])) {		
+			else if (isset($_POST['btnguardar'])) {		
 				$id = $_POST['id'];
 				$Nombre = $_POST['nombreD'];
 				$ApellidoP = $_POST['apellidoPd'];
@@ -106,7 +106,7 @@
 				include '../php/conexion.php';
 				mysqli_select_db($conexion, "sagadb");		
 					
-				$Resultado = mysqli_query($conexion, "UPDATE `docentes` SET  `nombreD` = '$Nombre', `apellidoPd` = '$ApellidoP', `apellidoMd` = '$ApellidoM', `natalicioD` = '$FechaNac', `edad` = '$Edad', `direccionD` = '$Domicilio', `telefonoD` = '$Telefono', `telefonoEd` = '$Tel_Emg', `correoD` = '$Correo', `cargoD` = '$Cargo', `areaD` = '$Area' WHERE `id_docente` = '$id';");	
+				$Resultado = mysqli_query($conexion, "UPDATE `docentes` SET `nombreD`='$Nombre',`apellidoPd`='$ApellidoP',`apellidoMd`='$ApellidoM',`edad`='$Edad',`sexoD`=null,`direccionD`='$Domicilio',`telefonoD`='$Telefono',`cargoD`='$Cargo',`correoD`='$Correo',`areaD`='$Area',`natalicioD`='$FechaNac',`telefonoEd`='$Tel_Emg',`Horario_D`=null,`Clave`=null WHERE `id_docente` = '$id';");	
 
 				if($Resultado==true){
 					echo '

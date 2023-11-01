@@ -2,7 +2,7 @@
     include '../php/variabledS.php';
     validarSad();
 
-    include '../php/conexion_be.php';
+    include '../php/conexion.php';
 
     // Consulta para obtener las incidencias desde la base de datos
     $consultaIncidencias = "SELECT * FROM `incidenciasalumnos`";

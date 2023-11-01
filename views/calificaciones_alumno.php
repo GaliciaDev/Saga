@@ -19,19 +19,17 @@
     </nav>
 </header>
 
-<br><br><label>En base al login direccione este index: </label>
-<form method="POST" action="calificaciones_alumno.php">
-    <input type="text" name="index" placeholder="Ingrese su Matricula">
-    <input type="submit" value="Buscar">
-</form>
-
 <table class="tabla_informacion">                    
     <tr>
         <h2>Reporte de Calificaciones</h2>
         <?php
-        // Recibir los datos del buscador
-        if ($_POST) {
-            $matricula = $_POST['index'];        
+        // Inicializa la sesión
+        session_start();
+
+        // Verifica si la variable de sesión 'alumno' está configurada
+        if (isset($_SESSION['alumno'])) {
+            // Obtiene la matrícula del alumno desde la variable de sesión
+            $matricula = $_SESSION['alumno'];
 
             // Conexion a la BD
             include '../php/conexion.php';
@@ -106,10 +104,14 @@
                     $total_mat++;
                     $total_cal += $campos['Promedio_Mat'];
                 }
+                $id = $matricula;
+                echo '<br><a target="_blank" href="../php/imprimir_calificacion_alumno.php?id_alumno='.$id.'"><button class="btnguardar">Imprimir PDF</button></a><br><br>';
                 
             } else {
                 echo "Error en la consulta SQL.";
             }
+        } else {
+            echo "La variable de sesión 'alumno' no está configurada. Por favor inicie sesión para ver sus calificaciones.";
         }
         ?>
     </tr>

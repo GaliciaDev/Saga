@@ -2,7 +2,7 @@
     include '../php/variabledS.php';
     validarSad();
 
-    include '../php/conexion_be.php';
+    include '../php/conexion.php';
     $consultaUsuarios = "SELECT * FROM `alumnos`";
     $resultadoUsuarios = mysqli_query($conexion, $consultaUsuarios);
 ?>

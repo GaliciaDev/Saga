@@ -1,6 +1,6 @@
 <?php
     include 'php/variabledS.php';
-    include 'php/conexion_be.php';
+    include 'php/conexion.php';
     validarSad();
 ?>
 

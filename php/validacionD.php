@@ -1,7 +1,7 @@
 <?php
     /* Definir que trabajaremos con variables de sesion */
     session_start();
-    include '../php/conexion_be.php';
+    include '../php/conexion.php';
 
     /* Variables de acceso */
     $matricula = $_POST['matricula'];

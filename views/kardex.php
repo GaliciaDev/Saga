@@ -42,34 +42,34 @@
 
     <h1>Kardex</h1>
 
-    <!-- Formulario para ingresar el ID del alumno -->
-    <form action="" method="POST" style="margin-bottom: 20px;">
-        <label for="id_alumno">ID del Alumno:</label>
-        <input type="text" id="id_alumno" name="id_alumno" required>
-        <input type="submit" value="Buscar">
-    </form>
+    <?php
+        // Iniciar la sesión
+        session_start();
+        include '../php/variabledS.php';
 
-    <!-- Tabla grande -->
-    <table class="tabla-grande">
-        <tr>
-            <th>Materia</th>
-            <th>Calificación</th>
-            <th>Periodo</th>
-            <th>Situación</th>
-        </tr>
-        <?php
-            if (isset($_POST['id_alumno'])) {
-                $id_alumno = $_POST['id_alumno'];
+        // Verificar si la variable de sesión 'alumno' está configurada
+        if (isset($_SESSION['alumno'])) {
+            // Obtener la matrícula del alumno de la variable de sesión
+            $id_alumno = $_SESSION['alumno'];
 
-                // Conexión a la base de datos
-                include '../php/conexion.php';
-                mysqli_select_db($conexion, "sagadb");
+            // Conexión a la base de datos
+            include '../php/conexion.php';
+            mysqli_select_db($conexion, "sagadb");
 
-                // Consulta para obtener los datos de la tabla calificaciones
-                $consulta_calificaciones = "SELECT materia, calificacion, periodo, situacion FROM calificaciones WHERE id_alumno = '$id_alumno'";
-                $resultado_calificaciones = mysqli_query($conexion, $consulta_calificaciones);
+            // Consulta para obtener los datos de la tabla calificaciones
+            $consulta_calificaciones = "SELECT materia, calificacion, periodo, situacion FROM calificaciones WHERE id_alumno = '$id_alumno'";
+            $resultado_calificaciones = mysqli_query($conexion, $consulta_calificaciones);
 
-                // Recorre los resultados y muestra los datos en la tabla grande
+            // Muestra los datos en la tabla grande
+            if (mysqli_num_rows($resultado_calificaciones) > 0) {
+                echo '<table class="tabla-grande">';
+                echo '<tr>';
+                echo '<th>Materia</th>';
+                echo '<th>Calificación</th>';
+                echo '<th>Periodo</th>';
+                echo '<th>Situación</th>';
+                echo '</tr>';
+
                 while ($fila_calificacion = mysqli_fetch_assoc($resultado_calificaciones)) {
                     $materia = $fila_calificacion['materia'];
                     $calificacion = $fila_calificacion['calificacion'];
@@ -84,65 +84,46 @@
                     echo "</tr>";
                 }
 
-                // Cierra la conexión a la base de datos
-                mysqli_close($conexion);
+                echo '</table>';
+            } else {
+                echo "No se encontraron calificaciones para el alumno con matrícula $id_alumno.";
             }
+
+            // Tabla pequeña con grados cursados y promedio
+            echo '<table class="tabla-pequena">';
+            echo '<tr>';
+            echo '<th>Año Cursado</th>';
+            echo '<td>';
+            $consulta_grados = "SELECT DISTINCT grado FROM calificaciones WHERE id_alumno = '$id_alumno'";
+            $resultado_grados = mysqli_query($conexion, $consulta_grados);
+            $grados_cursados = array();
+            while ($fila_grado = mysqli_fetch_assoc($resultado_grados)) {
+                $grado = $fila_grado['grado'];
+                $grados_cursados[] = $grado;
+            }
+            echo implode(", ", $grados_cursados);
+            echo '</td>';
+            echo '</tr>';
+            echo '<tr>';
+            echo '<th>Promedio</th>';
+            echo '<td>';
+            $consulta_promedio = "SELECT AVG(calificacion) AS promedio FROM calificaciones WHERE id_alumno = '$id_alumno'";
+            $resultado_promedio = mysqli_query($conexion, $consulta_promedio);
+            $fila_promedio = mysqli_fetch_assoc($resultado_promedio);
+            $promedio = $fila_promedio['promedio'];
+            echo round($promedio, 2);
+            echo '</td>';
+            echo '</tr>';
+            echo '</table>';
+            $id = $id_alumno;
+            echo '<br><br><br><br><a target="_blank" href="../php/imprimir_kardex.php?id_alumno='.$id.'"><button class="btnguardar">Imprimir PDF</button></a><br><br>';
+
+            // Cierra la conexión a la base de datos
+            mysqli_close($conexion);
+        } else {
+            echo "La variable de sesión 'alumno' no está configurada.";
+        }
         ?>
-    </table>
-
-    <!-- Tabla pequeña -->
-    <table class="tabla-pequena">
-        <tr>
-            <th>Año Cursado</th>
-            <td>
-                <?php
-                    if (isset($_POST['id_alumno'])) {
-                        // Conexión a la base de datos
-                        include '../php/conexion.php';
-                        mysqli_select_db($conexion, "sagadb");
-
-                        // Consulta para obtener los grados cursados por el alumno
-                        $consulta_grados = "SELECT DISTINCT grado FROM calificaciones WHERE id_alumno = '$id_alumno'";
-                        $resultado_grados = mysqli_query($conexion, $consulta_grados);
-
-                        // Recorre los resultados y muestra los grados en la tabla pequeña
-                        $grados_cursados = array();
-                        while ($fila_grado = mysqli_fetch_assoc($resultado_grados)) {
-                            $grado = $fila_grado['grado'];
-                            $grados_cursados[] = $grado;
-                        }
-
-                        // Muestra los grados cursados
-                        echo implode(", ", $grados_cursados);
-
-                        // Cierra la conexión a la base de datos
-                        mysqli_close($conexion);
-                    }
-                ?>
-            </td>
-        </tr>
-        <tr>
-            <th>Promedio</th>
-            <td>
-                <?php
-                    if (isset($_POST['id_alumno'])) {
-                        // Conexión a la base de datos
-                        include '../php/conexion.php';
-                        mysqli_select_db($conexion, "sagadb");
-
-                        // Consulta para calcular el promedio de todas las materias
-                        $consulta_promedio = "SELECT AVG(calificacion) AS promedio FROM calificaciones WHERE id_alumno = '$id_alumno'";
-                        $resultado_promedio = mysqli_query($conexion, $consulta_promedio);
-                        $fila_promedio = mysqli_fetch_assoc($resultado_promedio);
-                        $promedio = $fila_promedio['promedio'];
-
-                        // Muestra el promedio
-                        echo round($promedio, 2);
-
-                        // Cierra la conexión a la base de datos
-                        mysqli_close($conexion);
-                    }
-                ?>
             </td>
         </tr>
     </table>

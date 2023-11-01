@@ -68,7 +68,7 @@ if (isset($_POST['Enviar'])) {
     $alumnos_query = "SELECT * FROM `alumnos` WHERE `grado` = '$grado[0]' AND `grupo` = '$grado[1]';";
     $alumnos_resultado = mysqli_query($conexion, $alumnos_query);
 
-    echo 'Grado y Grupo: ' . $grado[0] . ' ' . $grupo[1] . '<br>';
+    echo 'Grado y Grupo: ' . $grado[0] . '' . $grupo[1] . '<br>';
 
     echo '<table class="estadisticas_promedio_alumno">';
     echo '<h4>Promedio de Materias</h4>';

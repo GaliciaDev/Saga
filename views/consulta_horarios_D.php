@@ -31,7 +31,7 @@
         if (isset($_SESSION['docente'])) {
             $id_usuario = $_SESSION['docente'];
 
-            include '../php/conexion_be.php';
+            include '../php/conexion.php';
 
             // Consulta para obtener el nombre del profesor a partir del ID de usuario
             $consulta_nombre = "SELECT nombreD, apellidoPd, apellidoMd FROM `docentes` WHERE `id_docente` = '$id_usuario';";

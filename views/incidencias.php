@@ -3,7 +3,7 @@
     validarSad();
     
     // Conexión a la base de datos
-    include '../php/conexion_be.php';
+    include '../php/conexion.php';
     
     // Variable para almacenar el mensaje
     $mensaje = "";
