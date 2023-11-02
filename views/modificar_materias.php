@@ -32,6 +32,7 @@
                     <div class="dropdown-content">                    
                       <a href="subir_grado.php">Aumentar Grado</a>
                       <a href="lista_reprobados.php">Lista Reprobados</a>
+                      <a href="lista_egresados.php">Lista Egresados</a>
                     </div>
                 </li>                                               
                 <li class="dropdown">
@@ -133,8 +134,7 @@ if (mysqli_num_rows($resultado_materias) > 0) {
     }
 
     echo '</table>';
-    echo '<br><input type="submit" name="editar" value="Guardar Cambios"><br><br>';
-    echo '</form>';
+        echo '</form>';
 }
 ?>
 </body>

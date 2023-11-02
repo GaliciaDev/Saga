@@ -1,39 +1,3 @@
-<?php
-// Establecer la conexión a la base de datos (debes completar esto con tus propios datos de conexión)
-include '../php/conexion.php';
-
-// Verificar la conexión
-if ($conexion->connect_error) {
-    die("Conexión fallida: " . $conexion->connect_error);
-}
-
-if (isset($_POST['egresar_alumnos'])) {
-    // Realizar una consulta para verificar si se insertaron datos en la tabla "alumnos_egresados"
-    $sqlVerificarEgresados = "SELECT COUNT(*) as numEgresados FROM alumnos_egresados";
-    $resultVerificarEgresados = $conexion->query($sqlVerificarEgresados);
-    $rowVerificarEgresados = $resultVerificarEgresados->fetch_assoc();
-
-    if ($rowVerificarEgresados['numEgresados'] > 0) {
-        // Si hay datos en la tabla "alumnos_egresados", procedemos a eliminar los alumnos de la tabla "alumnos"
-        $sqlEliminarAlumnos = "DELETE FROM alumnos WHERE grado = 3";
-        if ($conexion->query($sqlEliminarAlumnos) === TRUE) {
-            echo "Los alumnos de 3er grado se han eliminado de la tabla alumnos.";
-        } else {
-            echo "Error al eliminar los alumnos: " . $conexion->error;
-        }
-    } else {
-        echo "No se han insertado datos en la tabla alumnos_egresados.";
-    }
-}
-
-// Consulta SQL para obtener los datos de la tabla "alumnos" ordenados por grado
-$sql = "SELECT id_alumno, CONCAT(nombre, ' ', apellidoP, ' ', apellidoM) AS nombre_completo, edad, tutor, correo, grado, grupo, turno, periodo
-        FROM alumnos
-        ORDER BY grado, id_alumno";
-
-$result = $conexion->query($sql);
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -68,7 +32,13 @@ $result = $conexion->query($sql);
                       <a href="modificar_materias.php">Modificar Materias</a>                      
                     </div>
                 </li>       
-                <li><a href="lista_reprobados.php">Lista Reprobados</a></li>                                               
+                <li class="dropdown">
+                    <button class="dropbtn">Listas</button>
+                    <div class="dropdown-content">                                          
+                        <a href="lista_reprobados.php">Lista Reprobados</a>
+                        <a href="lista_egresados.php">Lista Egresados</a>
+                    </div>
+                </li>
                 <li class="dropdown">
                     <button class="dropbtn">Estadisticas Alumnos</button>
                     <div class="dropdown-content">
@@ -101,9 +71,8 @@ $result = $conexion->query($sql);
         <h1>Subir Grado</h1>
         <form action="../php/subir_grado.php" method="post">
             <input type="submit" name="egresar_alumnos" value="Egresar Alumnos de 3er Grado">
-            <input type="submit" name="aumentar_grado" value="Aumentar Grado de Alumnos de 1er y 2do Grado">
-            
-         </form>
+            <input type="submit" name="aumentar_grado" value="Aumentar Grado de Alumnos de 1er y 2do Grado">                        
+        </form>
         <br><table>
             <tr>
                 <th>ID</th>
@@ -127,10 +96,13 @@ $result = $conexion->query($sql);
                 die("Conexión fallida: " . $conexion->connect_error);
             }
 
-            // Consulta SQL para obtener los datos de la tabla "alumnos" ordenados por grado
-            $sql = "SELECT id_alumno, CONCAT(nombre, ' ', apellidoP, ' ', apellidoM) AS nombre_completo, edad, tutor, correo, grado, grupo, turno, periodo
-                    FROM alumnos
-                    ORDER BY grado, id_alumno";
+            // Consulta SQL para obtener los datos de la tabla "alumnos" que no estén en "alumnos_egresados" y ordenados por grado
+            $sql = "SELECT a.id_alumno, CONCAT(a.nombre, ' ', a.apellidoP, ' ', a.apellidoM) AS nombre_completo, a.edad, a.tutor, a.correo, a.grado, a.grupo, a.turno, a.periodo, AVG(c.calificacion) AS promedio
+            FROM alumnos a
+            LEFT JOIN calificaciones c ON a.id_alumno = c.id_alumno
+            WHERE a.id_alumno NOT IN (SELECT id_alumno FROM alumnos_egresados)
+            GROUP BY a.id_alumno
+            ORDER BY a.grado, a.id_alumno";
 
             $result = $conexion->query($sql);
 

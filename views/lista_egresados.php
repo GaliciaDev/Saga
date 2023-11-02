@@ -1,25 +1,22 @@
 <?php
     include '../php/variabledS.php';
-    validarSad();
-
     include '../php/conexion.php';
-    $consultaUsuarios = "SELECT * FROM `alumnos`";
-    $resultadoUsuarios = mysqli_query($conexion, $consultaUsuarios);
+    validarSad();
 ?>
 
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="../css/perfiles.css">
+        <link rel="stylesheet" type="text/css" href="../css/index.css">
         <link rel="shortcut icon" href="../assets/img/icon.png">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>Perfiles</title>
+        <title>Lista de Egresados</title>
     </head> 
 <body>
     <header>
         <nav>
-            <ul class="menu">         
-                <li><a href="../index_administrativo.php">Inicio</a></li>                                                       
+            <ul class="menu">           
+                <li><a href="../index_administrativo.php">Inicio</a></li>"                                                     
                 <li class="dropdown">                    
                     <button class="dropbtn">Horarios</button>
                     <div class="dropdown-content">
@@ -45,8 +42,7 @@
                     <button class="dropbtn">Subir Grado</button>
                     <div class="dropdown-content">                    
                       <a href="subir_grado.php">Aumentar Grado</a>
-                      <a href="lista_reprobados.php">Lista Reprobados</a>
-                      <a href="lista_egresados.php">Lista Egresados</a>
+                      <a href="lista_reprobados.php">Lista Reprobados</a>                      
                     </div>
                 </li>                                               
                 <li class="dropdown">
@@ -61,7 +57,8 @@
                     <div class="dropdown-content">
                       <a href="registro_alumnos.html">Registro Alumnos</a>
                       <a href="registro_docentes.html">Registro Docentes</a>
-                      <a href="registro_administrativo.html">Registro Administrativo</a>                      
+                      <a href="registro_administrativo.html">Registro Administrativo</a>
+                      <a href="lista_perfiles.php">Lista Perfiles</a>
                     </div>
                 </li>   
                 <li class="dropdown">
@@ -76,42 +73,43 @@
             </ul>            
         </nav>        
     </header>    
-        <h2>Usuarios Alumnos</h2>
-        <div id="Botones">
-            <a href="lista_perfiles_D.php"><button>Perfiles Docentes</button></a>
-            <a href="lista_perfiles.php"><button>Perfiles Administrativos</button></a>
-        </div>
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Correo Electrónico</th>
-                    <th>Telefono</th>
-                    <th>Direccion</th>
-                    <th>Grado</th>                    
-                    <th>Grupo</th>
-                    <th>Turno</th>
-                    <th>Periodo</th>
-                    <th>Acciones</th>
-                </tr>
-                <?php
-                while ($fila = mysqli_fetch_assoc($resultadoUsuarios)) {
-                    echo "<tr>";
-                    echo "<td>" . $fila['id_alumno'] . "</td>";
-                    $nombreCompleto = implode(' ', [$fila['nombre'], $fila['apellidoP'], $fila['apellidoM']]);
-                    echo "<td>" . $nombreCompleto . "</td>";
-                    echo "<td>" . $fila['correo'] . "</td>";
-                    echo "<td>" . $fila['telefono'] . "</td>";
-                    echo "<td>" . $fila['domicilio'] . "</td>";
-                    echo "<td>" . $fila['grado'] . "</td>";
-                    echo "<td>" . $fila['grupo'] . "</td>";
-                    echo "<td>" . $fila['turno'] . "</td>";
-                    echo "<td>" . $fila['periodo'] . "</td>";
-                    echo "<td><a href='consultar_alumnos.php?id=" . $fila['id_alumno'] . "'>Ver Mas...</a></td>";
-                    echo "</tr>";
+    <div class="main-content">
+        <h1>Lista de Alumnos Egresados</h1>
+        <form action="lista_egresados.php" method="POST">
+            <input type="text" name="buscar" placeholder="Buscar por ID o Periodo">
+            <input type="submit" value="Buscar">
+        </form>
+
+        <?php
+            $query = "SELECT * FROM alumnos_egresados ORDER BY periodo";
+            $result = $conexion->query($query);
+
+            if ($result->num_rows > 0) {
+                echo '<table border="1">';
+                echo '<tr>';
+                echo '<th>ID Alumno</th>';
+                echo '<th>Nombre Completo</th>';
+                echo '<th>Periodo</th>';
+                echo '<th>Promedio</th>';
+                echo '</tr>';
+
+                while ($row = $result->fetch_assoc()) {
+                    echo '<tr>';
+                    echo '<td>' . $row['id_alumno'] . '</td>';
+                    echo '<td>' . $row['nombre_completo'] . '</td>';
+                    echo '<td>' . $row['periodo'] . '</td>';
+                    echo '<td>' . $row['promedio'] . '</td>';
+                    echo '</tr>';
                 }
-                ?>
-            </table>
+
+                echo '</table>';
+            } else {
+                echo 'No se encontraron alumnos egresados.';
+            }
+
+            $conexion->close();
+        ?>
+    </div>
 </body>
     <footer>
         <p>&copy; 2023 SAGA.</p>

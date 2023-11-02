@@ -31,8 +31,14 @@
                       <a href="asignar_materia.php">Asignar Materias</a>
                       <a href="modificar_materias.php">Modificar Materias</a>                      
                     </div>
-                </li>       
-                <li><a href="subir_grado.php">Aumentar Grado</a></li>                                               
+                </li>                       
+                <li class="dropdown">
+                    <button class="dropbtn">Listas</button>
+                    <div class="dropdown-content">
+                        <a href="subir_grado.php">Aumentar Grado</a>                                            
+                        <a href="lista_egresados.php">Lista Egresados</a>
+                    </div>
+                </li>
                 <li class="dropdown">
                     <button class="dropbtn">Estadisticas Alumnos</button>
                     <div class="dropdown-content">

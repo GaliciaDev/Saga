@@ -45,6 +45,7 @@
                     <div class="dropdown-content">                    
                       <a href="subir_grado.php">Aumentar Grado</a>
                       <a href="lista_reprobados.php">Lista Reprobados</a>
+                      <a href="lista_egresados.php">Lista Egresados</a>
                     </div>
                 </li>                                               
                 <li class="dropdown">

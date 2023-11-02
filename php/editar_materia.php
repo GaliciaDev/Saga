@@ -48,6 +48,7 @@ if ($_POST) {
 
     if ($resultado_actualizar) {
         echo '<h1>Los cambios se han guardado correctamente.</h1>';
+        echo '<meta http-equiv="refresh" content="1; url=../views/modificar_materias.php">';
     } else {
         echo 'Error al actualizar los datos: ' . mysqli_error($conexion);
     }
@@ -70,9 +71,9 @@ if ($_POST) {
 
         <label for="nuevas_horas_clases">Horas de Clases:</label>
         <select id="nuevas_horas_clases" name="nuevas_horas_clases">
-            <option value="5" <?php if ($horas_clases == '5') echo 'selected'; ?>>5 Hrs.</option>
-            <option value="4" <?php if ($horas_clases == '4') echo 'selected'; ?>>4 Hrs</option>
-            <option value="3" <?php if ($horas_clases == '3') echo 'selected'; ?>>3 Hrs</option>
+            <option value="5" <?php if ($horas_clases == '5 Hrs.') echo 'selected'; ?>>5 Hrs.</option>
+            <option value="4" <?php if ($horas_clases == '4 Hrs.') echo 'selected'; ?>>4 Hrs</option>
+            <option value="3" <?php if ($horas_clases == '3 Hrs.') echo 'selected'; ?>>3 Hrs</option>
         </select><br>
 
         <select class="nombre" name="nuevo_docente" id="docente">
