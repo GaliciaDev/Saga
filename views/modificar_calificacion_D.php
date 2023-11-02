@@ -43,7 +43,7 @@ $resultadoMaterias = mysqli_query($conexion, $consultaMaterias);
                     </div>
                 </li>
                 <li><a href="contactos_tutores_D.php">Contacto Tutores</a></li>
-                <li><a href="../php/cerrar_sesion.php">Cerrar Sesion</a></li>
+                <li><a href="../php/cerrarsesion.php">Cerrar Sesion</a></li>
             </ul>
         </nav>
     </header>

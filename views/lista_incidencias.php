@@ -44,8 +44,8 @@
 <body>
     <header>
         <nav>
-            <ul class="menu">      
-                <li><a href="../index_administrativo.php">Inicio</a></li>                                                          
+            <ul class="menu">          
+                <li><a href="../index_administrativo.php">Inicio</a></li>                                                      
                 <li class="dropdown">                    
                     <button class="dropbtn">Horarios</button>
                     <div class="dropdown-content">
@@ -82,14 +82,15 @@
                     </div>
                 </li>        
                 <li class="dropdown">
-                    <button class="dropbtn">Registro</button>
+                    <button class="dropbtn">Perfiles</button>
                     <div class="dropdown-content">
                       <a href="registro_alumnos.html">Registro Alumnos</a>
                       <a href="registro_docentes.html">Registro Docentes</a>
                       <a href="registro_administrativo.html">Registro Administrativo</a>
+                      <a href="lista_perfiles.php">Lista Perfiles</a>
                     </div>
-                </li>                   
-                <li><a href="incidencias.php">Registro Incidencias</a></li>
+                </li>   
+                <li><a href="incidencias.php">Registro Incidencias</a></li>                                
                 <li><a href="contactos_tutores.php">Contacto Tutores</a></li>                    
                 <li><a href="../php/cerrar_sesion.php">Cerrar Sesion</a></li>
             </ul>            

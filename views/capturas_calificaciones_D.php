@@ -15,9 +15,9 @@ validarSd();
 <body>
     <header>
         <nav>
-        <ul class="menu">
+            <ul class="menu">
                 <li><a href="../index_docente.php">Inicio</a></li>
-                <li><a href="consulta_horarios_D.php">Horario</a></li>                                    
+                <li><a href="consulta_horarios_D.php">Horario</a></li>
                 <li><a href="modificar_calificacion_D.php">Modificar Calificacion</a></li>
                 <li class="dropdown">
                     <button class="dropbtn">Estadisticas Alumnos</button>
@@ -27,7 +27,7 @@ validarSd();
                     </div>
                 </li>
                 <li><a href="contactos_tutores_D.php">Contacto Tutores</a></li>
-                <li><a href="../php/cerrar_sesion.php">Cerrar Sesion</a></li>
+                <li><a href="../php/cerrarsesion.php">Cerrar Sesion</a></li>
             </ul>
         </nav>
     </header>

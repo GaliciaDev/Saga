@@ -19,23 +19,6 @@ body{
     font-family: 'Bebas Neue', cursive;
     /* Este cambia el color de fondo de la pagina */
     background-color: #09080D;    
-    width: auto;
-    height: auto;    
-}
-/*Diseño para celular*/
-@media (max-width: 991px) {
-    nav {
-        font-weight: 700;
-        padding: 10px, 25px;
-    }
-
-    nav ul {
-        margin-right: 1rem !important;
-    }
-
-    nav a {
-        display: none !important;
-    }
 }
 
 /* Cambiar los estilos de los parrajos */

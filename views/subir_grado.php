@@ -1,3 +1,39 @@
+<?php
+// Establecer la conexión a la base de datos (debes completar esto con tus propios datos de conexión)
+include '../php/conexion.php';
+
+// Verificar la conexión
+if ($conexion->connect_error) {
+    die("Conexión fallida: " . $conexion->connect_error);
+}
+
+if (isset($_POST['egresar_alumnos'])) {
+    // Realizar una consulta para verificar si se insertaron datos en la tabla "alumnos_egresados"
+    $sqlVerificarEgresados = "SELECT COUNT(*) as numEgresados FROM alumnos_egresados";
+    $resultVerificarEgresados = $conexion->query($sqlVerificarEgresados);
+    $rowVerificarEgresados = $resultVerificarEgresados->fetch_assoc();
+
+    if ($rowVerificarEgresados['numEgresados'] > 0) {
+        // Si hay datos en la tabla "alumnos_egresados", procedemos a eliminar los alumnos de la tabla "alumnos"
+        $sqlEliminarAlumnos = "DELETE FROM alumnos WHERE grado = 3";
+        if ($conexion->query($sqlEliminarAlumnos) === TRUE) {
+            echo "Los alumnos de 3er grado se han eliminado de la tabla alumnos.";
+        } else {
+            echo "Error al eliminar los alumnos: " . $conexion->error;
+        }
+    } else {
+        echo "No se han insertado datos en la tabla alumnos_egresados.";
+    }
+}
+
+// Consulta SQL para obtener los datos de la tabla "alumnos" ordenados por grado
+$sql = "SELECT id_alumno, CONCAT(nombre, ' ', apellidoP, ' ', apellidoM) AS nombre_completo, edad, tutor, correo, grado, grupo, turno, periodo
+        FROM alumnos
+        ORDER BY grado, id_alumno";
+
+$result = $conexion->query($sql);
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,8 +45,8 @@
 <body>
     <header>
         <nav>
-            <ul class="menu">                                                                
-                <li><a href="../index_administrativo.php">Inicio</a></li> 
+            <ul class="menu">          
+                <li><a href="../index_administrativo.php">Inicio</a></li>                                                      
                 <li class="dropdown">                    
                     <button class="dropbtn">Horarios</button>
                     <div class="dropdown-content">
@@ -31,8 +67,8 @@
                       <a href="asignar_materia.php">Asignar Materias</a>
                       <a href="modificar_materias.php">Modificar Materias</a>                      
                     </div>
-                </li>         
-                <li><a href="lista_reprobados.php">Lista Reprobados</a></li>                                                
+                </li>       
+                <li><a href="lista_reprobados.php">Lista Reprobados</a></li>                                               
                 <li class="dropdown">
                     <button class="dropbtn">Estadisticas Alumnos</button>
                     <div class="dropdown-content">
@@ -41,15 +77,23 @@
                     </div>
                 </li>        
                 <li class="dropdown">
-                    <button class="dropbtn">Registro</button>
+                    <button class="dropbtn">Perfiles</button>
                     <div class="dropdown-content">
                       <a href="registro_alumnos.html">Registro Alumnos</a>
                       <a href="registro_docentes.html">Registro Docentes</a>
                       <a href="registro_administrativo.html">Registro Administrativo</a>
+                      <a href="lista_perfiles.php">Lista Perfiles</a>
                     </div>
-                </li>                 
+                </li>   
+                <li class="dropdown">
+                    <button class="dropbtn">Incidencias</button>
+                    <div class="dropdown-content">
+                      <a href="incidencias.php">Registro Incidencias</a>
+                      <a href="lista_incidencias.php">Lista de Incidencias</a>                      
+                    </div>
+                </li>                                
                 <li><a href="contactos_tutores.php">Contacto Tutores</a></li>                    
-                <li><a href="../php/cerrarsesion.php">Cerrar Sesion</a></li>
+                <li><a href="../php/cerrar_sesion.php">Cerrar Sesion</a></li>
             </ul>            
         </nav>        
         </header>
@@ -60,7 +104,7 @@
             <input type="submit" name="aumentar_grado" value="Aumentar Grado de Alumnos de 1er y 2do Grado">
             
          </form>
-        <table>
+        <br><table>
             <tr>
                 <th>ID</th>
                 <th>Nombre Completo</th>
@@ -76,7 +120,7 @@
 
             <?php
             // Establecer la conexión a la base de datos (debes completar esto con tus propios datos de conexión)
-            include '../php/conexion_be.php';
+            include '../php/conexion.php';
             
             // Verificar la conexión
             if ($conexion->connect_error) {
