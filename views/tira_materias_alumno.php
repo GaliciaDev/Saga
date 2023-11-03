@@ -4,20 +4,11 @@
     <link rel="stylesheet" type="text/css" href="../css/index.css">
     <link rel="shortcut icon" href="../assets/img/icon.png">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="../css/diseño_movil.css">
     <title>Consultar Materias</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul class="menu">
-                <li><a href="../index_alumno.php">Inicio</a></li>
-                <li><a href="consultar_horario_alumnos.php">Horario</a></li>
-                <li><a href="calificaciones_alumno.php">Calificaciones</a></li>
-                <li><a href="kardex.php">Kardex</a></li>
-                <li><a href="../php/cerrarsesion.php">Cerrar Sesion</a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php include '../php/nav_A.php'; ?>
     <body>
         <?php
         // Iniciar la sesión

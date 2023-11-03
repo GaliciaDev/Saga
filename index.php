@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="assets/img/icon.png">    
     <title>EST 153</title>
     <link rel="stylesheet" href="css/indexP.css">
+    <link rel="stylesheet" href="css/diseño_movil.css">
 </head>
 <body>
     <header class="header">
@@ -18,14 +19,14 @@
             <label for="menu" class="menu-icono">&#9776;</label>
             <div class="logo"></div>
             <input type="checkbox" id="menu">
-            <nav class="navbar menu">
+            <nav class="navbar menu">                
                 <ul>
                     <li><a href="https://www.facebook.com/tecnicabasiliovadillo.turnovespertino.9/?locale=es_LA%22%20class%3D%22nav__links%22">Nosotros</a></li>
                     <li><a href="../saga/views/formulario_alumnos.php">Alumnos</a></li>
                     <li><a href="../saga/views/formulario_docente.php">Docentes</a></li>
                     <li><a href="../saga/views/formulario_tutores.php">Tutores</a></li>
                     <li><a href="../saga/views/formulario_administradores.php">Administrativo</a></li>
-                </ul>
+                </ul>            
             </nav>
         </div>        
 

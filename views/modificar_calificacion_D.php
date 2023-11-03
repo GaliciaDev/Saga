@@ -26,27 +26,11 @@ $resultadoMaterias = mysqli_query($conexion, $consultaMaterias);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../css/estilo_modificar_calificacion.css">
     <link rel="shortcut icon" href="../assets/img/icon.png">
+    <link rel="stylesheet" href="../css/diseño_movil.css">
     <title>Editar Calificaciones</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul class="menu">
-                <li><a href="../index_docente.php">Inicio</a></li>
-                <li><a href="consulta_horarios_D.php">Horario</a></li>
-                <li><a href="capturas_calificaciones_D.php">Captura Calificaciones</a></li>
-                <li class="dropdown">
-                    <button class="dropbtn">Estadisticas Alumnos</button>
-                    <div class="dropdown-content">
-                        <a href="estadisticas_alumno_D.php">Alumno</a>
-                        <a href="estadisticas_grupal_D.php">Grupal</a>
-                    </div>
-                </li>
-                <li><a href="contactos_tutores_D.php">Contacto Tutores</a></li>
-                <li><a href="../php/cerrarsesion.php">Cerrar Sesion</a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php include '../php/nav_D.php'; ?>
     <h1>Editar Calificaciones</h1>
     <br><br>
 

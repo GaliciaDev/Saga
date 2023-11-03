@@ -13,7 +13,7 @@
 		$Correo_adm=$_POST['correoA'];			
 		$Cargo_adm=$_POST['cargoA'];
 		$Area_adm=$_POST['areaA'];					
-		$Password_adm=$_POST['Clave_adm'];		
+		$Password_adm= password_hash($_POST['Clave_adm'], PASSWORD_BCRYPT);
 
 		include 'conexion.php';
 		mysqli_select_db($conexion, "sagadb");		

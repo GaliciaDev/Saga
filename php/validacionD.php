@@ -6,14 +6,12 @@
     /* Variables de acceso */
     $matricula = $_POST['matricula'];
     $clave = $_POST['clave'];
-    //Recuerda hashear la contraseña cuando la guardes en la base de datos  :D
-    //$clave = hash('sha512', $clave);
 
     /* Consulta y verificacion del usuario */
-    $validar_login = mysqli_query($conexion, "SELECT * FROM docentes WHERE id_docente ='$matricula'
-    and Clave='$clave'");
+    $validar_login = mysqli_query($conexion, "SELECT Clave FROM docentes WHERE id_docente ='$matricula' LIMIT 1;");
+    $password_hash = mysqli_fetch_array($validar_login);
 
-    if (mysqli_num_rows($validar_login) > 0) {
+    if (password_verify($clave, $password_hash['Clave'])) {
         /* Variables de sesion */
         $_SESSION['docente'] = $matricula;
         header("location: ../index_docente.php");

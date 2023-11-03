@@ -39,64 +39,11 @@
         <link rel="stylesheet" type="text/css" href="../css/estilo_incidencias.css">
         <link rel="shortcut icon" href="../assets/img/icon.png">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="../css/diseño_movil.css">
         <title>Lista Incidencias</title>
     </head> 
 <body>
-    <header>
-        <nav>
-            <ul class="menu">          
-                <li><a href="../index_administrativo.php">Inicio</a></li>                                                      
-                <li class="dropdown">                    
-                    <button class="dropbtn">Horarios</button>
-                    <div class="dropdown-content">
-                        <a href="asignar_horarios_alumnos.php">Asignar Horarios</a>
-                        <a href="consultar_horarios.php">Consulta Horarios</a>                      
-                    </div>
-                </li>                   
-                <li class="dropdown">
-                    <button class="dropbtn">Captura Calificaciones</button>
-                    <div class="dropdown-content">
-                      <a href="modificar_calificacion.php">Modificar Calificacion</a>
-                      <a href="capturar_calif_definitiva.php">Captura Trimestral</a>                      
-                    </div>
-                </li>       
-                <li class="dropdown">
-                    <button class="dropbtn">Materias</button>
-                    <div class="dropdown-content">
-                      <a href="asignar_materia.php">Asignar Materias</a>
-                      <a href="modificar_materias.php">Modificar Materias</a>                      
-                    </div>
-                </li>       
-                <li class="dropdown">
-                    <button class="dropbtn">Subir Grado</button>
-                    <div class="dropdown-content">                    
-                      <a href="subir_grado.php">Aumentar Grado</a>
-                      <a href="lista_reprobados.php">Lista Reprobados</a>
-                      <a href="lista_egresados.php">Lista Egresados</a>
-                    </div>
-                </li>                                               
-                <li class="dropdown">
-                    <button class="dropbtn">Estadisticas Alumnos</button>
-                    <div class="dropdown-content">
-                      <a href="estadisticas_alumno.php">Alumno</a>
-                      <a href="estadistica_grupal.php">Grupal</a>                      
-                    </div>
-                </li>        
-                <li class="dropdown">
-                    <button class="dropbtn">Perfiles</button>
-                    <div class="dropdown-content">
-                      <a href="registro_alumnos.html">Registro Alumnos</a>
-                      <a href="registro_docentes.html">Registro Docentes</a>
-                      <a href="registro_administrativo.html">Registro Administrativo</a>
-                      <a href="lista_perfiles.php">Lista Perfiles</a>
-                    </div>
-                </li>   
-                <li><a href="incidencias.php">Registro Incidencias</a></li>                                
-                <li><a href="contactos_tutores.php">Contacto Tutores</a></li>                    
-                <li><a href="../php/cerrar_sesion.php">Cerrar Sesion</a></li>
-            </ul>            
-        </nav>        
-    </header>    
+<?php include '../php/nav_Admin.php'; ?>    
     <h2>Lista de Incidencias</h2>
     <table class="tabla_informacion">
         <tr>

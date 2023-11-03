@@ -13,7 +13,7 @@
 		$Correo=$_POST['correo'];		
 		$Grado=$_POST['grado'];
 		$Grupo=$_POST['grupo'];
-		$Clave=$_POST['Clave_A'];		
+		$Clave = password_hash($_POST['Clave_A'], PASSWORD_BCRYPT);		
 		$Turno=$_POST['turno'];
 		$Periodo=date("Y-m");
 

@@ -9,34 +9,12 @@ validarSd();
 <head>
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="shortcut icon" href="assets/img/icon.png">
+    <link rel="stylesheet" href="../css/diseño_movil.css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Index del Docente</title>
 </head>
-<body>
-    <header>
-        <nav>
-            <ul class="menu">
-                <li><a href="views/consulta_horarios_D.php">Horario</a></li>
-                <li class="dropdown">
-                    <button class="dropbtn">Captura Calificaciones</button>
-                    <div class="dropdown-content">
-                        <a href="views/capturas_calificaciones_D.php">Captura Calificaciones</a>
-                        <a href="views/modificar_calificacion_D.php">Modificar Calificacion</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <button class="dropbtn">Estadisticas Alumnos</button>
-                    <div class="dropdown-content">
-                        <a href="views/estadisticas_alumno_D.php">Alumno</a>
-                        <a href="views/estadisticas_grupal_D.php">Grupal</a>
-                    </div>
-                </li>
-                <li><a href="views/contactos_tutores_D.php">Contacto Tutores</a></li>
-                <li><a href="php/cerrarsesion.php">Cerrar Sesion</a></li>
-            </ul>
-        </nav>
-    </header>
-
+<body>    
+    <?php include 'php/navegacion_D.php'; ?>
     <br><br>    
     <table class="tabla_informacion">
         <tr>

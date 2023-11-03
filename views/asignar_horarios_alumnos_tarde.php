@@ -5,64 +5,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../css/estilo_asignar_horario_alumno.css">
 	<link rel="shortcut icon" href="../assets/img/icon.png">
+    <link rel="stylesheet" href="../css/diseño_movil.css">
 	<title>Asignar Horarios</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul class="menu">                                                                
-                <li><a href="../index_administrativo.php">Inicio</a></li>
-                <li><a href="consultar_horarios.php">Consulta Horarios</a></li>                   
-                <li class="dropdown">
-                    <button class="dropbtn">Captura Calificaciones</button>
-                    <div class="dropdown-content">
-                      <a href="modificar_calificacion.php">Modificar Calificacion</a>
-                      <a href="capturar_calif_definitiva.php">Captura Trimestral</a>                      
-                    </div>
-                </li>       
-                <li class="dropdown">
-                    <button class="dropbtn">Materias</button>
-                    <div class="dropdown-content">
-                      <a href="asignar_materia.php">Asignar Materias</a>
-                      <a href="modificar_materias.php">Modificar Materias</a>                      
-                    </div>
-                </li>       
-                <li class="dropdown">
-                    <button class="dropbtn">Subir Grado</button>
-                    <div class="dropdown-content">                    
-                      <a href="subir_grado.php">Aumentar Grado</a>
-                      <a href="lista_reprobados.php">Lista Reprobados</a>
-                      <a href="lista_egresados.php">Lista Egresados</a>
-                    </div>
-                </li>                                               
-                <li class="dropdown">
-                    <button class="dropbtn">Estadisticas Alumnos</button>
-                    <div class="dropdown-content">
-                      <a href="estadisticas_alumno.php">Alumno</a>
-                      <a href="estadistica_grupal.php">Grupal</a>                      
-                    </div>
-                </li>        
-                <li class="dropdown">
-                    <button class="dropbtn">Perfiles</button>
-                    <div class="dropdown-content">
-                      <a href="registro_alumnos.html">Registro Alumnos</a>
-                      <a href="registro_docentes.html">Registro Docentes</a>
-                      <a href="registro_administrativo.html">Registro Administrativo</a>
-                      <a href="lista_perfiles.php">Lista Perfiles</a>
-                    </div>
-                </li>   
-                <li class="dropdown">
-                    <button class="dropbtn">Incidencias</button>
-                    <div class="dropdown-content">
-                      <a href="incidencias.php">Registro Incidencias</a>
-                      <a href="lista_incidencias.php">Lista de Incidencias</a>                      
-                    </div>
-                </li>                                
-                <li><a href="contactos_tutores.php">Contacto Tutores</a></li>                    
-                <li><a href="../php/cerrar_sesion.php">Cerrar Sesion</a></li>
-            </ul>            
-        </nav>
-	</header>
+<?php include '../php/nav_Admin.php'; ?>
     <head>
         <br><label>Seleccionar Turno: Vespertino</label>
             <a class="boton-personalizado" href="asignar_horarios_alumnos_tarde.php">Vespertino</a>

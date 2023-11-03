@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="../css/consulta.css">
+	<link rel="stylesheet" href="../css/diseño_movil.css">
 	<link rel="shortcut icon" href="../assets/img/icon.png">
 	<title>Consulta y Actualizacion</title>
 </head>
