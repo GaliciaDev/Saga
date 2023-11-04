@@ -57,7 +57,7 @@
 						font-size: 18px;
 					}
 				</style>';
-			echo '<META HTTP-EQUIV="REFRESH" CONTENT="2;URL=../views/registro_alumnos.html">';
+			echo '<META HTTP-EQUIV="REFRESH" CONTENT="2;URL=../views/registro_alumnos.php">';
 		}		
 		else  {
 			echo "Error en la consulta";

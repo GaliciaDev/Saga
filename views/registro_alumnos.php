@@ -37,16 +37,36 @@
             <label class="g">Grado</label>
                 <input class="gr" type="number" name="grado" placeholder="Grado" required>
             <label class="g">Grupo</label>
-                <input class="gr" type="text" name="grupo" placeholder="Grupo" required>
+
+            <script>
+                function convertirAMayusculas(input) {
+                    input.value = input.value.toUpperCase();
+                }
+            </script>
+
+
+                <input class="gr" type="text" name="grupo" placeholder="Grupo" oninput="convertirAMayusculas(this)" required>
             <label class="turno">Turno</label>
                 <select class="turn" name="turno" required>
                     <option value="Matutino">Matutino</option>
                     <option value="Vespertino">Vespertino</option>
                 </select>
-            <label class="con">Contraseña</label>
-                <input class="pass" type="password" placeholder="Preferible Caracteres Especiales" name="Clave_A" class="formulario" id="CajaPass" required><br>     
-            <label class="con">Confirmar Contraseña</label><br>
-                <input class="pass" type="password" placeholder="Repita su Contraseña" name="clave_confi" class="formulario" id="CajaPass" required><br><br>
+                <label class="con">Contraseña</label>
+                    <input class="pass" type="password" placeholder="Preferible Caracteres Especiales" name="Clave_A" class="formulario" id="password" required><br>
+                <label class="con">Confirmar Contraseña</label>
+                    <input class="pass" type="password" placeholder="Repita su Contraseña" name="clave_confi" class="formulario" id="confirmPassword" required><br><br>
+
+                    <script>
+                        document.getElementById('registro_docente').addEventListener('submit', function(event) {
+                            var password = document.getElementById('password').value;
+                            var confirmPassword = document.getElementById('confirmPassword').value;
+
+                            if (password !== confirmPassword) {
+                                alert('Las contraseñas no coinciden. Por favor, vuelva a ingresarlas.');
+                                event.preventDefault(); // Evita que se envíe el formulario
+                            }
+                        });
+                    </script>
 
             <input class="btnguardar" name="Enviar" type="submit" id="btnEnviar" value="Agregar"><br><br><br>
         </div>

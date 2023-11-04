@@ -31,12 +31,9 @@ if (isset($_POST['egresar_alumnos'])) {
 
                     if ($periodo != $periodoActual && $promedio > 60) {
                         // Consulta para insertar en la tabla de egresados o actualizar si ya existe
-                        $sqlInsertEgresados = "INSERT INTO `alumnos_egresados`(`id_alumno`, `nombre_completo`, `periodo`, `promedio`) VALUES (?, ?, ?, ?)
-                            ON DUPLICATE KEY UPDATE `nombre_completo` = VALUES(`nombre_completo`), `periodo` = VALUES(`periodo`), `promedio` = VALUES(`promedio`)";
-                        $stmtInsertEgresados = $conexion->prepare($sqlInsertEgresados);
-                        $stmtInsertEgresados->bind_param("isss", $id_alumno, $nombre_completo, $periodo, $promedio);
+                        $sqlInsertEgresados = "INSERT INTO `alumnos_egresados`(`id_alumno`, `id`, `nombre_completo`, `periodo`, `promedio`) VALUES ('$id_alumno', null, '$nombre_completo','$periodo','$promedio')";                        
 
-                        if ($stmtInsertEgresados->execute()) {
+                        if (mysqli_query($conexion, $sqlInsertEgresados)) {
                             echo "Alumno de 3er grado egresado correctamente: " . $nombre_completo . "<br>";
                             echo "<meta http-equiv='refresh' content='1; url=../views/subir_grado.php'>";
                         } else {

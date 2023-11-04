@@ -54,7 +54,7 @@
 
 				include '../php/conexion.php';
 				mysqli_select_db($conexion, "sagadb");		
-					
+				
 				$Resultado = mysqli_query($conexion, "DELETE FROM `alumnos` WHERE `id_alumno` = '$id';");	
 
 				if($Resultado==true){

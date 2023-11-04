@@ -41,9 +41,9 @@
             <li class="dropdown">
                 <button class="dropbtn">Perfiles</button>
                 <div class="dropdown-content">
-                    <a href="registro_alumnos.html">Registro Alumnos</a>
-                    <a href="registro_docentes.html">Registro Docentes</a>
-                    <a href="registro_administrativo.html">Registro Administrativo</a>
+                    <a href="registro_alumnos.php">Registro Alumnos</a>
+                    <a href="registro_docentes.php">Registro Docentes</a>
+                    <a href="registro_administrativo.php">Registro Administrativo</a>
                     <a href="lista_perfiles.php">Lista Perfiles</a>
                 </div>
             </li>   
