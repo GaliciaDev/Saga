@@ -2,6 +2,7 @@
 document.getElementById("btnRegistro").addEventListener("click", registros);
 document.getElementById("btnIniciarSesion").addEventListener("click",iniciarSesion);
 window.addEventListener("resize",ajusteAncho);
+window.addEventListener("load", iniciarSesion);
 
 /* Variables de control */
 var contenedorRegistros = document.querySelector(".registros");

@@ -172,6 +172,7 @@ $conexion->close();
     <label>Hora Clase:</label>
     <select class="select" name="nuevoHora">
         <option value="<?php echo $hora; ?>"><?php echo $hora;?></option>
+        <option value="<?php echo $hora; ?>"><?php echo $hora;?></option>
         <option value="7:00 - 7:45">7:00am - 7:45am</option>
         <option value="7:45 - 8:30">7:45am - 8:30am</option>
         <option value="8:30 - 9:15">8:30am - 9:15am</option>            
@@ -179,7 +180,16 @@ $conexion->close();
         <option value="10:30 - 11:15">10:30am - 11:15am</option>
         <option value="11:15 - 12:00">11:15am - 12:00pm</option>
         <option value="12:00 - 12:45">12:00am - 12:45am</option>
-        <option value="12:45 - 13:30">12:45pm - 1:30pm</option>
+        <option value="12:45 - 1:30">12:45pm - 1:30pm</option>
+
+        <option value="2:00 - 2:45">2:00pm - 2:45pm</option>
+        <option value="2:45 - 3:30">2:45pm - 3:30pm</option>
+        <option value="3:30 - 4:15">3:30pm - 4:15pm</option>
+        <option value="4:15 - 5:00">4:15pm - 5:00pm</option>
+        <option value="5:30 - 6:15">5:30pm - 6:15pm</option>
+        <option value="6:15 - 7:00">6:15pm - 7:00pm</option>
+        <option value="7:00 - 7:45">7:00pm - 7:45pm</option>
+        <option value="7:45 - 8:30">7:45pm - 8:30pm</option>
     </select><br><br>
 
     <label>Aula:</label>

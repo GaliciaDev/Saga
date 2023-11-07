@@ -4,16 +4,16 @@ function cambiarContraseña($matricula, $nuevaContraseña) {
 
     if ($conexion->connect_error) {
         die("La conexión a la base de datos ha fallado: " . $conexion->connect_error);
-        echo "<meta http-equiv='refresh' content='2; url=../views/formulario_alumnos.php'>";
+        echo "<meta http-equiv='refresh' content='2; url=../views/formulario_docente.php'>";
     }
 
-    $sql = "UPDATE alumnos SET Clave_A = '$nuevaContraseña' WHERE id_alumno = '$matricula'";
+    $sql = "UPDATE docentes SET Clave = '$nuevaContraseña' WHERE id_docente = '$matricula'";
 
     if ($conexion->query($sql) === TRUE) {
         // Éxito en la actualización
     } else {
         echo "Error en la actualización de la contraseña: " . $conexion->error;
-        echo "<meta http-equiv='refresh' content='2; url=../views/formulario_alumnos.php'>";
+        echo "<meta http-equiv='refresh' content='2; url=../views/formulario_docente.php'>";
     }
 
     $conexion->close();
@@ -24,25 +24,25 @@ function verificarDatos($nombreCompleto, $correo, $matricula){
 
     if ($conexion->connect_error) {
         die("La conexión a la base de datos ha fallado: " . $conexion->connect_error);
-        echo "<meta http-equiv='refresh' content='2; url=../views/formulario_alumnos.php'>";
+        echo "<meta http-equiv='refresh' content='2; url=../views/formulario_docente.php'>";
     }
 
-    $sql = "SELECT nombre, apellidoP, apellidoM, correo FROM alumnos WHERE id_alumno = '$matricula'";
+    $sql = "SELECT nombreD, apellidoPd, apellidoMd, correoD FROM docentes WHERE id_docente = '$matricula'";
 
     $resultado = $conexion->query($sql);
 
     if ($resultado->num_rows > 0) {
         $fila = $resultado->fetch_assoc();
-        $nombreAlumno = $fila['nombre']. " " . $fila['apellidoP']. " " . $fila['apellidoM'];
+        $nombre = $fila['nombreD']. " " . $fila['apellidoPd']. " " . $fila['apellidoMd'];
 
-        if ($nombreAlumno === $nombreCompleto && $fila['correo'] === $correo) {
+        if ($nombre === $nombreCompleto && $fila['correoD'] === $correo) {
             return true;
         } else {
             return false;
         }
     } else {
         echo "No se encontró ningún alumno con la matrícula proporcionada.";
-        echo "<meta http-equiv='refresh' content='2; url=../views/formulario_alumnos.php'>";
+        echo "<meta http-equiv='refresh' content='2; url=../views/formulario_docente.php'>";
     }
 
     $conexion->close();
@@ -64,14 +64,14 @@ if (isset($_POST['recuperar'])) {
             //enviarCorreo($correo, $nombreCompleto, $nuevaContraseña);
 
             echo "La contraseña se ha modificado con éxito y se ha enviado un correo al alumno.";
-            echo "<meta http-equiv='refresh' content='2; url=../views/formulario_alumnos.php'>";
+            echo "<meta http-equiv='refresh' content='2; url=../views/formulario_docente.php'>";
         } else {
             echo "Las contraseñas no coinciden.";
-            echo "<meta http-equiv='refresh' content='2; url=../views/formulario_alumnos.php'>";
+            echo "<meta http-equiv='refresh' content='2; url=../views/formulario_docente.php'>";
         }
     } else {
         echo "Los datos proporcionados son incorrectos.";
-        echo "<meta http-equiv='refresh' content='2; url=../views/formulario_alumnos.php'>";
+        echo "<meta http-equiv='refresh' content='2; url=../views/formulario_docente.php'>";
     }
 }
 ?>

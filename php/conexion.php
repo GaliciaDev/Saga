@@ -1,6 +1,6 @@
 <?php
 // Variables
-$conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&", "sagadb");
+$conexion = mysqli_connect("localhost", "DBA-Saga", "srvtySDL&", "sagadb"); //localhost, DBA-Saga, srvtySDL&, sagadb
 
 mysqli_select_db($conexion, "sagadb");
 

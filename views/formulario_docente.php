@@ -44,17 +44,16 @@
                     
                  </form>
 
-                 <form action="../php/recuperC.php" method="POST" class="registrarU">
+                 <form action="../php/recuperCD.php" method="POST" class="recuperarC ocultar">
                     <h2>Recuperar Cuenta</h2>
-                    <input type="text" placeholder="Nombre" name="nombre">
-                    <input type="text" placeholder="Apellido Paterno" name="apellido1">
-                    <input type="text" placeholder="Apellido Materno" name="apellido2">
-                    <input type="text" placeholder="Correo Electronico" name="correo">                    
                     <input type="text" placeholder="Matricula" name="matricula">
-                    
-                    <button>Enviar</button>
-
-                 </form>
+                    <input type="text" placeholder="Nombre Completo" name="nombre">                    
+                    <input type="email" placeholder="Correo Electronico" name="correo">                                        
+                    <input type="password" placeholder="Nueva Contraseña" name="clave">
+                    <input type="password" placeholder="Confirmar Contraseña" name="clave2">
+                    <button type="submit" name="recuperar">Recuperar Contraseña</button>
+                </form>
+                
             </div>
         </div>
     </main>  

@@ -193,6 +193,15 @@ $conexion->close();
         <option value="11:15 - 12:00">11:15am - 12:00pm</option>
         <option value="12:00 - 12:45">12:00am - 12:45am</option>
         <option value="12:45 - 13:30">12:45pm - 1:30pm</option>
+        <option value="13:30 - 14:15">1:30pm - 2:15pm</option>
+        <option value="14:00 - 15:45">2:00pm - 2:45pm</option>
+        <option value="15:45 - 16:30">2:45pm - 3:30pm</option>
+        <option value="16:30 - 17:15">3:30pm - 4:15pm</option>
+        <option value="17:15 - 18:00">4:15pm - 5:00pm</option>
+        <option value="18:00 - 18:45">5:30pm - 6:15pm</option>
+        <option value="18:45 - 19:30">6:15pm - 7:00pm</option>
+        <option value="19:30 - 20:15">7:00pm - 7:45pm</option>
+        <option value="20:15 - 21:00">7:45pm - 8:30pm</option>
     </select><br><br>
 
     <label>Aula:</label>

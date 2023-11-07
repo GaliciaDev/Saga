@@ -436,67 +436,42 @@
         }
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $grupo = $_POST["asignar_grupo"];
-            $dia = $_POST["dia"];
+            include '../php/conexion.php';
+        
+            // Validar y limpiar los datos del formulario
+            $grupo = mysqli_real_escape_string($conexion, $_POST["asignar_grupo"]);
+            $dia = mysqli_real_escape_string($conexion, $_POST["dia"]);
             $materias = $_POST["materia"];
             $docentes = $_POST["nombre_docente"];
             $horas = ["2:00 - 2:45", "2:45 - 3:30", "3:30 - 4:15", "4:15 - 5:00", "5:30 - 6:15", "6:15 - 7:00", "7:00 - 7:45", "7:45 - 8:30"];
             $aulas = $_POST["aula"];
-            $turno = "Vespertino"; // Definir el turno como "Vespertino"
-
+            $turno = "Vespertino";
+        
             for ($i = 0; $i < count($materias); $i++) {
-                $actualizacion_realizada = false;
-                $mensaje_no_cambios = "";
-
-                for ($i = 0; $i < count($materias); $i++) {
-                    $hora = $horas[$i];
-
-                    $sql_verificar = "SELECT * FROM horarios WHERE Docentes = '$docentes[$i]' AND Dias = '$dia' AND Hora = '$hora'";
-                    $resultado_verificar = $conexion->query($sql_verificar);
-
-                    if ($resultado_verificar->num_rows == 0) {
-                        $sql_insertar = "INSERT INTO horarios (grado_grupo, Dias, Materias, Docentes, Hora, Aula, turno)
-                                        VALUES ('$grupo', '$dia', '$materias[$i]', '$docentes[$i]', '$hora', '$aulas[$i]', '$turno')";
-
-                        if ($conexion->query($sql_insertar) === TRUE) {
-                            $registro_exitoso = true;
-                            if ($registro_exitoso) {
-                                echo "<script>
-                                        setTimeout(function() {
-                                            alert('Registro exitoso');
-                                        }, 1000);
-                                    </script>";
-                            }
-                        } else {
-                            echo "Error en la inserción: " . $conexion->error;
-                        }
+                $hora = $horas[$i];
+        
+                // Consultar si ya existe una asignación para el docente, día y hora específicos
+                $sql_verificar = "SELECT * FROM horarios WHERE Docentes = '$docentes[$i]' AND Dias = '$dia' AND Hora = '$hora'";
+                $resultado_verificar = $conexion->query($sql_verificar);
+        
+                if ($resultado_verificar->num_rows == 0) {
+                    // No hay registros, insertar uno nuevo
+                    $sql_insertar = "INSERT INTO horarios (grado_grupo, Dias, Materias, Docentes, Hora, Aula, turno)
+                                    VALUES ('$grupo', '$dia', '$materias[$i]', '$docentes[$i]', '$hora', '$aulas[$i]', '$turno')";
+        
+                    if ($conexion->query($sql_insertar) === TRUE) {
+                        echo "Registro Exitoso";
+                        echo "<meta http-equiv='refresh' content='2; url=asignar_horarios_alumnos_tarde.php'>";
                     } else {
-                        $mensaje_duplicado = "Ya existe una asignación para el docente '$docentes[$i]' en el día '$dia' y hora '$hora'.<br><br>";
-                        $mensaje_duplicado .= "¿Quieres actualizar esta asignación? (Sí/No)";
-                        $respuesta_usuario = strtolower(trim(readline($mensaje_duplicado)));
-
-                        if ($respuesta_usuario === 'si' || $respuesta_usuario === 'sí') {
-                            $sql_actualizar = "UPDATE horarios 
-                                            SET Materias = '$materias[$i]', Aula = '$aulas[$i]'
-                                            WHERE Docentes = '$docentes[$i]' AND Dias = '$dia' AND Hora = '$hora'";
-
-                            if ($conexion->query($sql_actualizar) === TRUE) {
-                                echo "Actualización exitosa.";
-                                $actualizacion_realizada = true;
-                            } else {
-                                echo "Error en la actualización: " . $conexion->error;
-                            }
-                        } else {
-                            // No se realizan cambios
-                            $mensaje_no_cambios = "";
-                        }
+                        echo "Error en la inserción: " . $conexion->error;
                     }
-                }
-
-                if (!$actualizacion_realizada) {
-                    echo $mensaje_no_cambios;
+                } else {
+                    // Ya existe una asignación, puedes decidir qué hacer aquí
+                    echo "Ya existe una asignación para el docente '$docentes[$i]' en el día '$dia' y hora '$hora'.<br><br>";
+                    echo "¿Quieres actualizar esta asignación? (Sí/No)";
                 }
             }
+                    
             $conexion->close();
         }
     ?>

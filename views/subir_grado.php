@@ -14,6 +14,7 @@
         <form action="../php/subir_grado.php" method="post">
             <input type="submit" name="egresar_alumnos" value="Egresar Alumnos de 3er Grado">
             <input type="submit" name="aumentar_grado" value="Aumentar Grado de Alumnos de 1er y 2do Grado">                        
+            <input type="submit" name="eliminar_registros" value="Alumnos Egresados Borrar Registros">
         </form>
         <br><table>
             <tr>

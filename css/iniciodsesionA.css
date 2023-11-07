@@ -129,6 +129,11 @@ main{
 
 .registrarU{
     display: none;
+    background: beige;
+}
+
+.ocultar{ 
+    display: none;
 }
 
 /* Area responsiva del sitio */

@@ -105,6 +105,38 @@ if (isset($_POST['egresar_alumnos'])) {
     } else {
         echo "Error al verificar el registro en la tabla alumnos: " . $conexion->error;
     }
+} elseif (isset($_POST['eliminar_registros'])) {
+    // Acción: Eliminar registros de alumnos, materias y calificaciones
+
+    // Obtén el ID del alumno que deseas eliminar
+    $id_alumno_a_eliminar = 123; // Reemplaza con el ID del alumno que deseas eliminar
+
+    // Consulta SQL para eliminar el alumno de la tabla 'alumnos'
+    $sql_eliminar_alumno = "DELETE FROM alumnos WHERE id_alumno = ?";
+    $stmt_eliminar_alumno = $conexion->prepare($sql_eliminar_alumno);
+    $stmt_eliminar_alumno->bind_param("i", $id_alumno_a_eliminar);
+
+    // Consulta SQL para eliminar registros de calificaciones del alumno
+    $sql_eliminar_calificaciones = "DELETE FROM calificaciones WHERE id_alumno = ?";
+    $stmt_eliminar_calificaciones = $conexion->prepare($sql_eliminar_calificaciones);
+    $stmt_eliminar_calificaciones->bind_param("i", $id_alumno_a_eliminar);
+
+    // Consulta SQL para eliminar registros de materias relacionados con el alumno
+    $sql_eliminar_materias = "DELETE FROM materias WHERE id_alumno = ?";
+    $stmt_eliminar_materias = $conexion->prepare($sql_eliminar_materias);
+    $stmt_eliminar_materias->bind_param("i", $id_alumno_a_eliminar);
+
+    // Ejecutar las consultas de eliminación
+    if (
+        $stmt_eliminar_alumno->execute() &&
+        $stmt_eliminar_calificaciones->execute() &&
+        $stmt_eliminar_materias->execute()
+    ) {
+        echo "Registros eliminados correctamente.";
+        echo "<meta http-equiv='refresh' content='2; url=../views/subir_grado.php'>";
+    } else {
+        echo "Error al eliminar registros: " . $conexion->error;
+    }
 }
 
 // Cierra la conexión a la base de datos

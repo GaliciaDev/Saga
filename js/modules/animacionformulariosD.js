@@ -2,6 +2,7 @@
 document.getElementById("btnRegistro").addEventListener("click", registros);
 document.getElementById("btnIniciarSesion").addEventListener("click",iniciarSesion);
 window.addEventListener("resize",ajusteAncho);
+window.addEventListener("load", iniciarSesion);
 
 /* Variables de control */
 var contenedorRegistros = document.querySelector(".registros");
@@ -14,16 +15,16 @@ var caja__trasera_registro = document.querySelector(".caja__trasera-registro");
 function ajusteAncho() {
     if (window.innerWidth > 850) {
         caja__trasera_inicio.style.display = "block";
-        caja__trasera_registro.style.display = "block";        
+        caja__trasera_registro.style.display = "block";
     } 
     else {
-        caja__trasera_registro.style.display = "block";
-        caja__trasera_registro.style.opacity = "1";
-        caja__trasera_inicio.style.display = "none";
         formularioIniciarS.style.display = "block";
-        formularioRegistro.style.display = "none";
+        caja__trasera_registro.style.display = "none";
+        caja__trasera_registro.style.opacity = "0";
+        caja__trasera_inicio.style.display = "none";
+        formularioRegistro.style.display = "block";
         contenedorRegistros.style.left = "0px";
-    }    
+    }
 }
     
 ajusteAncho();
