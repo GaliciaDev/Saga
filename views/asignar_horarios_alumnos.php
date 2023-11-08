@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">    
     <link rel="stylesheet" type="text/css" href="../css/estilo_asignar_horario_alumno.css">
 	<link rel="shortcut icon" href="../assets/img/icon.png">
     <link rel="stylesheet" href="../css/diseño_movil.css">
@@ -491,7 +491,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>        
 </body><br>
 <footer>
-    <p>&copy; 2023 SAGA.</p>
-    <p>Contáctanos: info@example.com</p>
+<?php include '../php/footerG.php';?>
 </footer>
 </html>

@@ -123,6 +123,9 @@
         }
     </style>
 </head>
+<footer>
+<?php include '../php/footerG.php';?>
+    </footer>
 </html>
 <?php
 

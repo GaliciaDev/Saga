@@ -119,8 +119,7 @@
         </style>
     </body>
     <footer>
-        <p>&copy; 2023 SAGA.</p>
-        <p>Contáctanos: info@example.com</p>
+    <?php include '../php/footerG.php';?>
     </footer>
 </body>
 </html>

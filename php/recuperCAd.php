@@ -1,4 +1,8 @@
 <?php
+// clase PHPMailer
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
+
 function cambiarContraseña($matricula, $nuevaContraseña) {
     include 'conexion.php';
 
@@ -48,6 +52,36 @@ function verificarDatos($nombreCompleto, $correo, $matricula){
     $conexion->close();
 }
 
+function enviarCorreo($correo, $nombreCompleto, $matricula, $nuevaContraseña) {
+    $mail = new PHPMailer\PHPMailer\PHPMailer();
+
+    // Configura el servidor SMTP
+    $mail->IsSMTP();
+    $mail->Host = 'tu_host_smtp';
+    $mail->Port = 587; // Puerto SMTP
+    $mail->SMTPAuth = true;
+    $mail->Username = 'tu_correo_smtp';
+    $mail->Password = 'tu_contraseña_smtp';
+    
+    // Establece el asunto y el cuerpo del correo
+    $mail->Subject = 'Cambio de Contraseña';
+    $mail->Body = "Se está intentando cambiar la contraseña de acceso del control escolar SAGA para el usuario $nombreCompleto. ¿Acepta el cambio de contraseña?";
+    
+    // Agrega botones en el cuerpo del correo
+    $mail->Body .= '<br><a href="tu_sitio_web/confirmar.php?matricula='.$matricula.'&accion=aceptar">Afirmativo</a>';
+    $mail->Body .= '<br><a href="tu_sitio_web/confirmar.php?matricula='.$matricula.'&accion=rechazar">No soy Yo</a>';
+    
+    $mail->setFrom('tu_correo', 'Tu Nombre');
+    $mail->addAddress($correo, $nombreCompleto);
+    
+    // Envía el correo
+    if ($mail->send()) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 if (isset($_POST['recuperar'])) {
     $nombreCompleto = $_POST['nombre'];
     $correo = $_POST['correo'];
@@ -58,10 +92,10 @@ if (isset($_POST['recuperar'])) {
     if (verificarDatos($nombreCompleto, $correo, $matricula)) {
         if (password_verify($confirmarContraseña, $nuevaContraseña)) {
             // Actualiza la contraseña en la base de datos
-            cambiarContraseña($matricula, $nuevaContraseña);
+            //cambiarContraseña($matricula, $nuevaContraseña);
 
             // Envía un correo electrónico al alumno con la contraseña modificada y otros detalles
-            //enviarCorreo($correo, $nombreCompleto, $nuevaContraseña);
+            enviarCorreo($correo, $nombreCompleto, $nuevaContraseña);
 
             echo "La contraseña se ha modificado con éxito y se ha enviado un correo al alumno.";
             echo "<meta http-equiv='refresh' content='2; url=../views/formulario_administradores.php'>";

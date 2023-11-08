@@ -18,7 +18,7 @@
         <div class="menu">
             <label for="menu" class="menu-icono">&#9776;</label>
             <div class="logo"></div>
-            <input type="checkbox" id="menu">
+                <input type="checkbox" id="menu">
             <nav class="navbar menu">                
                 <ul>
                     <li><a href="https://www.facebook.com/tecnicabasiliovadillo.turnovespertino.9/?locale=es_LA%22%20class%3D%22nav__links%22">Nosotros</a></li>

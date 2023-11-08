@@ -9,7 +9,7 @@
     <head>
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <link rel="shortcut icon" href="assets/img/icon.png">
-        <link rel="stylesheet" href="../css/diseño_movil.css">
+        <link rel="stylesheet" href="css/diseño_movil.css">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Index Administrativo</title>
     </head> 
@@ -51,7 +51,6 @@
     </table><br><br><br>
 </body>
     <footer>
-        <p>&copy; 2023 SAGA.</p>
-        <p>Contáctanos: info@example.com</p>
+    <?php include 'php/footerG.php';?>
     </footer>
 </html>  

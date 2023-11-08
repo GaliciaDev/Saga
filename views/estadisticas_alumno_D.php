@@ -97,3 +97,8 @@
 		echo '<br><a target="_blank" href="../php/imprimir_estadisticas.php?id_alumno='.$id.'"><button class="btnguardar">Imprimir PDF</button></a><br><br>';
 	}
 ?>
+</body>
+<footer>
+<?php include '../php/footerG.php';?>
+</footer>
+</html>
