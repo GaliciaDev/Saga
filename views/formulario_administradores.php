@@ -38,7 +38,7 @@
             <div class="registros">
                 <form action="../php/validacionAd.php" method="POST" class="inicioDs">
                     <h2>Iniciar sesion</h2>
-                    <input type="text" placeholder="Matricula" name="matricula">
+                    <input type="text" autofocus placeholder="Matricula" name="matricula">
                     <input type="password" placeholder="Contraseña" name="clave">
                     <button>Entrar</button>
                     

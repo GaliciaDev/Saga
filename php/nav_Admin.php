@@ -1,61 +1,75 @@
+<!doctype html>
+<!--[if lte IE 9]>
+<html lang="en" class="oldie">
+<![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" media="all" href="../css/Nav_Admin.css" />
+</head>
 <header>
-    <nav>
-        <ul class="menu">          
-            <li><a href="../index_administrativo.php">Inicio</a></li>                                                      
-            <li class="dropdown">                    
-                <button class="dropbtn">Horarios</button>
-                <div class="dropdown-content">
-                    <a href="asignar_horarios_alumnos.php">Asignar Horarios</a>
-                    <a href="consultar_horarios.php">Consulta Horarios</a>                      
-                </div>
-            </li>                   
-            <li class="dropdown">
-                <button class="dropbtn">Captura Calificaciones</button>
-                <div class="dropdown-content">
-                    <a href="modificar_calificacion.php">Modificar Calificacion</a>
-                    <a href="capturar_calif_definitiva.php">Captura Trimestral</a>                      
-                </div>
-            </li>       
-            <li class="dropdown">
-                <button class="dropbtn">Materias</button>
-                <div class="dropdown-content">
-                    <a href="asignar_materia.php">Asignar Materias</a>
-                    <a href="modificar_materias.php">Modificar Materias</a>                      
-                </div>
-            </li>       
-            <li class="dropdown">
-                <button class="dropbtn">Subir Grado</button>
-                <div class="dropdown-content">                    
-                    <a href="subir_grado.php">Aumentar Grado</a>
-                    <a href="lista_reprobados.php">Lista Reprobados</a>
-                    <a href="lista_egresados.php">Lista Egresados</a>
-                </div>
-            </li>                                               
-            <li class="dropdown">
-                <button class="dropbtn">Estadisticas Alumnos</button>
-                <div class="dropdown-content">
-                    <a href="estadisticas_alumno.php">Alumno</a>
-                    <a href="estadistica_grupal.php">Grupal</a>                      
-                </div>
-            </li>        
-            <li class="dropdown">
-                <button class="dropbtn">Perfiles</button>
-                <div class="dropdown-content">
-                    <a href="registro_alumnos.php">Registro Alumnos</a>
-                    <a href="registro_docentes.php">Registro Docentes</a>
-                    <a href="registro_administrativo.php">Registro Administrativo</a>
-                    <a href="lista_perfiles.php">Lista Perfiles</a>
-                </div>
-            </li>   
-            <li class="dropdown">
-                <button class="dropbtn">Incidencias</button>
-                <div class="dropdown-content">
-                    <a href="incidencias.php">Registro Incidencias</a>
-                    <a href="lista_incidencias.php">Lista de Incidencias</a>                      
-                </div>
-            </li>                                
-            <li><a href="contactos_tutores.php">Contacto Tutores</a></li>                    
-            <li><a href="../php/cerrar_sesion.php">Cerrar Sesion</a></li>
-        </ul>            
-    </nav>        
+<nav>
+		<menu>
+			<menuitem id="demo1">
+				<a>Horarios</a>
+				<menu>
+					<menuitem><a href="asignar_horarios_alumnos.php">Asignar Horarios</a></menuitem>
+                    <menuitem><a href="consultar_horarios.php">Consulta Horarios</a></menuitem>               					
+				</menu>
+			</menuitem>
+            <menuitem id="demo1">
+				<a>Captura Calificaciones</a>
+				<menu>
+					<menuitem><a href="modificar_calificacion.php">Modificar Calificacion</a></menuitem>
+                    <menuitem><a href="capturar_calif_definitiva.php">Captura Trimestral</a></menuitem>               				
+                <menuitem>
+                  <a>Materias</a>
+                  <menu>
+                    <menuitem><a href="asignar_materia.php">Asignar Materias</a></menuitem>
+                    <menuitem><a href="modificar_materias.php">Modificar Materias</a></menuitem>          
+                  </menu>  
+               </menuitem>    					
+				</menu>
+			</menuitem>            
+            <menuitem id="demo1">
+				<a>Estadisticas Alumnos</a>
+				<menu>                                                  
+					<menuitem><a href="estadisticas_alumno.php">Alumno</a></menuitem>
+                    <menuitem><a href="estadistica_grupal.php">Grupal</a></menuitem>   
+                <menuitem>
+                  <a>Incidencias</a>
+                  <menu>
+                    <menuitem><a href="incidencias.php">Registro Incidencias</a></menuitem>
+                    <menuitem><a href="lista_incidencias.php">Lista de Incidencias</a></menuitem>               				                              
+                  </menu>  
+               </menuitem>            				                    
+				</menu>
+			</menuitem>
+            <menuitem id="demo1">
+				<a>Perfiles</a>
+				<menu>                                                                                          
+					<menuitem><a href="registro_alumnos.php">Registro Alumnos</a></menuitem>
+                    <menuitem><a href="registro_docentes.php">Registro Docentes</a></menuitem>               				
+                    <menuitem><a href="registro_administrativo.php">Registro Administrativo</a></menuitem>
+                <menuitem>
+                  <a>Lista de Perfiles</a>
+                  <menu>
+                     <menuitem><a href="lista_perfiles.php">Perfiles Administrativos</a>  </menuitem>
+                     <menuitem><a href="lista_perfiles_D.php">Perfiles Docentes</a></menuitem>
+                     <menuitem><a href="lista_perfiles_A.php">Perfiles Alumnos</a></menuitem>                     
+                  </menu>  
+               </menuitem>
+				</menu>
+			</menuitem>            
+         <menuitem><a href="contactos_tutores.php">Contacto Tutores</a></menuitem>
+         <menuitem><a href="../php/cerrar_sesion.php">Cerrar Sesion</a></menuitem>
+		</menu>
+	</nav>
 </header>
+<body>
+</body>
+</html>
