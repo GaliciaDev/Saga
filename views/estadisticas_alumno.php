@@ -12,7 +12,7 @@
 <body>	
 <?php include '../php/nav_Admin.php'; ?>
 	<head>
-		<h1>Desempeño del Alumno</h1>		
+		<br><h1>Desempeño del Alumno</h1><br><br>	
 	</head>	
 	
 	<form action="estadisticas_alumno.php" method="POST">
@@ -99,3 +99,6 @@
 		echo '<br><a target="_blank" href="../php/imprimir_estadisticas.php?id_alumno='.$id.'"><button class="btnguardar">Imprimir PDF</button></a><br><br>';
 	}
 ?>
+</body>
+<?php include '../php/footerG.php'; ?>
+</html>

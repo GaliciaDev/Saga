@@ -11,7 +11,7 @@
 <body>
 <?php include '../php/nav_Admin.php'; ?>
 <body>
-<h1>Tabla de Materias</h1>
+<br><h1>Tabla de Materias</h1>
 
 <?php
 // Conexión a la BD
@@ -67,7 +67,7 @@ $resultado_materias = mysqli_query($conexion, $consulta_materias);
 
 if (mysqli_num_rows($resultado_materias) > 0) {
     echo '<form method="POST">';
-    echo '<table>';
+    echo '<center><table>';
     echo '<tr>';
     echo '<th>Materia</th>';
     echo '<th>Horas de Clases</th>';
@@ -80,14 +80,14 @@ if (mysqli_num_rows($resultado_materias) > 0) {
         generarTablaMaterias($fila['id'], $fila['Materias'], $fila['Horas_Clases'], $fila['docente']);
     }
 
-    echo '</table>';
+    echo '</table></center>';
         echo '</form>';
 }
 ?>
 </body>
 <style>
     table {
-    width: 100%;
+    width: 90%;
     border-collapse: collapse;
     margin-top: 20px;
 }

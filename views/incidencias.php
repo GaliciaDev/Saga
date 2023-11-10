@@ -51,24 +51,33 @@
         </head> 
     <body>
     <?php include '../php/nav_Admin.php'; ?>
-        <h2>Registrar Incidencia</h2>
+        <br><h2>Registrar Incidencia</h2><br><br>
             <form method="post" action="incidencias.php">
                 <label for="alumno">Alumno:</label>
                 <input type="text" id="alumno" name="alumno" required>
 
-                <label for="tipo">Tipo de Incidencia:</label>
+                &emsp;<label for="tipo">Tipo de Incidencia:</label>
                 <select id="tipo" name="tipo" required>
                     <option value="Comportamiento">Comportamiento</option>
                     <option value="Faltas">Faltas</option>
                     <option value="Otro">Otro</option>
                 </select>
 
-                <label for="descripcion">Descripción de la Incidencia:</label>
-                <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+                &emsp;<label for="descripcion">Descripción de la Incidencia:</label>
+                &emsp;<textarea id="descripcion" name="descripcion" rows="4" required></textarea>
 
-                <input type="submit" value="Registrar Incidencia">
+                &emsp;<input type="submit" value="Registrar Incidencia">
             </form>
     </body>
+    <style>
+        select {
+            width: 12%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
         <footer>
         <?php include '../php/footerG.php';?>
         </footer>

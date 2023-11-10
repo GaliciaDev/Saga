@@ -48,7 +48,7 @@ $conexion->close();
 </head>
 <body>
 <?php include '../php/nav_A.php'; ?>
-<h1>Horario de Alumno</h1>
+<br><h1>Horario de Alumno</h1><br><br>
 
 <?php
 // Verificar si se encontraron horarios para el grupo
@@ -128,7 +128,20 @@ if (!empty($horarios)) {
     echo 'No se encontraron horarios para el grupo del alumno.';
 }
 ?>
-
+    <style>
+        .btnguardar {
+            width: 16%;
+            padding: 10px;
+            color: white;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: #000;
+        }
+        .btnguardar:hover {
+            background-color: #333;
+        }
+    </style>
 </body>
 <footer>
 <?php include '../php/footerG.php';?>

@@ -8,20 +8,37 @@ validarSd();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../css/capturas.css">
+    <link rel="stylesheet" type="text/css" href="../css/estilo_capturas.css">
     <link rel="shortcut icon" href="../assets/img/icon.png">
     <link rel="stylesheet" href="../css/diseño_movil.css">
     <title>Captura Calificacion</title>
 </head>
+<style>
+    .materias {
+        width: 16%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    
+    input[type="number"] {
+        width: 16%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+</style>
 <body>
     <?php include '../php/nav_D.php'; ?>
-    <h1>Captura Calificacion</h1>
+    <br><h1>Captura Calificacion</h1>
     <br><br>
 
     <?php
         if (isset($_SESSION['docente'])) {
             $id_docente = $_SESSION['docente'];
-
+            $nombre_profesor = '';
             include '../php/conexion.php';
 
             // Consulta para obtener el nombre completo del docente
@@ -35,13 +52,22 @@ validarSd();
                 $consulta_grados_grupos = "SELECT grado_grupo FROM `horarios` WHERE `Docentes` = '$nombre_profesor';";
                 $resultado_grados_grupos = mysqli_query($conexion, $consulta_grados_grupos);
 
+                $grados_grupos_unicos = array();
+
+                // Almacena grados y grupos únicos en un array
+                while ($fila = mysqli_fetch_assoc($resultado_grados_grupos)) {
+                    $grados_grupos_unicos[] = $fila['grado_grupo'];
+                }
+
+                $grados_grupos_unicos = array_unique($grados_grupos_unicos);
+
                 echo '<form class="form_captura" action="capturas_calificaciones_D.php" method="POST">
                         <label>Grado y Grupo</label>
                         <select class="materias" name="lista_mat">';
                 
-                // Agrega opciones al select con los grados y grupos obtenidos
-                while ($fila = mysqli_fetch_assoc($resultado_grados_grupos)) {
-                    echo '<option value="' . $fila['grado_grupo'] . '">' . $fila['grado_grupo'] . '</option>';
+                // Imprime las opciones del menú desplegable para grados y grupos únicos
+                foreach ($grados_grupos_unicos as $valor) {
+                    echo '<option value="' . $valor . '">' . $valor . '</option>';
                 }
                 
                 echo '</select>
@@ -55,7 +81,7 @@ validarSd();
         }
                       
         // Consulta para obtener las materias del docente        
-        $consulta_materias = "SELECT `Materias` FROM `horarios` WHERE `Docentes` = '$nombre_profesor';";
+        $consulta_materias = "SELECT `Materias` FROM `tira_materias` WHERE `docente` = '$nombre_profesor';";
         $resultado_materias = mysqli_query($conexion, $consulta_materias);
         
         if (mysqli_num_rows($resultado_materias) > 0) {

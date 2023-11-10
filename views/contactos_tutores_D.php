@@ -3,17 +3,26 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../css/contactos_tutores.css">
+	<link rel="stylesheet" type="text/css" href="../css/estilo_contactos_tutores.css">
 	<link rel="shortcut icon" href="../assets/img/icon.png">
 	<link rel="stylesheet" href="../css/diseño_movil.css">
 	<title>Contacto a Tutores</title>
 </head>
 <body>
 	<?php include '../php/nav_D.php'; ?>
-	<head>		
-		<br><br><label>Alumno: </label>
+	<head>	
+		<style>
+			.dato{
+				width: 16%;
+				padding: 10px;
+				margin-bottom: 20px;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+			}
+		</style>	
+		<center><br><br><label>Alumno: </label>
 		<form method="POST" action="contactos_tutores_D.php">
-			<input type="text" name="contactos" placeholder="Ingrese la Matricula del Alumno">
+			<input class="dato" type="text" autofocus name="contactos" placeholder="Ingrese la Matricula del Alumno">
 			<input type="submit" value="Buscar">
 		</form>
 	</head>
@@ -49,7 +58,7 @@
 						<th>Correo</th>
 						<td>'.($campo['correo']).'</td>
 					</tr>  
-				</table>
+				</table></center>
 				';
 			} else {
 				echo "Usuario no encontrado.";

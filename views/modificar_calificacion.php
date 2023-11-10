@@ -10,7 +10,7 @@
 </head>
 <body>
 <?php include '../php/nav_Admin.php'; ?>
-<h1>Modificar Calificaciones</h1>
+<br><h1>Modificar Calificaciones</h1><br><br>
 <!-- Formulario para ingresar el ID del alumno -->
 <form method="POST">
     <label for="id">Ingrese el ID del alumno:</label>

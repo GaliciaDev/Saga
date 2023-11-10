@@ -44,7 +44,7 @@
                 <option class="reg" value="opcion">Elija una Opcion</option>
                 <option class="reg" value="Docente">Ciencias Administrativas</option>
                 <option class="reg" value="Coordinacion">Control Escolar</option>
-                <option class="reg" value="Secretaria">Nose</option>            
+                <option class="reg" value="Secretaria">Administrador</option>            
             </select><br><br>
             <label class="fe">Fecha de Nacimiento</label>
                 <input class="na" type="date" name="natalicioA" class="CajasL" required><br><br>

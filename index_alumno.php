@@ -18,7 +18,7 @@
 
     <table class="tabla_informacion">                    
         <tr>
-            <h2>Informacion General</h2>
+            <br><h2>Informacion General</h2><br><br>
             <?php
 			$matricula = $_SESSION['alumno'];
 

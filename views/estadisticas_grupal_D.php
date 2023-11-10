@@ -11,7 +11,7 @@
 <body>	
 	<?php include '../php/nav_D.php'; ?>
 	<head>
-		<h1>Desenpeño del Grupo</h1>		
+		<br><h1>Desenpeño del Grupo</h1><br><br>		
 	</head>
 	<form action="estadisticas_grupal_D.php" method="POST">
 		<label>Ingrese un Grupo:</label>

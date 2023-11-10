@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../css/contactos_tutores.css">
+	<link rel="stylesheet" type="text/css" href="../css/estilo_contactos_tutores.css">
 	<link rel="shortcut icon" href="../assets/img/icon.png">
 	<link rel="stylesheet" href="../css/diseño_movil.css">
 	<title>Contacto a Tutores</title>
@@ -11,15 +11,24 @@
 <body>
 <?php include '../php/nav_Admin.php'; ?>
 	<head>		
-		<br><br><label>Alumno: </label>
+		<center><br><br><label>Alumno: </label><br>
 		<form method="POST" action="contactos_tutores.php">
-			<input type="text" name="contactos" placeholder="Ingrese la Matricula del Alumno">
-			<input type="submit" value="Buscar">
+			<input type="text" name="contactos" placeholder="Ingrese la Matricula del Alumno"><br><br>
+			<input type="submit" value="Buscar">			
 		</form>
 	</head>
 
+	<style>
+		input[type="text"] {
+			width: 16%;
+			padding: 10px;
+			margin-bottom: 20px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+		}
+	</style>
 	<table class="contacto_tutores">
-		<h4>Informacion</h4>		
+		<br><center><h4>Informacion</h4></center><br>
 
 		<?php
 			//Recibir los datos del buscador
@@ -50,7 +59,7 @@
 				';                            
 			}
     		?>  
-	</table>
+	</table></center><br><br>
 </body>
 	<footer>
 	<?php include '../php/footerG.php';?>

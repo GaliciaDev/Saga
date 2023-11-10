@@ -42,7 +42,7 @@
                 $resultadoMaterias = mysqli_query($conexion, $consultaMaterias);
 
                 if (mysqli_num_rows($resultadoMaterias) > 0) {
-                    echo "<h2>Materias del Alumno</h2>";
+                    echo "<br><h2>Materias del Alumno</h2><br><br>";
                     echo "<table>";
                     echo "<tr>";
                     echo "<th>Materia</th>";
@@ -117,6 +117,20 @@
                 background-color: #ddd;
             }
         </style>
+        <style>
+        .btnguardar {
+            width: 16%;
+            padding: 10px;
+            color: white;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: #000;
+        }
+        .btnguardar:hover {
+            background-color: #333;
+        }
+    </style>
     </body>
     <footer>
     <?php include '../php/footerG.php';?>

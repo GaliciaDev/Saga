@@ -15,7 +15,7 @@
   <header>
   <nav>
 		<menu>															
-         <menuitem><a href="index_docente.php">Inicio</a></menuitem>
+         <menuitem><a href="index_alumno.php">Inicio</a></menuitem>
          <menuitem><a href="views/consultar_horario_alumnos.php">Horario</a></menuitem>
          <menuitem><a href="views/tira_materias_alumno.php">Tira Materias</a></menuitem>
          <menuitem><a href="views/calificaciones_alumno.php">Calificaciones</a></menuitem>

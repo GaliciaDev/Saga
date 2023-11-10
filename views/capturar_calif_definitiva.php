@@ -10,7 +10,7 @@
 <body>
 <?php include '../php/nav_Admin.php'; ?>
     <body>
-        <h1>Tabla de Calificaciones de Alumnos</h1>
+        <br><h1>Tabla de Calificaciones de Alumnos</h1>
 
         <br>
         <form method="POST">

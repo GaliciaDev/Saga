@@ -12,7 +12,7 @@
 
 <table class="tabla_informacion">                    
     <tr>
-        <h2>Reporte de Calificaciones</h2>
+        <br><h2>Reporte de Calificaciones</h2><br>
         <?php
         // Inicializa la sesión
         session_start();
@@ -107,6 +107,20 @@
         ?>
     </tr>
 </table>
+<style>
+        .btnguardar {
+            width: 16%;
+            padding: 10px;
+            color: white;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: #000;
+        }
+        .btnguardar:hover {
+            background-color: #333;
+        }
+    </style>
 </body>
 <br><footer>
 <?php include '../php/footerG.php';?>

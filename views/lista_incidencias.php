@@ -36,7 +36,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="../css/estilo_incidencias.css">
+        <link rel="stylesheet" type="text/css" href="../css/incidencias.css">
         <link rel="shortcut icon" href="../assets/img/icon.png">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="stylesheet" href="../css/diseño_movil.css">
@@ -44,7 +44,7 @@
     </head> 
 <body>
 <?php include '../php/nav_Admin.php'; ?>    
-    <h2>Lista de Incidencias</h2>
+    <br><h2>Lista de Incidencias</h2><br><br>
     <table class="tabla_informacion">
         <tr>
             <th>ID</th>

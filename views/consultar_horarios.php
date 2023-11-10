@@ -9,8 +9,10 @@
     <title>Consulta de Horarios</title>
 </head>
 <body>
+    <style>.tabla{width: 90%; } </style>
 <?php include '../php/nav_Admin.php'; ?>    
-    <h1>Consulta de Horarios</h1>                        
+    <br><h1>Consulta de Horarios</h1><br><br>     
+    <center>              
     <table class="tabla">        
         <tr>
             <th>Grado y Grupo</th>
@@ -62,7 +64,7 @@
         $conexion->close();
         ?>
 
-    </table><br>                   
+    </table><br></center>                   
 
     <script>
 function eliminarFila(id) {

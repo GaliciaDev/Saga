@@ -11,7 +11,7 @@
 <body>
 <?php include '../php/nav_Admin.php'; ?>
     <head>
-        <br><label>Seleccionar Turno: Vespertino</label>
+        <br><label>Seleccionar Turno: Vespertino</label><br>
             <a class="boton-personalizado" href="asignar_horarios_alumnos_tarde.php">Vespertino</a>
             <a class="boton-personalizado" href="asignar_horarios_alumnos.php">Matutino</a><br>
             <style>
@@ -28,10 +28,23 @@
                 .boton-personalizado:hover {
                     background-color: #333;
                 }
+
+                select {
+                    display: block;
+                        width: 70%;
+                        padding: 10px;
+                        margin-bottom: 10px;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        box-sizing: border-box;
+                        text-align: center;
+                        margin-left: auto;
+                        margin-right: auto;
+                }
             </style>
         <br><form class="formulario" method="POST" action="asignar_horarios_alumnos_tarde.php">
-            <h1>Asignacion de Horarios</h1>
-            <label>Ingrese Un Grupo a Asignar Horario</label>
+            <h1>Asignacion de Horarios</h1><br>
+            <label>Ingrese Un Grupo a Asignar Horario</label><br>
                 
                 <input type="text" class="busca" id="grupo" name="asignar_grupo" placeholder="- -" required>                
                        

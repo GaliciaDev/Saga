@@ -32,7 +32,7 @@
 <body>
     <?php include '../php/nav_A.php'; ?>
 
-    <h1>Kardex</h1>
+    <br><h1>Kardex</h1><br><br>
 
     <?php
         // Iniciar la sesión
@@ -108,7 +108,7 @@
             echo '</tr>';
             echo '</table>';
             $id = $id_alumno;
-            echo '<br><br><br><br><a target="_blank" href="../php/imprimir_kardex.php?id_alumno='.$id.'"><button class="btnguardar">Imprimir PDF</button></a><br><br>';
+            echo '<br><br><br><br><br><a target="_blank" href="../php/imprimir_kardex.php?id_alumno='.$id.'"><button class="btnguardar">Imprimir PDF</button></a><br><br>';
 
             // Cierra la conexión a la base de datos
             mysqli_close($conexion);
@@ -119,7 +119,20 @@
             </td>
         </tr>
     </table>
-
+    <style>
+        .btnguardar {
+            width: 16%;
+            padding: 10px;
+            color: white;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: #000;
+        }
+        .btnguardar:hover {
+            background-color: #333;
+        }
+    </style>
 </body>
 <footer>
 <?php include '../php/footerG.php';?>

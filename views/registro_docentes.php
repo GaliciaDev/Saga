@@ -42,8 +42,8 @@
             <label class="a">Area</label>
             <select class="reg" name="areaD">
                 <option class="reg" value="opcion">Elija una Opcion</option>
-                <option class="reg" value="Docente">Ciencias Administrativas</option>
-                <option class="reg" value="Coordinacion">Control Escolar</option>                           
+                <option class="reg" value="Docente">Materias de Tronco</option>
+                <option class="reg" value="Coordinacion">Informatica</option>                           
             </select><br><br>
             <label class="fe">Fecha de Nacimiento</label>
                 <input class="na" type="date" name="natalicioD" class="CajasL" required><br><br>
