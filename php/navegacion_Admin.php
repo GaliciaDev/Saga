@@ -9,10 +9,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
-  <link rel="stylesheet" media="all" href="css/Estilo_Nav_Admin.css" />
+  <link rel="stylesheet" media="all" href="css/Nav_Admin.css" />
+  <link rel="stylesheet" href="../css/estilo_diseño_movil.css" />
 </head>
 <header>
-<nav>
+  <input type="checkbox" id="menu-desplegable">
+<nav class="menu">
 		<menu>
 			<menuitem id="demo1">
 				<a>Horarios</a>

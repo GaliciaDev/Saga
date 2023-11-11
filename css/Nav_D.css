@@ -111,3 +111,6 @@ html, body{
     opacity: 1;
   }
   
+#menu-desplegable {
+  display: none;
+}

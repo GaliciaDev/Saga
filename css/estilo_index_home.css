@@ -21,50 +21,46 @@ font-family: 'Bebas Neue', cursive;
 background-color: #09080D;    
 }
 
-.menu_desplegable {
-display: none;
-}
-
 /* Cambiar los estilos de los parrajos */
 p{
-font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .container{
-max-width: 1200px;
-margin: 0 auto;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .header {
 /* Obscurecer la imagen principal */
-background-image: linear-gradient(
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5)),
-    url(../assets/img/index.jpg);
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)),
+        url(../assets/img/index.jpg);
 
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-min-height: 70vh;
-display: flex;
-align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
 }
 
 .logo {
-color: #FFFDFC;
-font-size: 25px;    
+    color: #FFFDFC;
+    font-size: 25px;    
 }
 
 .menu .navbar ul li {
-position: relative;
-float: left;
+    position: relative;
+    float: left;
 }
 
 .menu .navbar ul li a{
-font-size: 20px;
-padding: 20px;
-color: #FFFDFC;
-display: block;
+    font-size: 20px;
+    padding: 20px;
+    color: #FFFDFC;
+    display: block;
 }
 
 .menu {
@@ -85,8 +81,8 @@ color: #97975B;
 }
 
 /* Ocultar casilla del input */
-#menu {
-display: none;
+#menu-desplegable {
+    display: none;
 }
 
 /* Cambiar el tamaño de la imagen icono */

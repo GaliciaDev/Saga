@@ -9,11 +9,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
-  <link rel="stylesheet" media="all" href="../css/Estilo_Nav_A.css" />
+  <link rel="stylesheet" href="../css/Nav_A.css" />
+  <link rel="stylesheet" href="../css/estilo_diseño_movil.css" />
 </head>
 <body>
-  <header>
-  <nav>
+  <header>    
+      <input type="checkbox" id="menu-desplegable">
+  <nav class="menu">  
 		<menu>															
          <menuitem><a href="../index_alumno.php">Inicio</a></menuitem>
          <menuitem><a href="consultar_horario_alumnos.php">Horario</a></menuitem>

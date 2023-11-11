@@ -89,3 +89,7 @@ body {
 .menu ul li a:target {
   border-bottom-color: #3d1a03fb;
 }
+
+#menu-desplegable {
+  display: none;
+}

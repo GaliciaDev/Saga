@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/img/icon.png">        
     <link rel="stylesheet" href="css/estilo_index_home.css">
-    <link rel="stylesheet" media="only screen and (max-width: 768px)" href="css/diseño_movil.css">
+    <link rel="stylesheet" href="css/estilo_diseño_movil.css">
     <title>EST 153</title>  
 </head>
 <body>
@@ -18,7 +18,7 @@
         <div class="menu">
                 <label for="menu" class="menu-icono">&#9776;</label>
             <div class="logo"></div>
-                <input type="checkbox" id="menu">
+                <input type="checkbox" id="menu-desplegable">
             <nav class="navbar menu">                
                 <ul>                    
                     <li><a href="https://www.facebook.com/tecnicabasiliovadillo.turnovespertino.9/?locale=es_LA%22%20class%3D%22nav__links%22">Nosotros</a></li>
