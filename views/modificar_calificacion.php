@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../css/estilo_modificar_materia.css">
+    <link rel="stylesheet" type="text/css" href="../css/modificar_calificacion.css">
     <link rel="stylesheet" href="../css/diseño_movil.css">
     <link rel="shortcut icon" href="../assets/img/icon.png">  
     <title>Modificar Calificaciones</title>
@@ -12,11 +12,22 @@
 <?php include '../php/nav_Admin.php'; ?>
 <br><h1>Modificar Calificaciones</h1><br><br>
 <!-- Formulario para ingresar el ID del alumno -->
-<form method="POST">
-    <label for="id">Ingrese el ID del alumno:</label>
-    <input class="dato" type="text" name="id_alumno" id="id_alumno">
-    <input type="submit" value="Buscar">
-</form>
+<style>.dato {    display: block;
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;}</style>
+<center>
+<form method="POST">    
+    <label for="id">Ingrese el ID del alumno:</label><br>
+    <input class="dato" type="text" name="id_alumno" id="id_alumno"><br>
+    <input type="submit" value="Buscar"><br><br>
+</form></center>
 <?php
 // Verificar si se ha enviado el formulario
 if ($_POST) {
@@ -34,7 +45,7 @@ if ($_POST) {
     // Verificar si se encontraron resultados
     if (mysqli_num_rows($resultado_calificaciones) > 0) {
         echo '<h2>Calificaciones del Alumno</h2>';
-        echo '<form method="POST">';
+        echo '<center><form method="POST" class="tablilla">';
         echo '<input type="hidden" name="id_alumno" value="' . $id_alumno . '">';
         echo '<table class="tabla_informacion">';
         echo '
@@ -63,7 +74,7 @@ if ($_POST) {
         }
         echo '</table>';
         echo '<br><br><input type="submit" name="guardar_cambios" value="Guardar Cambios"><br><br>';
-        echo '</form>';
+        echo '</form></center>';
     } else {
         echo '<p>El alumno no fue encontrado o no tiene calificaciones registradas.</p>';
     }

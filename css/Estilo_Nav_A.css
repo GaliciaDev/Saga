@@ -24,8 +24,7 @@ html, body{
     pointer-events:none;
  }
  nav > menu { display:flex;
-    justify-content: center;
-    background: black;
+    justify-content: center;    
 }
  
  nav > menu > menuitem { pointer-events: all; opacity:1; }

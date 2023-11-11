@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../css/estadisticas_alumno.css">
+	<link rel="stylesheet" type="text/css" href="../css/estilo_estadisticas_alumno.css">
 	<link rel="shortcut icon" href="../assets/img/icon.png">
 	<link rel="stylesheet" href="../css/diseño_movil.css">
 	<title>Desempeño Alumno</title>
@@ -37,7 +37,7 @@
 		$nombreCompleto = ""; // Variable para almacenar el nombre completo del alumno
 
 		 echo '<table class="estadisticas_promedio_alumno">                                
-				<h4>Promedio de Materias</h4>                
+				<h4>Promedio de Materias</h4><br>                
 				<tr>            
 					<th>Materias</th>
 					<th>Primer Parcial</th>

@@ -4,8 +4,7 @@ body {
     text-align: center;
 }
 
-header {
-    background-color: #333;
+header {    
     color: #fff;
     padding: 10px;
 }
@@ -45,28 +44,31 @@ header {
   margin: 10px;
 }
 
-.tabla_calificaciones {
+.tabla_horarios {
     border-collapse: collapse;
     width: 100%;
+    height: auto;
+    justify-content: center;
+    text-align: center;
 }
 
-.tabla_calificaciones th{ 
+.tabla_horarios th{ 
     padding: 8px;
     text-align: center;
     border-bottom: 1px solid #ddd;
 }
 
-.tabla_calificaciones td {
+.tabla_horarios td {
     padding: 8px;
     text-align: center;
     border-bottom: 1px solid #ddd;   
 }
 
-.tabla_calificaciones th {
+.tabla_horarios th {
     background-color: #f2f2f2;
 }
 
-.tabla_calificaciones tr:hover {
+.tabla_horarios tr:hover {
     background-color: #f5f5f5;
 }
 
@@ -78,58 +80,115 @@ footer {
     font-size: 14px;
 }
 
-input[type="number"] {
-    padding: 8px;
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 14px;
-    width: 50px;
+    margin: 0;    
+    
 }
-
-input[type="text"] {
-    padding: 8px;
+  
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+  
+input,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 14px;
-    width: 200px;
+    box-sizing: border-box;
 }
-
-input[type="submit"] {
-    background-color: #2c312c;;
+  
+  input[type="submit"] {
+    background-color: #4CAF50;
     color: white;
     border: none;
-    height: auto;
-    width: 40%;
     cursor: pointer;
     padding: 10px 20px;
     border-radius: 4px;
 }
   
-input[type="submit"]:hover {
-    background-color: #2c312c;;
+  input[type="submit"]:hover {
+    background-color: #45a049;
 }
 
 select {
-    padding: 8px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 14px;
-    width: 250px;
-}
-
-.busqueda[type="submit"] {
-    background-color: #2c312c;;
-    color: white;
-    border: none;
-    height: auto;
-    width: 10%;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #333;
+    font-size: 12px;
     cursor: pointer;
-    padding: 10px 20px;
-    border-radius: 4px;
 }
+  
+  select:hover {
+    border-color: #999;
+}
+  
+  select:focus {
+    outline: none;
+    border-color: #555;
+    box-shadow: 0 0 5px rgba(85, 85, 85, 0.3);
+}
+  
+  select option {
+    background-color: #fff;
+    color: #333;
+}  
 
-.busqueda[type="submit"]:hover {
-    background-color: #2c312c;;
+.dropdown {
+    position: relative;
+    display: inline-block;
+    padding: 8px;
+    text-align: left;
+    list-style-type: none;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+.dropbtn {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.dropdown-content a {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+}
+  
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 .dropdown {

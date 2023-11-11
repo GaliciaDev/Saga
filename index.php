@@ -8,15 +8,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/img/icon.png">    
-    <title>EST 153</title>
-    <link rel="stylesheet" href="css/indexP.css">
-    <link rel="stylesheet" href="css/diseño_movil.css">
+    <link rel="shortcut icon" href="assets/img/icon.png">        
+    <link rel="stylesheet" href="css/estilo_index_home.css">
+    <link rel="stylesheet" media="only screen and (max-width: 768px)" href="css/diseño_movil.css">
+    <title>EST 153</title>  
 </head>
 <body>
     <header class="header">
         <div class="menu">
-            <label for="menu" class="menu-icono">&#9776;</label>
+                <label for="menu" class="menu-icono">&#9776;</label>
             <div class="logo"></div>
                 <input type="checkbox" id="menu">
             <nav class="navbar menu">                
@@ -24,11 +24,11 @@
                     <li><a href="https://www.facebook.com/tecnicabasiliovadillo.turnovespertino.9/?locale=es_LA%22%20class%3D%22nav__links%22">Nosotros</a></li>
                     <li><a href="../saga/views/formulario_alumnos.php">Alumnos</a></li>
                     <li><a href="../saga/views/formulario_docente.php">Docentes</a></li>
-                    <li><a href="../saga/views/formulario_tutores.php">Tutores</a></li>
+                    <!--<li><a href="../saga/views/formulario_tutores.php">Tutores</a></li>-->
                     <li><a href="../saga/views/formulario_administradores.php">Administrativo</a></li>
                 </ul>            
             </nav>
-        </div>        
+        </div>      
 
        <!-- Informacion -->
        <div class="header-content container">
@@ -81,24 +81,9 @@
     <main class="information container">
         
         <div class="information-1">
-            <h3>15</h3>
-            <p>Mansiones</p>            
-        </div>
-
-        <div class="information-1">
-            <h3>185</h3>
-            <p>Casas</p>
-        </div>
-
-        <div class="information-1">
-            <h3>110</h3>
-            <p>Alumnos</p>
-        </div>
-
-        <div class="information-1">
-            <h3>20</h3>
-            <p>Docentes</p>
-        </div>
+            <h3>Secundatias Técnicas</h3>
+            <p>La Subdirección de Educación Secundaria Técnica de la Secretaría de Educación de Veracruz, y cada una de las Escuelas Secundarias Técnicas oficiales e incorporadas tienen como meta fundamental proporcionar un servicio educativo de calidad, responsable e incluyente, que al mismo tiempo satisfaga las necesidades de los trabajadores al servicio de esta modalidad.</p>            
+        </div>        
     </main>
 
     <!-- Productos -->
@@ -106,36 +91,36 @@
         <!-- Agregando 2 clases -->
         <div class="house-1 txt">
             <span>01</span>
-            <h3>Tramites</h3>
-            <p>Disponible</p>
+            <h3>Calidad</h3>
+            <p>Servicio</p>
         </div>
 
         <div class="house-2 txt">
             <span>02</span>
-            <h3>Informacion de ingreso</h3>
-            <p>Disponible</p>
+            <h3>Oportunidad</h3>
+            <p>Innovación</p>
         </div>
 
         <div class="house-3 txt">
             <span>03</span>
-            <h3>Casa lorem</h3>
-            <p>Disponible</p>
+            <h3>Integridad</h3>
+            <p>Profesionalismo</p>
         </div>
 
         <div class="house-4 txt">
             <span>04</span>
-            <h3>Casa lorem</h3>
-            <p>Disponible</p>
+            <h3>Responsabilidad</h3>
+            <p>Pertinencia</p>
         </div>
 
         <div class="house-5 txt">
             <span>05</span>
-            <h3>Casa lorem</h3>
-            <p>Disponible</p>
+            <h3>Compromiso social</h3>
+            <p>Actitudes de éxito</p>
         </div>
     </section>
 
-    <?php include_once 'php/footer.php';?>
+    <center><?php include 'php/footerG.php';?></center>
 
 
 </body>

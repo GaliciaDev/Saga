@@ -9,30 +9,31 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
-  <link rel="stylesheet" media="all" href="../css/Nav_Admin.css" />
+  <link rel="stylesheet" media="all" href="../css/Estilo_Nav_Admin.css" />
 </head>
 <header>
 <nav>
 		<menu>
-			<menuitem id="demo1">
-				<a>Horarios</a>
-				<menu>
-					<menuitem><a href="asignar_horarios_alumnos.php">Asignar Horarios</a></menuitem>
-                    <menuitem><a href="consultar_horarios.php">Consulta Horarios</a></menuitem>               					
-				</menu>
-			</menuitem>
-            <menuitem id="demo1">
+    <menuitem><a href="../index_administrativo.php">Inicio</a></menuitem>			
+      <menuitem id="demo1">
 				<a>Captura Calificaciones</a>
 				<menu>
 					<menuitem><a href="modificar_calificacion.php">Modificar Calificacion</a></menuitem>
-                    <menuitem><a href="capturar_calif_definitiva.php">Captura Trimestral</a></menuitem>               				
+          <menuitem><a href="capturar_calif_definitiva.php">Captura Trimestral</a></menuitem>               				
                 <menuitem>
                   <a>Materias</a>
                   <menu>
                     <menuitem><a href="asignar_materia.php">Asignar Materias</a></menuitem>
                     <menuitem><a href="modificar_materias.php">Modificar Materias</a></menuitem>          
                   </menu>  
-               </menuitem>    					
+               </menuitem> 
+               <menuitem>
+                  <a>Materias</a>
+                  <menu>
+                    <menuitem><a href="asignar_materia.php">Asignar Materias</a></menuitem>
+                    <menuitem><a href="modificar_materias.php">Modificar Materias</a></menuitem>          
+                  </menu>  
+               </menuitem>   					
 				</menu>
 			</menuitem>            
             <menuitem id="demo1">
@@ -66,7 +67,7 @@
 				</menu>
 			</menuitem>            
          <menuitem><a href="contactos_tutores.php">Contacto Tutores</a></menuitem>
-         <menuitem><a href="../php/cerrar_sesion.php">Cerrar Sesion</a></menuitem>
+         <menuitem><a href="../php/cerrarsesion.php">Cerrar Sesion</a></menuitem>
 		</menu>
 	</nav>
 </header>

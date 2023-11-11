@@ -1,11 +1,10 @@
 body {
     width: 98%;
     height: auto;
-    text-align: center;    
+    text-align: center;
 }
 
-header {
-    background-color: #333;
+header {    
     color: #fff;
     padding: 10px;
 }
@@ -45,7 +44,7 @@ header {
   margin: 10px;
 }
 
-.tabla {
+.tabla_horarios {
     border-collapse: collapse;
     width: 100%;
     height: auto;
@@ -53,23 +52,23 @@ header {
     text-align: center;
 }
 
-.tabla th{ 
+.tabla_horarios th{ 
     padding: 8px;
     text-align: center;
     border-bottom: 1px solid #ddd;
 }
 
-.tabla td {
+.tabla_horarios td {
     padding: 8px;
     text-align: center;
     border-bottom: 1px solid #ddd;   
 }
 
-.tabla th {
+.tabla_horarios th {
     background-color: #f2f2f2;
 }
 
-.tabla tr:hover {
+.tabla_horarios tr:hover {
     background-color: #f5f5f5;
 }
 
@@ -82,21 +81,25 @@ footer {
 }
 
 form {
+    width: 98%;
+    max-width: 400px; /* Puedes ajustar este valor según tus necesidades */
+    margin: 0 auto;
     padding: 20px;
     background-color: #f5f5f5;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-  
+
 label {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
 }
-  
-input {
-    display: block;
-    width: 100%;
+
+input,
+textarea,
+select {
+    width: 100%; /* Ahora ocupará el 100% del contenedor */
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -105,87 +108,39 @@ input {
     text-align: center;
 }
 
-.salon {
-    display: block;
-    width: 80px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.busca{
-    display: block;
-    width: 80px;
-    padding: 10px;
-    margin: 0 auto; /* Esto centrará horizontalmente el elemento */
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    text-align: center;  
-}
-
-.nombre_doc {
-    display: block;
-    width: 250px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-  
 input[type="submit"] {
     background-color: #363636;
     color: white;
     border: none;
     height: auto;
-    width: 100%;
     cursor: pointer;
     padding: 10px 20px;
     border-radius: 4px;
-}
-  
-input[type="submit"]:hover {
-    background-color: #686868;
+    width: 80%;
 }
 
-select {
-    display: block;
-    width: 75%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    background-color: #fff;
-    color: #333;
-    font-size: 12px;
+input[type="submit"]:hover {
+    background-color: #000;
+}
+
+.center-input {
+    text-align: center;
+}
+
+/* Estilo base del botón */
+.editarBtn {
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border: none;
     cursor: pointer;
+    border-radius: 5px;
 }
-  
-select:hover {
-    border-color: #999;
+
+/* Estilo cuando se hace hover sobre el botón */
+.editarBtn:hover {
+    background-color: gray;
 }
-  
-select:focus {
-    outline: none;
-    border-color: #555;
-    box-shadow: 0 0 5px rgba(85, 85, 85, 0.3);
-}
-  
-select option {
-    background-color: #fff;
-    color: #333;
-}  
 
 .dropdown {
     position: relative;
@@ -195,8 +150,8 @@ select option {
     list-style-type: none;
     font-size: 14px;
     font-family: 'Times New Roman', Times, serif;
-  }
-  
+}
+
 .dropbtn {
     background-color: #333;
     color: white;
@@ -207,7 +162,7 @@ select option {
     font-family: 'Times New Roman', Times, serif;
     font-size: 14px;
 }
-  
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -216,50 +171,36 @@ select option {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
-  
+
 .dropdown-content a {
     color: black;
     padding: 10px 16px;
     text-decoration: none;
     display: block;
 }
-  
+
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* Estilos para los botones de acciones */
-.acciones {
+input [type="text"] {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.eliminar,
-.modificar {
-    padding: 5px 10px;
-    margin-right: 5px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    font-weight: bold;
-}
-
-.eliminar {
-    background-color: #333;
-}
-
-.modificar {
-    background-color: #333;
-}
-
-/* Estilos al pasar el cursor por encima de los botones */
-.eliminar:hover,
-.modificar:hover {
-    background-color: black;
-}
-
-/* Estilos para evitar que los botones tengan bordes azules al hacer clic */
-.eliminar:focus,
-.modificar:focus {
-    outline: none;
+.tablilla {
+    width: 98%;
+    max-width: 98%; /* Puedes ajustar este valor según tus necesidades */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }

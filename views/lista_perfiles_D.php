@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="../css/estilo_perfiles_usuarios.css">
+        <link rel="stylesheet" type="text/css" href="../css/perfiles_usuarios.css">
         <link rel="shortcut icon" href="../assets/img/icon.png">
         <link rel="stylesheet" href="../css/diseño_movil.css">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -23,7 +23,7 @@
             <a class="boton" href="lista_perfiles.php">Perfiles Administrativo</a>
             <a class="boton" href="lista_perfiles_A.php">Perfiles Alumnos</a>
         </div><br><br><br>
-            <table>
+            <center><table>
                 <tr>
                     <th>ID</th>
                     <th>Nombre</th>
@@ -49,7 +49,7 @@
                     echo "</tr>";
                 }
                 ?>
-            </table>
+            </table></center><br><br>
 </body>
     <footer>
     <?php include '../php/footerG.php';?>

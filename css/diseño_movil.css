@@ -1,147 +1,84 @@
-/* Diseño responsivo */
-@media (max-width: 991px) {
-    .menu{
-        padding: 30px;
-    }
-
-    .menu label{
-        display: initial;
-    }
-
-    .menu .navbar{
-        position: absolute;
-        top: 100;
-        left: 0;
-        right: 0;
-        background-color: #09080D;
+@media (max-width: 700px) {
+    .menu .navbar ul {
         display: none;
-    }
-
-    .menu .navbar ul li{
-        width: 100%;
-    }
-
-    #menu{
-        width: 100%;
-        height: 60px;
-
-        background-color: #333;
-        font-size: 12px;
-        font-weight: bold;
-        text-align: center;
-
-        position: sticky;
-        top: 0;
-    }
-    #menu:checked ~ .navbar{
-        display: initial;
-        top: 60px;
-    }
-
-    .header{
-        min-width: 0vh;
-    }
-
-    .header-content{
-        padding: 100px 30px;
-    }
-
-    .header-txt{
-        width: 100%;
-        text-align: center;
-    }
-
-    .header-txt h1{
-        font-size: 70px;
-        line-height: 80px;
-    }
-
-    .direction{
         flex-direction: column;
-        text-align: center;
-        padding: 30px;
-    }
-
-    .direction p{
-        margin-bottom: 10px;
-    }
-
-    .about{
-        padding: 0px 30px 30px 30px;
-        flex-direction: column; 
-    }
-
-    .about-txt{
-        width: 100%;
-        text-align: center;
-        margin-bottom: 25px;
-    }
-
-    .about-img{
-        width: 100%;
-        order: 2;
-        text-align: center;
-    }
-
-    .about-img img{
-        width: 300px;
-    }
-
-    .information{
-        padding: 30px;
-        flex-direction: column;
-        margin-left: 80px;
-    }
-
-    .house{
-        flex-direction: column;
-    }
-
-    .footer{
-        padding: 30px 30px 0 30px;
-    }
-
-    .footer-content{
-        flex-direction: column;
-    }
-
-    .footer-form{
         width: 100%;
         text-align: center;
     }
 
-    .footer-txt{
-        width: 100%;
-        text-align: center;
+    .menu .navbar ul li {
+        float: none;
     }
 
-    .footer-txt h3{
-        margin: 0 0 20px 0;
+    .menu .navbar ul li a {
+        padding: 15px;
     }
 
-    form{
-        width: 100%;
-        margin: 0 0 25px 0;
+    .menu .navbar ul.show {
+        display: flex;
     }
-
-    .footer-2 p {
-        text-align: center;
-    }
-}
-
-@media screen and (max-width: 750px) {
-    .menu_desplegable {
+    
+    .menu label {
         display: block;
-        position: sticky;
-        top: 0;
+    }
 
-        width: 100%;
-        height: auto;
-        background-color: #333;
-        color: white;
-        padding: 2px;
+    .header-txt h1 {
+        font-size: 40px;
+        line-height: 45px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
 
-        text-align: center;
-        font-size: 12px;
+    .header-txt p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .btn-1 {
+        padding: 10px 30px;
+        font-size: 18px;
+    }
+
+    .direction {
+        padding: 20px 0;
+    }
+
+    .direction p {
+        font-size: 14px;
+    }
+
+    .about-txt h2 {
+        font-size: 30px;
+    }
+
+    .about-txt p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .information-1 h3 {
+        font-size: 30px;
+    }
+
+    .information-1 p {
+        font-size: 14px;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+
+    .house-1 h3,
+    .house-2 h3,
+    .house-3 h3,
+    .house-4 h3,
+    .house-5 h3 {
+        font-size: 25px;
+    }
+
+    .house-1 p,
+    .house-2 p,
+    .house-3 p,
+    .house-4 p,
+    .house-5 p {
+        font-size: 14px;
     }
 }

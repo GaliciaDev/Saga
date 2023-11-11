@@ -9,7 +9,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
-  <link rel="stylesheet" media="all" href="css/Nav_Admin.css" />
+  <link rel="stylesheet" media="all" href="css/Estilo_Nav_Admin.css" />
 </head>
 <header>
 <nav>
@@ -66,7 +66,7 @@
 				</menu>
 			</menuitem>            
          <menuitem><a href="views/contactos_tutores.php">Contacto Tutores</a></menuitem>
-         <menuitem><a href="php/cerrar_sesion.php">Cerrar Sesion</a></menuitem>
+         <menuitem><a href="php/cerrarsesion.php">Cerrar Sesion</a></menuitem>
 		</menu>
 	</nav>
 </header>
