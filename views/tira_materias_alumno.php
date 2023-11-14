@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,9 +11,7 @@
 <body>
     <?php include '../php/nav_A.php'; ?>
     <body>
-        <?php
-        // Iniciar la sesión
-        session_start();
+        <?php        
         include '../php/variabledS.php';
 
         // Verificar si la variable de sesión 'alumno' está configurada

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,9 +35,7 @@
 
     <br><h1>Kardex</h1><br><br>
 
-    <?php
-        // Iniciar la sesión
-        session_start();
+    <?php        
         include '../php/variabledS.php';
 
         // Verificar si la variable de sesión 'alumno' está configurada

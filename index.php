@@ -10,37 +10,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/img/icon.png">        
     <link rel="stylesheet" href="css/estilo_index_home.css">
-    <link rel="stylesheet" href="css/estilo_diseño_movil.css">
+    <link rel="stylesheet" href="css/diseño_responsivo.css">
     <title>EST 153</title>  
 </head>
 <body>
-    <header class="header">
+<header class="header">
         <div class="menu">
-                <label for="menu" class="menu-icono">&#9776;</label>
+            <label for="menu" class="menu-icono">&#9776;</label>
             <div class="logo"></div>
-                <input type="checkbox" id="menu-desplegable">
-            <nav class="navbar menu">                
-                <ul>                    
+            <input type="checkbox" id="menu-desplegable">
+            <nav class="navbar menu">
+                <ul>
                     <li><a href="https://www.facebook.com/tecnicabasiliovadillo.turnovespertino.9/?locale=es_LA%22%20class%3D%22nav__links%22">Nosotros</a></li>
                     <li><a href="../saga/views/formulario_alumnos.php">Alumnos</a></li>
                     <li><a href="../saga/views/formulario_docente.php">Docentes</a></li>
                     <!--<li><a href="../saga/views/formulario_tutores.php">Tutores</a></li>-->
                     <li><a href="../saga/views/formulario_administradores.php">Administrativo</a></li>
-                </ul>            
+                </ul>
             </nav>
-        </div>      
+        </div>
 
-       <!-- Informacion -->
-       <div class="header-content container">
+        <!-- Informacion -->
+        <div class="header-content container">
             <div class="header-txt">
                 <h1>Escuela secundaria tecnica 153</h1>
-                <p>
-                    
-                </p>
+                <p></p>
                 <a href="https://www.facebook.com/p/Escuela-Secundaria-Tecnica-153-100063556944973/" class="btn-1">Informacion</a><br><br>
             </div>
-       </div>
+        </div>
     </header>
+
 
     <!--Informacion de contacto cliente-->
     <section class="direction container">

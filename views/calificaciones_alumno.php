@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,10 +14,7 @@
 <table class="tabla_informacion">                    
     <tr>
         <br><h2>Reporte de Calificaciones</h2><br>
-        <?php
-        // Inicializa la sesión
-        session_start();
-
+        <?php       
         // Verifica si la variable de sesión 'alumno' está configurada
         if (isset($_SESSION['alumno'])) {
             // Obtiene la matrícula del alumno desde la variable de sesión
