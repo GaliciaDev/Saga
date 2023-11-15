@@ -174,7 +174,8 @@
                       </ul>
                     </li>
                 </ul>
-            </li>                                   
+            </li>       
+            <li><a href="views/subir_grado.php">Subir Grado</a></li>                                 
             <li>
                 <a href="#">Perfiles</a>
                 <ul class="hidden">

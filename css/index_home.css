@@ -18,7 +18,7 @@ body{
 /* Esta cambia todos las fuentes del body */
 font-family: 'Bebas Neue', cursive;
 /* Este cambia el color de fondo de la pagina */
-background-color: #09080D;    
+background-color: white;    
 }
 
 /* Cambiar los estilos de los parrajos */
@@ -59,7 +59,7 @@ p{
 .menu .navbar ul li a{
     font-size: 20px;
     padding: 20px;
-    color: #FFFDFC;
+    color: #944d1e;
     display: block;
 }
 
@@ -77,7 +77,7 @@ p{
 }
 
 .menu .navbar ul li a:hover{
-color: #97975B;    
+color: #312104;    
 }
 
 /* Ocultar casilla del input */
@@ -104,7 +104,7 @@ width: 50%;
 .header-txt h1 {
 font-size: 105px;
 line-height: 110px;
-color: #FEFCFB;
+color: #db8c58;
 margin-top: 100px;
 margin-bottom: 30px;
 }
@@ -119,15 +119,15 @@ margin-bottom: 35px;
 .btn-1 {
 display: inline-block;
 padding: 11px 45px;
-background-color: #97975B;
-color: #FEFCFB;
+background-color: #944d1e;
+color: white;
 border-radius: 30px;
 font-size: 22px;
 }
 
 /* Animaciones del boton principal */
 .btn-1:hover {
-background-color: #a98450;
+background-color: #5e2a08;
 }
 
 .direction {
@@ -161,13 +161,14 @@ width: 450px;
 
 h2 {
 font-size: 70px;
-color: #FEFCFB;
+color: #944d1e;
 margin-bottom: 15px;
 }
 
 .about-txt p {
+font-weight: bold;
 font-size: 16px;
-color: #E0E0E0;
+color: #944d1e;
 margin-bottom: 35px;
 }
 
@@ -184,12 +185,12 @@ align-items: center;
 
 .information-1 h3 {
 font-size: 70px;
-color: #FEFCFB;
+color: #944d1e;
 }
 
 .information-1 p {
 font-size: 16px;
-color: #E0E0E0;
+color: #944d1e;
 margin-left: 15px;
 }
 
@@ -199,73 +200,58 @@ justify-content: space-between;
 }
 
 .house-1 {
-background-image: linear-gradient(
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5)),
-    url(images/i2.jpg);
-
-background-position: center center;
-background-repeat: no-repeat;
-background-size: cover;
-height: 500px;
-width: 100%;
-padding: 25px;
+    background: #944d1e;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgb(131 75 3 / 50%)), url(images/i2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+    padding: 25px;
 }
 
 .house-2 {
-background-image: linear-gradient(
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5)),
-    url(images/i3.jpg);
-
-background-position: center center;
-background-repeat: no-repeat;
-background-size: cover;
-height: 500px;
-width: 100%;
-padding: 25px;
+    background: #944d1e;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgb(131 75 3 / 50%)), url(images/i2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+    padding: 25px;
 }
 
 .house-3 {
-background-image: linear-gradient(
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5)),
-    url(images/i4.jpg);
-
-background-position: center center;
-background-repeat: no-repeat;
-background-size: cover;
-height: 500px;
-width: 100%;
-padding: 25px;
+    background: #944d1e;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgb(131 75 3 / 50%)), url(images/i2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+    padding: 25px;
 }
 
 .house-4 {
-background-image: linear-gradient(
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5)),
-    url(images/i5.jpg);
-
-background-position: center center;
-background-repeat: no-repeat;
-background-size: cover;
-height: 500px;
-width: 100%;
-padding: 25px;
+    background: #944d1e;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgb(131 75 3 / 50%)), url(images/i2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+    padding: 25px;
 }
 
 .house-5 {
-background-image: linear-gradient(
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5)),
-    url(images/i6.jpg);
-
-background-position: center center;
-background-repeat: no-repeat;
-background-size: cover;
-height: 500px;
-width: 100%;
-padding: 25px;
+    background: #944d1e;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgb(131 75 3 / 50%)), url(images/i2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+    padding: 25px;
 }
 
 .txt {
@@ -273,7 +259,7 @@ position: relative;
 }
 
 .txt span {
-color: #97975B;
+color: #944d1e;
 font-size: 35px;
 }
 

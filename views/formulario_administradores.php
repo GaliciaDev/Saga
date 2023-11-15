@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
     <link rel="shortcut icon" href="../assets/img/icon.png">
-    <link  rel="stylesheet" href="../css/iniciodsesionAd.css">
+    <link  rel="stylesheet" href="../css/estilo_iniciodsesionAd.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@
             <!-- Formularios de inicio de R-I -->
             <div class="registros">
                 <form action="../php/validacionAd.php" method="POST" class="inicioDs">
-                    <h2>Iniciar sesion</h2>
+                    <h2>Iniciar sesión</h2>
                     <input type="text" autofocus placeholder="Matricula" name="matricula">
                     <input type="password" placeholder="Contraseña" name="clave">
                     <button>Entrar</button>

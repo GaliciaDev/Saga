@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/img/icon.png">        
-    <link rel="stylesheet" href="css/estilo_index_home.css">
+    <link rel="stylesheet" href="css/index_home.css">
     <link rel="stylesheet" href="css/diseño_responsivo.css">
     <title>EST 153</title>  
 </head>
@@ -33,7 +33,7 @@
         <!-- Informacion -->
         <div class="header-content container">
             <div class="header-txt">
-                <h1>Escuela secundaria tecnica 153</h1>
+                <h1>Escuela secundaria técnica 153</h1>
                 <p></p>
                 <a href="https://www.facebook.com/p/Escuela-Secundaria-Tecnica-153-100063556944973/" class="btn-1">Informacion</a><br><br>
             </div>
@@ -58,11 +58,11 @@
         <div class="about-txt">
             <h2>Mision y Vision</h2>
             <p>
-            Misión<br>
-                Somos un plantel al servicio de nuestros alumnos, que proporciona educación secundaria técnica de calidad. 
+            <p id="subtexto">MISIÓN</p>
+                <p>Somos un plantel al servicio de nuestros alumnos, que proporciona educación secundaria técnica de calidad.</p> 
             <br><br>
-            Visión.<br>
-                La Escuela Secundaria Técnica 1 de Jalisco es un plantel de excelencia en la Educación Básica, en donde buscamos cultivar los valores que sustentan un alto espíritu humanista que impulsa la calidad personal, lo que hace que nuestra institución avance hacia una educación integral.
+            <p>VISIÓN</p>
+                <p>La Escuela Secundaria Técnica 1 de Jalisco es un plantel de excelencia en la Educación Básica, en donde buscamos cultivar los valores que sustentan un alto espíritu humanista que impulsa la calidad personal, lo que hace que nuestra institución avance hacia una educación integral.
 
                 Ofrecemos educación técnica de calidad en el área de Informática, lo que nos permite ser reconocidos por el desempeño de nuestros alumnos y docentes
 
@@ -70,7 +70,7 @@
 
                 Cumplimos con un propósito de conformar un equipo en superación permanente, con prestigio por sus innovaciones y comprometidos voluntariamente con el proceso dinámico de la calidad educativa.
 
-                Su comunidad se significa por el gran compromiso con la participación social y contamos con la corresponsabilidad de nuestros padres de familia para una mejor educación.
+                Su comunidad se significa por el gran compromiso con la participación social y contamos con la corresponsabilidad de nuestros padres de familia para una mejor educación.</p>
             </p>
             <a href="https://www.facebook.com/p/Escuela-Secundaria-Tecnica-153-100063556944973/" class="btn-1">Informacion</a>
         </div>

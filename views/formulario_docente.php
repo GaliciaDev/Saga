@@ -37,7 +37,7 @@
             <!-- Formularios de inicio de R-I -->
             <div class="registros">
                  <form action="../php/validacionD.php" method="POST" class="inicioDs">
-                    <h2>Iniciar sesion</h2>
+                    <h2>Iniciar sesión</h2>
                     <input type="text" autofocus placeholder="Matricula" name="matricula">
                     <input type="password" placeholder="Contraseña" name="clave">
                     <button>Entrar</button>

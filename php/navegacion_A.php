@@ -23,7 +23,7 @@
 
         /* Estilo para los links */
         li a {
-            background: rgb(117, 117, 117);
+            background: #944d1e;
             color: #FFF;
             min-width: 180px;
             transition: background 0.5s, color 0.5s, transform 0.5s;
@@ -38,7 +38,7 @@
         }
 
         li:hover a {
-            background: #72d9fb;
+            background: #4e280f;
         }
 
         li:hover ul a {

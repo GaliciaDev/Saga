@@ -29,7 +29,7 @@
 			font-family: 'Montserrat', sans-serif;
 			font-weight: 800;
 			background-color: #FFF;
-			color: #00b8de;
+			color: #944d1e;
 		}
 		/* ======================== */
 		.container{   
@@ -56,7 +56,7 @@
 		.pelotas {
 			width: 30px;
 			height: 30px;
-			background-color: #00b8de;
+			background-color: #944d1e;
 			animation: salto .5s alternate
 			infinite;
 		border-radius: 50%  

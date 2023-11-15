@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="../css/nivel.css">
+        <link rel="stylesheet" type="text/css" href="../css/estilo_nivel.css">
         <link rel="shortcut icon" href="../assets/img/icon.png">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="stylesheet" href="../css/diseño_movil.css">
@@ -72,7 +72,7 @@
                 $sqlPromedio = "SELECT AVG(calificacion) AS promedio FROM calificaciones WHERE id_alumno = $id_alumno";
                 $resultPromedio = $conexion->query($sqlPromedio);
                 $rowPromedio = $resultPromedio->fetch_assoc();
-                echo "<td>" . $rowPromedio['promedio'] . "</td>";
+                echo "<td>" . number_format($rowPromedio['promedio'], 2) . "</td>";
             
                 echo "</tr>";
             }
