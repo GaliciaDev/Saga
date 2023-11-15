@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="../css/estilo_registro.css">
+        <link rel="stylesheet" type="text/css" href="../css/estilo_registro_usuarios.css">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="stylesheet" href="../css/diseño_movil.css">
         <link rel="shortcut icon" href="../assets/img/icon.png">
@@ -49,6 +49,11 @@
                 <input class="na" type="date" name="natalicioD" class="CajasL" required><br><br>
             <label class="tel"> Telefono Emergencia</label>
                 <input class="reg" type="number" name="telefonoEd"placeholder="10 Digitos" min="10" required><br><br>
+            <label class="turn">Turno</label>
+                <select class="turn" name="turno" required>
+                    <option value="Matutino">Matutino</option>
+                    <option value="Vespertino">Vespertino</option>
+                </select><br><br>
             <label class="con">Contraseña</label>
                 <input class="pass" type="password" placeholder="Preferible Caracteres Especiales" name="Clave" class="formulario" id="password" required><br>
             <label class="con">Confirmar Contraseña</label><br>

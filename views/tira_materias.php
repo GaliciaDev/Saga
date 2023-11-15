@@ -73,8 +73,7 @@
                     <?php
                     
                     // Conexion a la BD
-                    include '../php/conexion.php';
-                    mysqli_select_db($conexion, "sagadb");
+                    include '../php/conexion.php';                    
 
                     $resultadoDocentes = mysqli_query("SELECT `nombreD`, `apellidoPd`, `apellidoMd` FROM `docentes`");
 

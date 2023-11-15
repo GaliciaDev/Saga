@@ -43,8 +43,7 @@
                     $fil_vie = 0;
 
                     //Conexion a la BD
-                    include '../php/conexion.php';
-                    mysqli_select_db($conexion, "sagadb");
+                    include '../php/conexion.php';                    
 
                     //Realizamos consulta
                     $resultado = mysqli_query($conexion, "SELECT * FROM `horarios` WHERE `grado_grupo` = '$consulta_h';");

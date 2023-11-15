@@ -17,8 +17,7 @@
 		$Turno=$_POST['turno'];
 		$Periodo=date("Y-m");
 
-		include 'conexion.php';
-		mysqli_select_db($conexion, "sagadb");		
+		include 'conexion.php';		
 
 		$Resultado=mysqli_query($conexion,"INSERT INTO `alumnos`(`id_alumno`, `nombre`, `apellidoP`, `apellidoM`, `natalicio`, `edad`, `sexo`, `domicilio`, `tutor`, `telefono`, `correo`, `grado`, `turno`, `materias`, `periodo`, `Horario_A`, `Clave_A`, `grupo`) VALUES ('$Matricula','$Nombre','$ApellidoP','$ApellidoM','$FechaNac','$Edad','$Genero','$Domicilio','$Tutor','$Tel_Tutor','$Correo','$Grado','$Turno', null,'$Periodo', null,'$Clave','$Grupo')");
 

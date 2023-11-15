@@ -95,6 +95,10 @@
             display: block;
         }
 
+        .icono {
+            display: none;
+        }
+
         /* Estilo responsivo ancho menor de 750px */
         @media screen and (max-width: 750px) {
             /* Hacer que los vínculos desplegables aparezcan en línea */
@@ -115,13 +119,20 @@
                 display: block;
                 cursor: pointer;
             }
+
+            .icono {
+                display: block;
+                width: 50px;
+                height: 50px;
+                margin-left: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <label for="show-menu" class="menu-icon">            
-            <img src="../assets/img/icono_menu.png" alt="Menú">
+            <img class="icono" src="../assets/img/icono_menu.png" alt="Menú"><br><br>
         </label>
         <input type="checkbox" id="show-menu" role="button">
         <ul id="menu">

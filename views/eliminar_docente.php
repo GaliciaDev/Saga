@@ -30,8 +30,7 @@
 			if (isset($_POST['buscar'])) {
 				$matricula_D = $_POST['id'];                    				
 				
-				include '../php/conexion.php';
-				mysqli_select_db($conexion, "sagadb");
+				include '../php/conexion.php';				
 				
 				$resultado = mysqli_query($conexion, "SELECT * FROM `docentes` WHERE `id_docente` = '$matricula_D';");
 
@@ -52,8 +51,7 @@
 			else if (isset($_POST['eliminar'])) {		
 				$id = $_POST['id'];								
 
-				include '../php/conexion.php';
-				mysqli_select_db($conexion, "sagadb");		
+				include '../php/conexion.php';					
 					
 				$Resultado = mysqli_query($conexion, "DELETE FROM `docentes` WHERE `id_docente` = '$id';");	
 

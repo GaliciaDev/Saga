@@ -4,8 +4,7 @@ require('../fpdf/fpdf.php');
 class PDF extends FPDF {
     function Header() {
         // Conexión a la base de datos y consulta para obtener el nombre del alumno
-        include 'conexion.php';
-        mysqli_select_db($conexion, "sagadb");
+        include 'conexion.php';        
 
         if (isset($_GET['id_alumno'])) {
             $id = $_GET['id_alumno'];
@@ -48,7 +47,6 @@ $pdf->AddPage();
 
 // Conexión a la base de datos y consulta para obtener las materias
 include 'conexion.php';
-mysqli_select_db($conexion, "sagadb");
 
 if (isset($_GET['id_alumno'])) {
     $id = $_GET['id_alumno'];

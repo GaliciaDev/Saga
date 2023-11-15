@@ -40,8 +40,7 @@
     <form action="capturas_calificaciones.php" method="POST">         
         <?php                                        
             //Conexion a la BD
-            include '../php/conexion.php';
-            mysqli_select_db($conexion, "sagadb");
+            include '../php/conexion.php';            
 
             //Realizamos consulta
             $resultado = mysqli_query($conexion, "SELECT `Materias` FROM `tira_materias`;");
@@ -84,8 +83,7 @@
                         
 
                         //Conexion a la BD
-                        include '../php/conexion.php';
-                        mysqli_select_db($conexion, "sagadb");
+                        include '../php/conexion.php';                        
 
                         //Realizamos consulta
                         $resultado = mysqli_query($conexion, "SELECT * FROM `alumnos` WHERE `grado` = '$grado[0]' AND `grupo` = '$grado[1]';");
@@ -110,8 +108,7 @@
                                 $calificacion = $_POST['calificacion'];
                                 $mat = $_POST['materia'];                   
 
-                                include '../php/conexion.php';
-                                mysqli_select_db($conexion, "sagadb");
+                                include '../php/conexion.php';                                
                                 
                                 for ($i = 0; $i < (count($id)); $i++) {
                                     $consulta = mysqli_query($conexion, "SELECT * FROM `materias` WHERE `id_alumno` = '$id[$i]' AND `Nom_Materia` = '$mat' LIMIT 1;");
@@ -142,8 +139,7 @@
                                 $calificacion = $_POST['calificacion'];           
                                 $mat = $_POST['materia'];                           
 
-                                include '../php/conexion.php';
-                                mysqli_select_db($conexion, "sagadb");
+                                include '../php/conexion.php';                                
                                 
                                 for ($i = 0; $i < (count($id)); $i++) {
                                     $consulta = mysqli_query($conexion, "SELECT * FROM `materias` WHERE `id_alumno` = '$id[$i]' AND `Nom_Materia` = '$mat' LIMIT 1;");
@@ -174,8 +170,7 @@
                                 $calificacion = $_POST['calificacion'];  
                                 $mat = $_POST['materia'];                  
 
-                                include '../php/conexion.php';
-                                mysqli_select_db($conexion, "sagadb");
+                                include '../php/conexion.php';                                
                                 
                                 for ($i = 0; $i < (count($id)); $i++) {
                                     $consulta = mysqli_query($conexion, "SELECT * FROM `materias` WHERE `id_alumno` = '$id[$i]' AND `Nom_Materia` = '$mat' LIMIT 1;");

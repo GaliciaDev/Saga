@@ -24,8 +24,7 @@ validarSd();
             $matricula = $_SESSION['docente'];
 
             // Conexión a la BD
-            include 'php/conexion.php';
-            mysqli_select_db($conexion, "sagadb");
+            include 'php/conexion.php';            
 
             // Realiza consulta
             $resultado = mysqli_query($conexion, "SELECT * FROM `docentes` WHERE `id_docente` = '$matricula' LIMIT 1;");

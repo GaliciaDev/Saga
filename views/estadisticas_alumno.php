@@ -28,8 +28,7 @@
 		$total_mat = 0;
 
 		// Conexion a la BD
-		include '../php/conexion.php';
-		mysqli_select_db($conexion, "sagadb");
+		include '../php/conexion.php';		
 
 		// Realizamos consulta con JOIN para obtener datos del alumno y materias
 		$alumno = mysqli_query($conexion, "SELECT * FROM `alumnos` WHERE `id_alumno` = '$id';");

@@ -16,8 +16,7 @@ if (isset($_GET['nombre_profesor'])) {
     $pdf->Cell(0, 10, 'Horario del Profesor: ' . $nombre_profesor, 0, 1, 'C');
 
     // Conexion a la BD
-    include 'conexion.php';
-    mysqli_select_db($conexion, "sagadb");
+    include 'conexion.php';    
 
     // Realizar consulta para obtener los horarios del profesor
     $consulta = "SELECT Dias, grado_grupo, Hora, Aula, Materias FROM `horarios` WHERE `Docentes` = '$nombre_profesor';";

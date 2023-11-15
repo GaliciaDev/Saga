@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../css/consulta.css">
+	<link rel="stylesheet" type="text/css" href="../css/estilo_consulta.css">
 	<link rel="stylesheet" href="../css/diseño_movil.css">
 	<link rel="shortcut icon" href="../assets/img/icon.png">
 	<title>Consulta y Actualizacion</title>
@@ -33,8 +33,7 @@
 				
 
 				//Conexion a la BD
-				include '../php/conexion.php';
-				mysqli_select_db($conexion, "sagadb");
+				include '../php/conexion.php';				
 
 				//Realizamos consulta
 				$resultado = mysqli_query($conexion, "SELECT * FROM `administrativo` WHERE `id_admin` = '$matricula_d';");
@@ -82,7 +81,13 @@
                         <input class="na" type="date" name="natalicio" '.($campo['natalicioA']).' class="CajasL" value="'.($campo	['natalicioA']).'" required><br><br>
                         <label class="tttel"> Telefono Emergencia</label>
                             <input class="reg" type="number" name="telefonoE"placeholder="10 Digitos" '.($campo	['telefonoEa']).' min="10" value="'.($campo	['telefonoEa']).'" required><br><br>                        							
-							
+						<label class="turn">Turno</label>
+							<select class="turno" name="turno">
+								<option class="turno" value="'.($campo	['turno']).'">'.($campo	['turno']).'</option>
+								<option class="turno" value="Matutino">Matutino</option>
+								<option class="turno" value="Vespertino">Vespertino</option>	
+							</select><br><br>
+
 								<br><br><input type="submit" name="capturar" value="Actualizar Informacion"> 							
 						</div>
 					</tr>  
@@ -103,11 +108,11 @@
 				$Correo = $_POST['correo'];	
                 $Cargo = $_POST['cargo'];
                 $Area = $_POST['area'];
+				$Turno = $_POST['turno'];
 
-				include '../php/conexion.php';
-				mysqli_select_db($conexion, "sagadb");		
+				include '../php/conexion.php';					
 					
-				$Resultado = mysqli_query($conexion, "UPDATE `administrativo` SET  `nombreAa` = '$Nombre', `apellidoPa` = '$ApellidoP', `apellidoM` = '$ApellidoM', `natalicioA` = '$FechaNac', `edadA` = '$Edad', `direccionA` = '$Domicilio', `telefonoA` = '$Telefono', `telefonoEa` = '$Tel_Emg', `correoA` = '$Correo', `cargoA` = '$Cargo', `areaA` = '$Area' WHERE `id_admin` = '$id';");	
+				$Resultado = mysqli_query($conexion, "UPDATE `administrativo` SET  `nombreAa` = '$Nombre', `apellidoPa` = '$ApellidoP', `apellidoM` = '$ApellidoM', `natalicioA` = '$FechaNac', `edadA` = '$Edad', `direccionA` = '$Domicilio', `telefonoA` = '$Telefono', `telefonoEa` = '$Tel_Emg', `correoA` = '$Correo', `cargoA` = '$Cargo', `areaA` = '$Area', `turno`='$Turno' WHERE `id_admin` = '$id';");	
 
 				if($Resultado==true){
 					echo '

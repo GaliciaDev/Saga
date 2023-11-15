@@ -44,8 +44,7 @@
             $id_alumno = $_SESSION['alumno'];
 
             // Conexión a la base de datos
-            include '../php/conexion.php';
-            mysqli_select_db($conexion, "sagadb");
+            include '../php/conexion.php';            
 
             // Consulta para obtener los datos de la tabla calificaciones
             $consulta_calificaciones = "SELECT materia, calificacion, periodo, situacion FROM calificaciones WHERE id_alumno = '$id_alumno'";

@@ -63,8 +63,7 @@
             <input type="text" id="salon" name="aula" placeholder="Ingrese el Aula" required>
                 <?php                                        
                     //Conexion a la BD
-                    include '../php/conexion.php';
-                    mysqli_select_db($conexion, "sagadb");
+                    include '../php/conexion.php';        
 
                     //Realizamos consulta
                     $resultado = mysqli_query($conexion, "SELECT `nombreD`, `apellidoPd`, `apellidoMd` FROM `docentes`;");

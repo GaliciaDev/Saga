@@ -36,8 +36,7 @@
 
             <?php
             // Realizar la conexión a la base de datos
-            include '../php/conexion.php';
-            mysqli_select_db($conexion, "sagadb");
+            include '../php/conexion.php';            
 
             // Obtener los datos de la tabla materias y alumnos
             $consulta_materias = "SELECT * FROM materias";
@@ -137,8 +136,7 @@
 <?php
 if (isset($_POST['capturar'])) {
     // Realizar la conexión a la base de datos
-    include '../php/conexion.php';
-    mysqli_select_db($conexion, "sagadb");
+    include '../php/conexion.php';    
 
     // Verificar si hay datos en la tabla materias
     $consulta_verificar = "SELECT COUNT(*) FROM materias";

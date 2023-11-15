@@ -18,7 +18,6 @@ $pdf = new PDF();
 $pdf->AddPage();
 
 include 'conexion.php';
-mysqli_select_db($conexion, "sagadb");
 
 if (isset($_GET['id_alumno'])) {
     $id = $_GET['id_alumno'];

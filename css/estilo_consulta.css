@@ -14,7 +14,7 @@
 }
   
 .nombre {
-    width: 39%;
+    width: 45%;
     padding: 10px;
     margin-bottom: 10px;
     border: none;
@@ -30,7 +30,7 @@
 }
 
 .domicilio {
-    width: 53%;
+    width: 40%;
     padding: 10px;
     margin-bottom: 10px;
     border: none;
@@ -38,7 +38,7 @@
 }
 
 .genero {
-    width: 5%;
+    width: 8%;
     padding: 10px;
     margin-bottom: 10px;
     border: none;
@@ -47,7 +47,7 @@
 }
 
 .reg {
-    width: 30%;
+    width: 17%;
     padding: 10px;
     margin-bottom: 10px;
     border: none;
@@ -55,7 +55,7 @@
 }
 
 input[type="email"] {
-    width: 63%;
+    width: 350px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -67,12 +67,12 @@ input[type="email"]::placeholder {
     color: #888;
 }
   
-  input[type="email"]:focus {
+input[type="email"]:focus {
     border-color: brown;
 }
 
 .tel {
-    width: 27%;
+    width: 18%;
     padding: 10px;
     margin-bottom: 10px;
     border: none;
@@ -91,7 +91,7 @@ select option:checked {
 }
   
 .btnlimpiar {
-    width: 272px;
+    width: 100%;
     padding: 10px;
     background-color: #818181;
     color: white;
@@ -100,7 +100,7 @@ select option:checked {
     cursor: pointer;
 }
   
-.btnlimpiar:hover {
+.btnlimpiar :hover {
     background-color: #000000;
 }
   
@@ -120,7 +120,7 @@ select option:checked {
 }
   
 .btnguardar {
-    width: 90%;
+    width: 100%;
     padding: 10px;
     background-color: #818181;
     color: white;
@@ -129,7 +129,7 @@ select option:checked {
     cursor: pointer;
 }
   
-.btnguardar:hover {
+.btnguardar :hover {
     background-color: #000000;
 }
 
@@ -147,18 +147,18 @@ a .btnconsulta:hover {
     background-color: #000000;
 }
 
-.btnactualizar {
+.btnregresar {
     width: 272px;
     padding: 10px;
-    background-color: #818181;
+    background-color: #285ceb;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
   
-.btnactualizar:hover {
-    background-color: #000000;
+.btnregresar :hover {
+    background-color: #0b2b83;
 }
 
 a .btneliminar {
@@ -177,7 +177,7 @@ a .btneliminar:hover {
 
 /* CODIGO NUEVO */
 form.registro {
-    width: 90%;
+    width: 98%;
     height: auto;
 
     display: flex;
@@ -187,7 +187,7 @@ form.registro {
     align-items: center;
 }
 
-div {
+div {    
     padding: 0.5em;
     height: auto;
     
@@ -200,20 +200,21 @@ div {
 
 div#Campos {
     width: 60%;
+    height: 100%;
 }
 
 div#Botones {
-    width: 25%;
+    width: 20%;
     height: 100%;
 }
 
 label {
-    width: 10%;
+    width: 7%;
     text-align: center;
 }
 
 .nom {
-    width: 20%;
+    width: 30%;
     text-align: center;
     margin-bottom: 1em;    
 }
@@ -225,31 +226,39 @@ label {
 }
 
 .ed {
-    width: 10%;
+    width: 11%;
     text-align: center;
     margin-bottom: 1em;    
 }
 
 .te {
-    width: 23%;
+    width: 15%;
     text-align: center;
     margin-bottom: 1em;
 }
 
+.telp {
+    width: 21%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
 .domi {
-    width: 27%;
+    width: 15%;
     text-align: center;
     margin-bottom: 1em;
 }
 
 .ge {
-    width: 22%;
+    width: 21%;
     text-align: center;
     margin-bottom: 1em;
 }
 
 .car {
-    width: 24%;
+    width: 21%;
     padding: 10px;
     margin-bottom: 10px;
     border: none;
@@ -257,7 +266,7 @@ label {
 }
 
 .corr {
-    width: 23%;
+    width: 19%;
     text-align: center;
     margin-bottom: 1em;
 }
@@ -271,19 +280,19 @@ label {
 }
 
 .a {
-    width: 12%;
+    width: 8%;
     text-align: center;
     margin-bottom: 1em;
 }
 
 .fe {
-    width: 16%;
+    width: 25%;
     text-align: center;
     margin-bottom: 1em;
 }
 
 .na {
-    width: 17%;
+    width: 16%;
     padding: 10px;
     margin-bottom: 10px;
     border: none;
@@ -291,13 +300,29 @@ label {
 }
 
 .con {
-    width: 38%;
+    width: 37%;
     text-align: center;
     margin-bottom: 1em;
 }
 
 .pass {
     width: 48%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.nomt {
+    width: 13%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.nombret {
+    width: 34%;
     padding: 10px;
     margin-bottom: 10px;
     border: none;
@@ -312,24 +337,73 @@ footer {
     font-size: 14px;
 }
 
-.matr{
-    width: 20%;
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #818181;
+    box-shadow: 0 0 5px #818181;
+}
+
+input[type="submit"] {
+    width: 81%;
+    height: auto;
+    padding: 10px 20px;
+    background-color: #818181;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;    
+}
+  
+input[type="submit"]:hover {
+    background-color: #000000;
+}
+
+.espacio {
+    width: 10%;
     padding: 10px;
     margin-bottom: 10px;
     border: none;
     border-radius: 5px;
 }
 
-.matri {
-    width: 15%;
+.tabla {
+    width: 90%;
+    height: auto;
+}
+
+.telpp {
+    width: 29%;
     padding: 10px;
     margin-bottom: 10px;
     border: none;
     border-radius: 5px;
 }
 
-.apell {
-    width: 26%;
+.tttel {
+    width: 29%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.antes {
+    width: 37%;
+    text-align: center;
+    margin-bottom: 1em;   
+}
+
+.turno {
+    width: 21%;
     padding: 10px;
     margin-bottom: 10px;
     border: none;

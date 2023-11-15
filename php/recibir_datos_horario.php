@@ -5,8 +5,7 @@
 		$Horario_D=$_POST['horario_d'];
 		$Horario_Adm=$_POST['horario_adm'];
 
-		include 'conexion.php';
-		mysqli_select_db($conexion, "sagadb");		
+		include 'conexion.php';			
 
 		$Resultado=mysqli_query($conexion,"INSERT INTO `horarios`(`Turno`, `Horario_A`, `Horario_D`, `Horario_Adm`) VALUES ('".$Turno."','".$Horario_A."','".$Horario_D."','".$Horario_Adm."');");
 		if($Resultado==true){

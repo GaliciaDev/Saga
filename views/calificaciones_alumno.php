@@ -21,8 +21,7 @@
             $matricula = $_SESSION['alumno'];
 
             // Conexion a la BD
-            include '../php/conexion.php';
-            mysqli_select_db($conexion, "sagadb");
+            include '../php/conexion.php';            
 
             // Realizamos consulta para obtener todas las materias del alumno
             $resultado = mysqli_query($conexion, "SELECT * FROM `materias` WHERE `id_alumno` = '$matricula';");

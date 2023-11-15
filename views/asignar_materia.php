@@ -25,8 +25,7 @@
     <select class="nombre" name="docente" id="docente">
         <?php
         // Conexión a la base de datos
-        include '../php/conexion.php';
-        mysqli_select_db($conexion, "sagadb");
+        include '../php/conexion.php';        
 
         // Consulta para obtener los nombres completos de los docentes
         $consulta_docentes = "SELECT CONCAT(nombreD, ' ', apellidoPd, ' ', apellidoMd) AS nombre_completo FROM docentes";
@@ -69,8 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("La conexión a la base de datos falló: " . mysqli_connect_error());
     }
 
-    // Seleccionar la base de datos
-    mysqli_select_db($conexion, "sagadb");
+    // Seleccionar la base de datos    
 
     // Verificar si la materia ya existe en la base de datos
     $consulta_existe_materia = "SELECT COUNT(*) AS existe FROM tira_materias WHERE Materias = ?";

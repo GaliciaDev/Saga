@@ -21,8 +21,7 @@
             $id = $matricula;
 
             // Conexión a la base de datos
-            include '../php/conexion.php';
-            mysqli_select_db($conexion, "sagadb");
+            include '../php/conexion.php';            
 
             // Consulta para obtener el grado, grupo y turno del alumno
             $consultaAlumno = "SELECT grado, grupo, turno FROM alumnos WHERE id_alumno = '$matricula'";

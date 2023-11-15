@@ -1,7 +1,6 @@
 <?php
 // Conexión a la base de datos
 include 'conexion.php';
-mysqli_select_db($conexion, "sagadb");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener los datos enviados por la solicitud AJAX

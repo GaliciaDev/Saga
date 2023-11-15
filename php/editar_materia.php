@@ -4,8 +4,7 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
     // Conexión a la base de datos
-    include 'conexion.php';
-    mysqli_select_db($conexion, "sagadb");
+    include 'conexion.php';    
 
     // Consulta para obtener los datos del registro a editar
     $consulta = "SELECT * FROM tira_materias WHERE id = $id";
@@ -79,8 +78,7 @@ if ($_POST) {
         <select class="nombre" name="nuevo_docente" id="docente">
             <?php
             // Conexión a la base de datos
-            include 'conexion.php';
-            mysqli_select_db($conexion, "sagadb");
+            include 'conexion.php';            
 
             // Consulta para obtener los nombres completos de los docentes
             $consulta_docentes = "SELECT CONCAT(nombreD, ' ', apellidoPd, ' ', apellidoMd) AS nombre_completo FROM docentes";

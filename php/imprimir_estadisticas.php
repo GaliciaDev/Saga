@@ -11,8 +11,7 @@ if (isset($_GET['id_alumno'])) {
     $pdf = new FPDF();
 
     // Conexion a la BD
-    include 'conexion.php';
-    mysqli_select_db($conexion, "sagadb");
+    include 'conexion.php';    
 
     // Realizamos consulta con JOIN para obtener datos del alumno y materias
 	$alumno = mysqli_query($conexion, "SELECT * FROM `alumnos` WHERE `id_alumno` = '$id';");

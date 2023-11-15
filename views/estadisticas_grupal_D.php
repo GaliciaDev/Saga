@@ -24,8 +24,7 @@ if (isset($_POST['Enviar'])) {
     $grupo = $_POST['grupo'];
     $grado = str_split($grupo);
 
-    include '../php/conexion.php';
-    mysqli_select_db($conexion, "sagadb");    
+    include '../php/conexion.php';       
 
     // Obtener datos de los alumnos del mismo grupo
     $alumnos_query = "SELECT * FROM `alumnos` WHERE `grado` = '$grado[0]' AND `grupo` = '$grado[1]';";

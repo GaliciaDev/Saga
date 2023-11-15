@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../css/consulta.css">
+	<link rel="stylesheet" type="text/css" href="../css/estilo_consulta.css">
 	<link rel="shortcut icon" href="../assets/img/icon.png">
 	<link rel="stylesheet" href="../css/diseño_movil.css">
 	<title>Consulta y Actualizacion</title>
@@ -33,8 +33,7 @@
 				
 
 				//Conexion a la BD
-				include '../php/conexion.php';
-				mysqli_select_db($conexion, "sagadb");
+				include '../php/conexion.php';				
 
 				//Realizamos consulta
 				$resultado = mysqli_query($conexion, "SELECT * FROM `docentes` WHERE `id_docente` = '$matricula_d';");
@@ -82,6 +81,13 @@
                         <input class="na" type="date" name="natalicioD" '.($campo['natalicioD']).' class="CajasL" value="'.($campo	['natalicioD']).'" required><br><br>
                         <label class="telpp"> Telefono Emergencia</label>
                             <input class="telp" type="number" name="telefonoEd"placeholder="10 Digitos" '.($campo	['telefonoEd']).' min="10" value="'.($campo	['telefonoEd']).'" required><br><br>                        							
+						<label class="turn">Turno</label>
+							<select class="turno" name="turno">
+								<option class="turno" value="'.($campo	['turno']).'">'.($campo	['turno']).'</option>
+								<option class="turno" value="Matutino">Matutino</option>
+								<option class="turno" value="Vespertino">Vespertino</option>	
+							</select><br><br>
+
 							
 								<br><br><input type="submit" name="btnguardar" value="Actualizar Informacion"> 							
 						</div>
@@ -103,11 +109,11 @@
 				$Correo = $_POST['correoD'];	
                 $Cargo = $_POST['cargoD'];
                 $Area = $_POST['areaD'];
+				$Turno = $_POST['turno'];
 
-				include '../php/conexion.php';
-				mysqli_select_db($conexion, "sagadb");		
+				include '../php/conexion.php';				
 					
-				$Resultado = mysqli_query($conexion, "UPDATE `docentes` SET `nombreD`='$Nombre',`apellidoPd`='$ApellidoP',`apellidoMd`='$ApellidoM',`edad`='$Edad',`sexoD`=null,`direccionD`='$Domicilio',`telefonoD`='$Telefono',`cargoD`='$Cargo',`correoD`='$Correo',`areaD`='$Area',`natalicioD`='$FechaNac',`telefonoEd`='$Tel_Emg',`Horario_D`=null,`Clave`=null WHERE `id_docente` = '$id';");	
+				$Resultado = mysqli_query($conexion, "UPDATE `docentes` SET `nombreD`='$Nombre',`apellidoPd`='$ApellidoP',`apellidoMd`='$ApellidoM',`edad`='$Edad',`sexoD`=null,`direccionD`='$Domicilio',`telefonoD`='$Telefono',`cargoD`='$Cargo',`correoD`='$Correo',`areaD`='$Area',`natalicioD`='$FechaNac',`telefonoEd`='$Tel_Emg',`Clave`=null, `turno`='$Turno' WHERE `id_docente` = '$id';");
 
 				if($Resultado==true){
 					echo '
@@ -142,6 +148,14 @@
 								padding: 20px;
 								border-radius: 5px;
 								font-size: 18px;
+							}
+
+							.turno {
+								width: 21%;
+								padding: 10px;
+								margin-bottom: 10px;
+								border: none;
+								border-radius: 5px;
 							}
 						</style>';
 					echo '<META HTTP-EQUIV="REFRESH" CONTENT="2;URL=consulta_docentes.php">';

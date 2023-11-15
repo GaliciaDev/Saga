@@ -1,8 +1,7 @@
 <?php
 if (isset($_GET['id'])) {
     // Conexión a la BD
-    include 'conexion.php';
-    mysqli_select_db($conexion, "sagadb");
+    include 'conexion.php';    
 
     // Obtener el ID de la materia a eliminar
     $id = $_GET['id'];

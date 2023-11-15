@@ -3,7 +3,7 @@
 	session_unset();
 	session_destroy();
 	echo '<link rel="stylesheet" type="text/css" href="css/estilos_login.css">';	
-	echp '<link rel="icon" type="image/png" href="../assets/img/icon.png"/>';
+	echo '<link rel="icon" type="image/png" href="../assets/img/icon.png"/>';
 	echo '<META HTTP-EQUIV="REFRESH" CONTENT="2;URL=../index.php">';
 ?>
 

@@ -66,11 +66,11 @@
         }
 
         li ul li a {
-            width: 12%;
+            width: 15%;
 			justify-content: center;
 			display: flex;
 			text-align: center;
-            min-width: 100px;
+            min-width: 200px;
             padding: 0 19px;
 			top: -6px;
 			left: 10px;	
@@ -102,6 +102,10 @@
             display: block;
         }
 
+        .icono {
+            display: none;
+        }
+
         /* Estilo responsivo ancho menor de 750px */
         @media screen and (max-width: 750px) {
             /* Hacer que los vínculos desplegables aparezcan en línea */
@@ -122,13 +126,20 @@
                 display: block;
                 cursor: pointer;
             }
+
+            .icono {
+              display: block;
+              width: 50px;
+              height: 50px;
+              margin-left: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <label for="show-menu" class="menu-icon">            
-            <img src="assets/img/icono_menu.png" alt="Menú">
+            <img class="icono" src="assets/img/icono_menu.png" alt="Menú"><br><br>
         </label>
         <input type="checkbox" id="show-menu" role="button">
         <ul id="menu">
@@ -144,7 +155,7 @@
 				<a href="#">Captura Calificaciones</a>
 				<ul class="hidden">
 					<li><a href="views/capturas_calificaciones_D.php">Captura Calificaciones</a></li>
-					<li><a href="views/modificar_calificacion_D.php">Modificar Calificacion</a></li>
+					<li><a href="views/modificar_calificacion_D.php">Modificar Calificaciones</a></li>
 				</ul>
 			</li>
             <li><a href="views/consulta_horarios_D.php">Horario</a></li>

@@ -6,7 +6,7 @@
 		$password=$_POST['Pass'];				
 		#Conectamos con MySQL
 		include 'conexion.php';
-		mysqli_select_db($conexion, "sagadb");
+		
 		#Consulta para validar
 		$Resultado=mysqli_query($conexion,"SELECT * FROM `login` WHERE `Matricula`='".$Nombre."' and `Password`='".$password."';");
 		if(mysqli_num_rows($Resultado)==1) {
