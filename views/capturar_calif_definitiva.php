@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../css/capturas.css">
+    <link rel="stylesheet" type="text/css" href="../css/estilo_capturas.css">
     <link rel="shortcut icon" href="../assets/img/icon.png">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="../css/diseño_movil.css">
@@ -94,7 +94,7 @@
             // Cerrar la conexión a la base de datos
             mysqli_close($conexion);
             ?>
-        </table>
+        </table><br>
     </body>    
 
     <style>

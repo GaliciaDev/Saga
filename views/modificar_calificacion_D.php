@@ -24,7 +24,7 @@ $resultadoMaterias = mysqli_query($conexion, $consultaMaterias);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../css/estilo_modificar_D.css">
+    <link rel="stylesheet" type="text/css" href="../css/modificar_D.css">
     <link rel="shortcut icon" href="../assets/img/icon.png">
     <link rel="stylesheet" href="../css/diseño_movil.css">
     <title>Editar Calificaciones</title>

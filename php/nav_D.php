@@ -23,7 +23,7 @@
 
         /* Estilo para los links */
         li a {
-            background: rgb(117, 117, 117);
+            background: #602701;
             color: #FFF;
             min-width: 180px;
             transition: background 0.5s, color 0.5s, transform 0.5s;
@@ -38,7 +38,7 @@
         }
 
         li:hover a {
-            background: #72d9fb;
+            background: #341602;
         }
 
         li:hover ul a {
@@ -50,7 +50,7 @@
 
         /* Hover para enlaces desplegados */
         li:hover ul a:hover {
-            background: #2598c3;
+            background: #602701;
             color: #fff;
         }
 
@@ -72,16 +72,16 @@
 			text-align: center;
             min-width: 200px;
             padding: 0 19px;
-			top: -6px;
+			top: 2px;
 			left: 10px;	
-			transition: opacity 0.5, transform 0.2s;
+			transition: opacity 0.5, transform 0.2s;            
 
         }
 
          /* Visualizar el menú desplegable en hover */
 		 li:hover > ul,
           li ul:hover {
-              display: block;
+              display: block;              
           }
 
         /* Estilos boton desplegar menu */
@@ -119,7 +119,7 @@
             }
             /* Todos los enlaces del menú de ancho completo */
             ul li, li a {
-                width: 100%;				
+                width: 100%;
             }
 
             .show-menu {

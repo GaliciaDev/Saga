@@ -8,7 +8,7 @@ validarSd();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../css/estilo_horario.css">
+    <link rel="stylesheet" type="text/css" href="../css/horario.css">
     <link rel="shortcut icon" href="../assets/img/icon.png">
     <link rel="stylesheet" href="../css/diseño_movil.css">
     <title>Horarios</title>
@@ -112,7 +112,7 @@ validarSd();
     <style>
         /* Estilo para el botón */
         .btnguardar {
-            background-color: #000; /* Color de fondo negro para el botón */
+            background-color: #602701; /* Color de fondo negro para el botón */
             color: #fff; /* Color del texto del botón (blanco) */
             padding: 10px 20px; /* Espaciado interno del botón (ajusta según tus necesidades) */
             border: none; /* Quita el borde del botón */
@@ -123,7 +123,7 @@ validarSd();
 
         /* Estilo para el botón cuando se pasa el ratón por encima */
         .btnguardar:hover {
-            background-color: #333; /* Cambia el color de fondo a gris oscuro al pasar el ratón por encima */
+            background-color: #3e1a02; /* Cambia el color de fondo a gris oscuro al pasar el ratón por encima */
         }
     </style>
 </body>

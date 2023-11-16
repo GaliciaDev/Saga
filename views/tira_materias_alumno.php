@@ -41,7 +41,7 @@
 
                 if (mysqli_num_rows($resultadoMaterias) > 0) {
                     echo "<br><h2>Materias del Alumno</h2><br><br>";
-                    echo "<table>";
+                    echo '<table class="tabla_informacion">';
                     echo "<tr>";
                     echo "<th>Materia</th>";
                     echo "<th>Turno</th>";
@@ -83,39 +83,31 @@
         }
         ?>
         <style>
-            table {
-                width: 80%;
-                border-collapse: collapse;
-                margin: 20px auto;
-                background-color: #f8f8f8;
-                border: 1px solid #ddd;
-                font-family: Arial, sans-serif;
-            }
+            .tabla_informacion {
+            border-collapse: collapse;
+            width: 100%;
+            text-align: center;    
+        }
 
-            /* Estilo para las celdas del encabezado */
-            table th {
-                background-color: #333;
-                color: #fff;
-                padding: 10px;
-            }
+        .tabla_informacion th, .tabla_informacion td {
+            padding: 8px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;    
+        }
 
-            /* Estilo para las celdas de datos */
-            table td {
-                padding: 8px;
-                border: 1px solid #ddd;
-            }
+        td {
+            text-align: center;
+        }
 
-            /* Estilo para las filas impares */
-            table tr:nth-child(odd) {
-                background-color: #f2f2f2;
-            }
+        .tabla_informacion th {
+            background-color: #f2f2f2;
+            text-align: center;
+        }
 
-            /* Estilo para las filas cuando se pasa el mouse por encima */
-            table tr:hover {
-                background-color: #ddd;
-            }
-        </style>
-        <style>
+        .tabla_informacion tr:hover {
+            background-color: #f5f5f5;
+        }
+        
         .btnguardar {
             width: 16%;
             padding: 10px;
@@ -123,10 +115,10 @@
             margin-bottom: 20px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            background: #000;
+            background: #944d1e;
         }
         .btnguardar:hover {
-            background-color: #333;
+            background-color: #522303;
         }
     </style>
     </body>

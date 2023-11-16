@@ -3,21 +3,49 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../css/modificar_calificacion.css">
+    <link rel="stylesheet" type="text/css" href="../css/estilo_modificar_calificacion.css">
     <link rel="stylesheet" href="../css/diseño_movil.css">
     <link rel="shortcut icon" href="../assets/img/icon.png">  
     <title>Modificar Calificaciones</title>
 </head>
 <body>
-<?php include '../php/nav_D.php'; ?>
+<?php include '../php/nav_Admin.php'; ?>
     <center><br><h1>Modificar Calificaciones</h1><br><br>
     <!-- Formulario para ingresar el ID del alumno -->
-    <form action="modificar_calificacion_D.php" method="POST">
+    <form class="busqueda" action="modificar_calificacion.php" method="POST">
         <label for="id">Ingrese el ID del alumno:</label>
         <input class="dato" autofocus type="text" name="id_alumno" id="id_alumno" placeholder="Ingrese una Matricula">
-        <input type="submit" value="Buscar">
-    </form>
+        <input class="btn" type="submit" value="Buscar">
+    </form><br><br>
+    <style>
+        .busqueda {
+            width: 15%;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border: 30 solid #ccc;
+            border-radius: 19px;            
+        }
 
+        .btn {
+            background: #602701;
+        }
+
+        .btn:hover {
+            background:·#602701;
+        }
+
+        .modificador {
+            width: 50%;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border: 30 solid #ccc;
+            border-radius: 19px;
+        }
+    </style>
     <?php
     // Verificar si se ha enviado el formulario
     if ($_POST) {
@@ -34,7 +62,7 @@
         // Verificar si se encontraron resultados
         if (mysqli_num_rows($resultado_calificaciones) > 0) {
             echo '<h2>Calificaciones del Alumno</h2>';
-            echo '<form method="POST">';
+            echo '<form class="modificador" method="POST">';
             echo '<input type="hidden" name="id_alumno" value="' . $id_alumno . '">';
             echo '<table class="tabla_informacion">';
             echo '
@@ -63,7 +91,7 @@
             }
             echo '</table>';
             echo '<br><br><input type="submit" name="guardar_cambios" value="Guardar Cambios"><br><br>';
-            echo '</form>';
+            echo '</form><br><br>';
         } else {
             echo '<p>El alumno no fue encontrado o no tiene calificaciones registradas.</p>';
         }

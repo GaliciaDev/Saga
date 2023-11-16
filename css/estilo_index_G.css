@@ -64,6 +64,10 @@ input[type="text"]{
     border-radius: 4px;
 }
 
+td:hover {
+    background-color: #f5f5f5;
+}
+
 input[type="submit"]{
     background-color: #2c312c;
       color: #fff;

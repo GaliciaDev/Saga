@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../css/contactos_tutores.css">
+	<link rel="stylesheet" type="text/css" href="../css/est_contactos_tutores.css">
 	<link rel="shortcut icon" href="../assets/img/icon.png">
 	<link rel="stylesheet" href="../css/diseño_movil.css">
 	<title>Contacto a Tutores</title>
@@ -14,7 +14,7 @@
 		<center><br><br><label>Alumno: </label><br>
 		<form method="POST" action="contactos_tutores.php">
 			<input type="text" name="contactos" placeholder="Ingrese la Matricula del Alumno"><br><br>
-			<input type="submit" value="Buscar">			
+			<input class="btnsu" type="submit" value="Buscar">			
 		</form>
 	</head>
 
@@ -26,6 +26,14 @@
 			border: 1px solid #ccc;
 			border-radius: 4px;
 		}
+
+		.btnsu {
+			background: #602701;
+		}
+
+		.btnsu:hover {
+			background: #602701;
+		} 
 	</style>
 	<table class="contacto_tutores">
 		<br><center><h4>Informacion</h4></center><br>

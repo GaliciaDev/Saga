@@ -244,17 +244,17 @@ select option {
 }
 
 .eliminar {
-    background-color: #333;
+    background-color: #602701;
 }
 
 .modificar {
-    background-color: #333;
+    background-color: #602701;
 }
 
 /* Estilos al pasar el cursor por encima de los botones */
 .eliminar:hover,
 .modificar:hover {
-    background-color: black;
+    background-color: #2e1200;
 }
 
 /* Estilos para evitar que los botones tengan bordes azules al hacer clic */

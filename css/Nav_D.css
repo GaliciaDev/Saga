@@ -51,7 +51,7 @@ html, body{
   }
   
   nav a {
-    background:rgb(117, 117, 117);
+    background:#602701;
     color:#FFF;
     min-width:180px;
     transition: background 0.5s, color 0.5s, transform 0.5s;

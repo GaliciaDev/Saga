@@ -35,6 +35,14 @@ header {
     background-color: #555;
 }
 
+footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+}
+
 .foto_perfil {
   width: 200px; 
   height: auto; 
@@ -44,48 +52,50 @@ header {
   margin: 10px;
 }
 
-.tabla_horarios {
+.contacto_tutores {
     border-collapse: collapse;
     width: 100%;
-    height: auto;
-    justify-content: center;
-    text-align: center;
 }
 
-.tabla_horarios th{ 
+.contacto_tutores th{ 
     padding: 8px;
     text-align: center;
     border-bottom: 1px solid #ddd;
 }
 
-.tabla_horarios td {
+.contacto_tutores td {
     padding: 8px;
     text-align: center;
     border-bottom: 1px solid #ddd;   
 }
 
-.tabla_horarios th {
+.contacto_tutores th {
     background-color: #f2f2f2;
 }
 
-.tabla_horarios tr:hover {
+.contacto_tutores tr:hover {
     background-color: #f5f5f5;
 }
 
-footer {
-    background-color: #f2f2f2;
-    padding: 20px;
-    text-align: center;
-    color: #888;
-    font-size: 14px;
+input[type="submit"] {
+    width: 10%;
+    height: auto;
+    background-color: #602701;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 4px;
 }
 
-form {
-    width: 98%;
-    max-width: 400px; /* Puedes ajustar este valor según tus necesidades */
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f5f5f5;
+input[type="submit"]:hover {
+    background-color: #2c1200;
+}
+
+input {
+    width: 12%;
+    padding: 10px;
+    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
@@ -93,53 +103,7 @@ form {
 label {
     display: block;
     margin-bottom: 10px;
-    font-weight: bold;
-}
-
-input,
-textarea,
-select {
-    width: 100%; /* Ahora ocupará el 100% del contenedor */
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-input[type="submit"] {
-    background-color: #363636;
-    color: white;
-    border: none;
-    height: auto;
-    cursor: pointer;
-    padding: 10px 20px;
-    border-radius: 4px;
-    width: 80%;
-}
-
-input[type="submit"]:hover {
-    background-color: #000;
-}
-
-.center-input {
-    text-align: center;
-}
-
-/* Estilo base del botón */
-.editarBtn {
-    background-color: black;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-/* Estilo cuando se hace hover sobre el botón */
-.editarBtn:hover {
-    background-color: gray;
+    font-weight: bold;    
 }
 
 .dropdown {
@@ -150,8 +114,8 @@ input[type="submit"]:hover {
     list-style-type: none;
     font-size: 14px;
     font-family: 'Times New Roman', Times, serif;
-}
-
+  }
+  
 .dropbtn {
     background-color: #333;
     color: white;
@@ -162,6 +126,10 @@ input[type="submit"]:hover {
     font-family: 'Times New Roman', Times, serif;
     font-size: 14px;
 }
+  
+h4 {
+    text-align: center;
+}
 
 .dropdown-content {
     display: none;
@@ -171,36 +139,14 @@ input[type="submit"]:hover {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
-
+  
 .dropdown-content a {
     color: black;
     padding: 10px 16px;
     text-decoration: none;
     display: block;
 }
-
+  
 .dropdown:hover .dropdown-content {
     display: block;
-}
-
-input [type="text"] {
-    width: 70%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.tablilla {
-    width: 98%;
-    max-width: 98%; /* Puedes ajustar este valor según tus necesidades */
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 4px;
 }

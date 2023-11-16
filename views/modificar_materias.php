@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../css/esti_modificar_materia.css">
+    <link rel="stylesheet" type="text/css" href="../css/modificar_materias.css">
     <link rel="shortcut icon" href="../assets/img/icon.png">  
     <link rel="stylesheet" href="../css/diseño_movil.css">
     <title>Modificar Calificaciones</title>
@@ -85,28 +85,30 @@ if (mysqli_num_rows($resultado_materias) > 0) {
 ?>
 </body>
 <style>
-    table {
-    width: 90%;
+
+.tabla_informacion {
     border-collapse: collapse;
-    margin-top: 20px;
+    width: 100%;
+    text-align: center;    
 }
 
-th, td {
-    border: 1px solid #ddd;
+.tabla_informacion th, .tabla_informacion td {
     padding: 8px;
-    text-align: left;
+    text-align: center;
+    border-bottom: 1px solid #ddd;    
 }
 
-th {
+td {
+    text-align: center;
+}
+
+.tabla_informacion th {
     background-color: #f2f2f2;
+    text-align: center;
 }
 
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-tr:hover {
-    background-color: #ddd;
+.tabla_informacion tr:hover {
+    background-color: #f5f5f5;
 }
 
 input[type="text"],

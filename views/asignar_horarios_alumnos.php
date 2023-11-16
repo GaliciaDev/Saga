@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">    
-    <link rel="stylesheet" type="text/css" href="../css/asignar_horario_alumno.css">
+    <link rel="stylesheet" type="text/css" href="../css/est_asignar_horario_alumno.css">
 	<link rel="shortcut icon" href="../assets/img/icon.png">
     <link rel="stylesheet" href="../css/diseño_movil.css">
 	<title>Asignar Horarios</title>
@@ -18,7 +18,7 @@
                 .boton-personalizado {
                 display: inline-block;
                 padding: 5px 10px; 
-                background-color: gray; 
+                background-color: #602701; 
                 color: #ffffff; 
                 text-decoration: none; 
                 border-radius: 5px; 
@@ -26,7 +26,7 @@
                 }
                 
                 .boton-personalizado:hover {
-                    background-color: #333;
+                    background-color: #220e00;
                 }
 
                 select {

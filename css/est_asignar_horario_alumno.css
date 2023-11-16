@@ -1,7 +1,7 @@
 body {
     width: 98%;
     height: auto;
-    text-align: center;
+    text-align: center;    
 }
 
 header {    
@@ -80,13 +80,111 @@ footer {
     font-size: 14px;
 }
 
-.formulario {
-    margin-left: 30%;
+form {
     padding: 20px;
     background-color: #f5f5f5;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+  
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+  
+input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.salon {
+    display: block;
+    width: 80px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.busca{
+    display: block;
+    width: 80px;
+    padding: 10px;
+    margin: 0 auto; /* Esto centrará horizontalmente el elemento */
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;  
+}
+
+.nombre_doc {
+    display: block;
+    width: 250px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+input[type="submit"] {
+    background-color: #602701;
+    color: white;
+    border: none;
+    height: auto;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+  
+input[type="submit"]:hover {
+    background-color: #2c1200;
+}
+
+select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #333;
+    font-size: 12px;
+    cursor: pointer;
+}
+  
+select:hover {
+    border-color: #999;
+}
+  
+select:focus {
+    outline: none;
+    border-color: #555;
+    box-shadow: 0 0 5px rgba(85, 85, 85, 0.3);
+}
+  
+select option {
+    background-color: #fff;
+    color: #333;
+}  
 
 .dropdown {
     position: relative;
@@ -128,101 +226,3 @@ footer {
 .dropdown:hover .dropdown-content {
     display: block;
 }
-  
-label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-  
-input {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.salon {
-    display: block;
-    width: 80px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.busca{
-    display: block;
-    width: 80px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    text-align: center;   
-}
-
-.nombre_doc {
-    display: block;
-    width: 250px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-  
-input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    height: auto;
-    width: 100%;
-    cursor: pointer;
-    padding: 10px 20px;
-    border-radius: 4px;
-}
-  
-input[type="submit"]:hover {
-    background-color: #45a049;
-}
-
-select {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    background-color: #fff;
-    color: #333;
-    font-size: 12px;
-    cursor: pointer;
-}
-  
-select:hover {
-    border-color: #999;
-}
-  
-select:focus {
-    outline: none;
-    border-color: #555;
-    box-shadow: 0 0 5px rgba(85, 85, 85, 0.3);
-}
-  
-select option {
-    background-color: #fff;
-    color: #333;
-}  

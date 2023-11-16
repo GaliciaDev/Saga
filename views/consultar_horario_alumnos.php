@@ -48,7 +48,7 @@ $conexion->close();
 </head>
 <body>
 <?php include '../php/nav_A.php'; ?>
-<br><h1>Horario de Alumno</h1><br><br>
+<br><h1>Horario del Alumno</h1><br><br>
 
 <?php
 // Verificar si se encontraron horarios para el grupo

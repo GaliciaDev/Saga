@@ -28,6 +28,15 @@
             padding: 8px;
             text-align: left;
         }
+
+        th {
+            background: #602701;
+            color: wheat;
+        }
+
+        td {
+            background: #f2f2f2;
+        }
     </style>
 </head>
 <body>
@@ -68,7 +77,7 @@
 
                     echo "<tr>";
                     echo "<td>$materia</td>";
-                    echo "<td>$calificacion</td>";
+                    echo "<td>" . number_format($calificacion, 2) . "</td>";
                     echo "<td>$periodo</td>";
                     echo "<td>$situacion</td>";
                     echo "</tr>";
@@ -125,10 +134,10 @@
             margin-bottom: 20px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            background: #000;
+            background: #944d1e;
         }
         .btnguardar:hover {
-            background-color: #333;
+            background-color: #5a2502;
         }
     </style>
 </body><br><br><br><br><br><br><br><br><br>

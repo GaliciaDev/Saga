@@ -112,10 +112,10 @@
             margin-bottom: 20px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            background: #000;
+            background: #944d1e;
         }
         .btnguardar:hover {
-            background-color: #333;
+            background-color: #5a2502;
         }
     </style>
 </body>

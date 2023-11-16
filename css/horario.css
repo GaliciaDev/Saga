@@ -1,7 +1,7 @@
 body {
     width: 98%;
     height: auto;
-    text-align: center;    
+    text-align: center;
 }
 
 header {    
@@ -44,7 +44,7 @@ header {
   margin: 10px;
 }
 
-.tabla {
+.tabla_horarios {
     border-collapse: collapse;
     width: 100%;
     height: auto;
@@ -52,23 +52,23 @@ header {
     text-align: center;
 }
 
-.tabla th{ 
+.tabla_horarios th{ 
     padding: 8px;
     text-align: center;
     border-bottom: 1px solid #ddd;
 }
 
-.tabla td {
+.tabla_horarios td {
     padding: 8px;
     text-align: center;
     border-bottom: 1px solid #ddd;   
 }
 
-.tabla th {
+.tabla_horarios th {
     background-color: #f2f2f2;
 }
 
-.tabla tr:hover {
+.tabla_horarios tr:hover {
     background-color: #f5f5f5;
 }
 
@@ -81,10 +81,14 @@ footer {
 }
 
 form {
+    max-width: 400px;
+    margin: 0 auto;
     padding: 20px;
     background-color: #f5f5f5;
     border: 1px solid #ccc;
     border-radius: 4px;
+    margin: 0;    
+    
 }
   
 label {
@@ -93,7 +97,8 @@ label {
     font-weight: bold;
 }
   
-input {
+input,
+textarea {
     display: block;
     width: 100%;
     padding: 10px;
@@ -101,60 +106,19 @@ input {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    text-align: center;
-}
-
-.salon {
-    display: block;
-    width: 80px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.busca{
-    display: block;
-    width: 80px;
-    padding: 10px;
-    margin: 0 auto; /* Esto centrará horizontalmente el elemento */
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    text-align: center;  
-}
-
-.nombre_doc {
-    display: block;
-    width: 250px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
 }
   
-input[type="submit"] {
-    background-color: #363636;
+  input[type="submit"] {
+    background-color: #602701;
     color: white;
     border: none;
-    height: auto;
-    width: 100%;
     cursor: pointer;
     padding: 10px 20px;
     border-radius: 4px;
 }
   
-input[type="submit"]:hover {
-    background-color: #686868;
+  input[type="submit"]:hover {
+    background-color: #311502;
 }
 
 select {
@@ -171,20 +135,61 @@ select {
     cursor: pointer;
 }
   
-select:hover {
+  select:hover {
     border-color: #999;
 }
   
-select:focus {
+  select:focus {
     outline: none;
     border-color: #555;
     box-shadow: 0 0 5px rgba(85, 85, 85, 0.3);
 }
   
-select option {
+  select option {
     background-color: #fff;
     color: #333;
 }  
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    padding: 8px;
+    text-align: left;
+    list-style-type: none;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+.dropbtn {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.dropdown-content a {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+}
+  
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
 .dropdown {
     position: relative;

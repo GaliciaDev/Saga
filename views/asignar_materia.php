@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../css/materias.css">
+    <link rel="stylesheet" type="text/css" href="../css/estilo_materias.css">
     <link rel="shortcut icon" href="../assets/img/icon.png">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="../css/diseño_movil.css">
@@ -31,9 +31,12 @@
         $consulta_docentes = "SELECT CONCAT(nombreD, ' ', apellidoPd, ' ', apellidoMd) AS nombre_completo FROM docentes";
         $resultado_docentes = mysqli_query($conexion, $consulta_docentes);
 
+        // Mostrar un valor por defecto
+        echo '<option class="nombre" value"">Seleccione un Docente</option>';
+
         // Generar las opciones
         while ($fila_docente = mysqli_fetch_assoc($resultado_docentes)) {
-            $nombre_completo = $fila_docente['nombre_completo'];
+            $nombre_completo = $fila_docente['nombre_completo'];            
             echo '<option class="nombre" value="' . $nombre_completo . '">' . $nombre_completo . '</option>';
         }
 

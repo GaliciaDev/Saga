@@ -133,7 +133,7 @@ input[type="text"]{
 }
 
 input[type="submit"]{
-    background-color: #2c312c;
+    background-color: #602701;
       color: #fff;
       padding: 10px 20px;
       border: none;
@@ -142,7 +142,7 @@ input[type="submit"]{
 }
     
 input[type="submit"]:hover {
-      background-color: #b4b9b5;
+      background-color: #2c1200;
 }
 
 /* Estilo para la tabla */
@@ -187,20 +187,18 @@ table td, table th {
 /* Cambia el color del texto en las celdas de encabezado */
 table th {
     color: white;
+    background-color: #602701;
 }
 
 /* Estilo para el encabezado h1 */
 h1 {
-    text-align: center;
-    background-color: #333;
-    color: #fff;
+    text-align: center;    
+    color: black;
     padding: 10px;
 }
 
 /* Estilo para el pie de página */
 footer {
-    text-align: center;
-    background-color: #333;
-    color: #fff;
+    text-align: center;    
     padding: 10px;
 }

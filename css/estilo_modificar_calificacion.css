@@ -81,153 +81,126 @@ footer {
 }
 
 form {
-    max-width: 400px;
+    width: 98%;
+    max-width: 400px; /* Puedes ajustar este valor según tus necesidades */
     margin: 0 auto;
     padding: 20px;
     background-color: #f5f5f5;
     border: 1px solid #ccc;
     border-radius: 4px;
-    margin: 0;    
-    
 }
-  
+
 label {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
 }
-  
+
 input,
-textarea {
-    display: block;
-    width: 100%;
+textarea,
+select {
+    width: 100%; /* Ahora ocupará el 100% del contenedor */
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    text-align: center;
 }
-  
-  input[type="submit"] {
-    background-color: #4CAF50;
+
+input[type="submit"] {
+    background-color: #602701;
     color: white;
     border: none;
+    height: auto;
     cursor: pointer;
     padding: 10px 20px;
     border-radius: 4px;
-}
-  
-  input[type="submit"]:hover {
-    background-color: #45a049;
+    width: 80%;
 }
 
-select {
+input[type="submit"]:hover {
+    background-color: #99623d;
+}
+
+.center-input {
+    text-align: center;
+}
+
+/* Estilo base del botón */
+.editarBtn {
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Estilo cuando se hace hover sobre el botón */
+.editarBtn:hover {
+    background-color: gray;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    padding: 8px;
+    text-align: left;
+    list-style-type: none;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.dropbtn {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
     display: block;
-    width: 100%;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+input [type="text"] {
+    width: 70%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    background-color: #fff;
-    color: #333;
-    font-size: 12px;
-    cursor: pointer;
-}
-  
-  select:hover {
-    border-color: #999;
-}
-  
-  select:focus {
-    outline: none;
-    border-color: #555;
-    box-shadow: 0 0 5px rgba(85, 85, 85, 0.3);
-}
-  
-  select option {
-    background-color: #fff;
-    color: #333;
-}  
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-    padding: 8px;
-    text-align: left;
-    list-style-type: none;
-    font-size: 14px;
-    font-family: 'Times New Roman', Times, serif;
-  }
-  
-.dropbtn {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 14px;
-}
-  
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #333;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-  
-.dropdown-content a {
-    color: black;
-    padding: 10px 16px;
-    text-decoration: none;
-    display: block;
-}
-  
-.dropdown:hover .dropdown-content {
-    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-    padding: 8px;
-    text-align: left;
-    list-style-type: none;
-    font-size: 14px;
-    font-family: 'Times New Roman', Times, serif;
-  }
-  
-.dropbtn {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 14px;
-}
-  
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #333;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-  
-.dropdown-content a {
-    color: black;
-    padding: 10px 16px;
-    text-decoration: none;
-    display: block;
-}
-  
-.dropdown:hover .dropdown-content {
-    display: block;
+.tablilla {
+    width: 98%;
+    max-width: 98%; /* Puedes ajustar este valor según tus necesidades */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }

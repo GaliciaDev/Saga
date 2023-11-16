@@ -44,7 +44,7 @@ input[type="number"] {
 }
 
 input[type="submit"] {
-    background-color: #000;
+    background-color: #692c01;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -54,7 +54,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background: #46464600;
+    background: #251001;
 }
 
 input {

@@ -1,13 +1,30 @@
-head {
-    background-color: #333;
-    color: blue;
-    padding: 10px;
-}
-
 body {
     width: 98%;
     height: auto;
+    font-size:  12px;
     text-align: center;
+}
+
+header {    
+    color: #fff;
+    padding: 10px;
+}
+
+img {
+    width: 60px;    
+}
+
+.boton {
+    background-color: #602701;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-attachment: #2b1100;
 }
 
 footer {
@@ -18,9 +35,9 @@ footer {
     font-size: 14px;
 }
 
-header {    
-    color: #fff;
-    padding: 10px;
+.logo {
+  width: 20%;
+  height: auto;
 }
 
 .menu {
@@ -43,6 +60,8 @@ header {
     color: #fff;
     text-decoration: none;
     padding: 15px 20px;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .menu li a:hover {
@@ -58,66 +77,23 @@ header {
   margin: 10px;
 }
 
-.estadisticas_promedio_alumno {
+.tabla_informacion {
     border-collapse: collapse;
     width: 100%;
 }
 
-.estadisticas_promedio_alumno th{ 
+.tabla_informacion th, .tabla_informacion td {
     padding: 8px;
-    text-align: center;
+    text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
-.estadisticas_promedio_alumno td {
-    padding: 8px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;   
-}
-
-.estadisticas_promedio_alumno th {
+.tabla_informacion th {
     background-color: #f2f2f2;
 }
 
-.estadisticas_promedio_alumno tr:hover {
+.tabla_informacion tr:hover {
     background-color: #f5f5f5;
-}
-form {
-    width: 98%;
-    margin: 40px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}  
-
-input[type="number"]{
-  width: 12%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-input[type="text"]{
-    width: 12%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-.btnguardar {
-    background-color: #2c312c;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-  
-.btnguardar[type="submit"]:hover {
-    background-color: #b4b9b5;
 }
 
 .dropdown {
@@ -160,3 +136,55 @@ input[type="text"]{
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+input[type="text"]{
+    width: 12%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"]{
+    background-color: #2c312c;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+}
+    
+input[type="submit"]:hover {
+      background-color: #b4b9b5;
+}
+
+/* Estilo para la tabla */
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para las celdas de la tabla */
+  td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    font-size: 15px;
+  }
+  
+  /* Estilo para las cabeceras de la tabla */
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Estilo para las filas alternas de la tabla */
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Estilo para el hover sobre las filas de la tabla */
+  tr:hover {
+    background-color: #e5e5e5;
+  }
+  

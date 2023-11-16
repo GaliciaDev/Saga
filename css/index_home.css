@@ -57,9 +57,10 @@ p{
 }
 
 .menu .navbar ul li a{
-    font-size: 20px;
-    padding: 20px;
-    color: #944d1e;
+    font-size: 25px;
+    padding: 11px;
+    display: block;
+    color: #db8c58;
     display: block;
 }
 
@@ -77,7 +78,7 @@ p{
 }
 
 .menu .navbar ul li a:hover{
-color: #312104;    
+color: #553803;    
 }
 
 /* Ocultar casilla del input */
@@ -137,12 +138,12 @@ padding: 40px 0;
 }
 
 .direction p {
-color: #FEFCFB;
-font-size: 16px;
+color: #552302;
+font-size: 20px;
 }
 
 .about {  
-padding: 100px 0;
+padding: 0px 0;
 display: flex;
 }
 

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../css/estilo_estadisticas_alumno.css">
+	<link rel="stylesheet" type="text/css" href="../css/estadisticas_alumno.css">
 	<link rel="shortcut icon" href="../assets/img/icon.png">
 	<link rel="stylesheet" href="../css/diseño_movil.css">
 	<title>Desempeño Alumno</title>
@@ -16,7 +16,7 @@
 	<form action="estadisticas_alumno_D.php" method="POST">
 		<label>Matricula del Alumno:</label>
 		<input type="number" name="alumno" placeholder="Ingrese la Matricula" required>
-		<input class="btnguardar" name="Enviar" type="submit" id="btnEnviar" value="Buscar"><br>
+		<input class="btn" name="Enviar" type="submit" id="btnEnviar" value="Buscar"><br>
 	</form>
 
 	<?php

@@ -18,7 +18,7 @@
 
     <table class="tabla_informacion">                    
         <tr>
-            <br><h2>Informacion General</h2><br><br>
+            <br><h2>Información General</h2><br><br>
             <?php
 			$matricula = $_SESSION['alumno'];
 
@@ -39,7 +39,7 @@
 				<tr>
 					<th>Grado y Grupo</th>
 						<td>'.(implode(" ",[$campo['grado'], $campo['grupo']])).'</td>
-					<th>Telefono</th>
+					<th>Teléfono</th>
 						<td>'.($campo['telefono']).'</td>
                     <th>Turno</th>
                         <td>'.($campo['turno']).'</td>
